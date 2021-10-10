@@ -1,9 +1,14 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage, NextPageContext } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import styled from 'styled-components';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import styles from '../../styles/Home.module.css';
 
 const Home: NextPage = () => {
+  const { t } = useTranslation('common');
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,6 +18,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <StyledDiv>{t('hello')}</StyledDiv>
+
+        {t('hello')}
+
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -66,7 +75,23 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </div>
-  )
+  );
+};
+
+export default Home;
+
+export async function getStaticProps({ locale }: NextPageContext) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? '', ['common'])),
+    },
+  };
 }
 
-export default Home
+const StyledDiv = styled.div`
+  background: red;
+  width: 200px;
+  height: 200px;
+`;
+
+

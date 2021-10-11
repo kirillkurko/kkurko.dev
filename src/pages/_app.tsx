@@ -1,22 +1,19 @@
 import '../../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    font-family: 'Red Hat Text', sans-serif;
-  }
-`;
-
-const theme = {};
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '@theme/globalStyle';
+import { theme } from '@theme/theme';
+import { ThemeProvider as MuiThemeProvider } from '@mui/styles';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <MuiThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </MuiThemeProvider>
       </ThemeProvider>
     </>
   );

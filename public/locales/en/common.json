@@ -1,3 +1,9 @@
 {
   "hello": "Hello",
+  "navbar": {
+    "skills": "Skills",
+    "experience": "Experience",
+    "about": "About",
+    "contact": "Contact"
+  }
 }

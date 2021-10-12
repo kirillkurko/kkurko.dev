@@ -1,26 +1,9 @@
 import { useMemo, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import { createStyles, makeStyles } from '@mui/styles';
-import { ThemeInterface } from '@theme/theme';
-import NavLink from '@components/NavBar/NavLink';
+import NavLink from '@atoms/NavLink';
 import { useTranslation } from 'next-i18next';
-
-const useStyles = makeStyles((theme: ThemeInterface) =>
-  createStyles({
-    appbar: {
-      background: theme.colors.white,
-      color: theme.colors.text,
-      boxShadow: 'none',
-      fontFamily: theme.fontFamilies.primary,
-    },
-    toolbar: {
-      display: 'flex',
-      justifyContent: 'flex-end',
-      padding: '20px',
-    },
-  }),
-);
+import { useStyles } from './atoms';
 
 function NavBar(): JSX.Element {
   const [activeLink, setActiveLink] = useState('');
@@ -29,10 +12,10 @@ function NavBar(): JSX.Element {
 
   const links = useMemo(() => {
     return [
-      { href: '#skills', label: t('navbar:skills') },
-      { href: '#experience', label: t('navbar:experience') },
-      { href: '#about', label: t('navbar:about') },
-      { href: '#contact', label: t('navbar:contact') },
+      { href: '#skills', label: t('navbar.skills') },
+      { href: '#experience', label: t('navbar.experience') },
+      { href: '#about', label: t('navbar.about') },
+      { href: '#contact', label: t('navbar.contact') },
     ];
   }, [t]);
 

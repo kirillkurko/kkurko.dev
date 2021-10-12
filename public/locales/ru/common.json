@@ -5,5 +5,8 @@
     "experience": "Опыт",
     "about": "Обо мне",
     "contact": "Связаться"
+  },
+  "hero": {
+    "title": "Hey, I am Kirill Kurko, front-end developer with back-end experience and UX/UI skills"
   }
 }

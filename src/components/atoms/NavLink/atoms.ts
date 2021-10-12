@@ -1,27 +1,11 @@
-import Link from 'next/link';
 import styled, { css } from 'styled-components';
 import { ThemeProps } from '@theme/theme';
 
 type Props = {
-  href: string;
-  label: string;
-  active: boolean;
-  onClick: (href: string) => void;
-};
-
-function NavLink({ href, label, active, onClick }: Props): JSX.Element {
-  return (
-    <Wrapper title={label} active={active} onClick={() => onClick(href)}>
-      <Link href={href}>{label}</Link>
-    </Wrapper>
-  );
-}
-
-type WrapperProps = {
   active: boolean;
 };
 
-const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled.div<Props>`
   text-transform: uppercase;
   font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
   font-size: ${({ theme }: ThemeProps) => theme.fontSize.nav};
@@ -29,10 +13,10 @@ const Wrapper = styled.div<WrapperProps>`
   line-height: 1;
   transition: color 0.5s;
 
-  color: ${({ theme, active }: ThemeProps & WrapperProps) =>
+  color: ${({ theme, active }: ThemeProps & Props) =>
     active ? theme.colors.primary : theme.colors.text};
 
-  ${({ active }: WrapperProps) =>
+  ${({ active }: Props) =>
     active &&
     css`
       text-decoration: none !important;
@@ -53,5 +37,3 @@ const Wrapper = styled.div<WrapperProps>`
     text-decoration: underline;
   }
 `;
-
-export default NavLink;

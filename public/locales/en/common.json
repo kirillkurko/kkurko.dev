@@ -5,5 +5,13 @@
     "experience": "Experience",
     "about": "About",
     "contact": "Contact"
+  },
+  "hero": {
+    "hey": "Hey, I am Kirill Kurko,",
+    "frontend": "front-end developer",
+    "with": "with",
+    "and": "and",
+    "backend": "back-end experience",
+    "skills": "UX/UI skills"
   }
 }

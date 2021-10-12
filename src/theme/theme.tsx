@@ -18,6 +18,7 @@ export interface ThemeInterface extends Theme {
   };
   fontSize: {
     nav: string;
+    hero: string;
   };
   fontFamilies: FontFamiliesType;
 }
@@ -34,6 +35,7 @@ export const theme: ThemeInterface = {
   },
   fontSize: {
     nav: `${16 / 16}rem`,
+    hero: `${35 / 16}rem`,
   },
   fontFamilies,
   ...miuTheme,

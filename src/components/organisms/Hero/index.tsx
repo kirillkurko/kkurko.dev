@@ -1,7 +1,8 @@
 import Circle from '@atoms/Circle';
-import { Wrapper, Container, Side, Title, Bold } from './atoms';
+import { Wrapper, Container, Title, Bold, Side } from './atoms';
 import { useTranslation } from 'next-i18next';
 import Typing from 'react-typing-animation';
+import { LAPTOP_HERO } from '@constants/images';
 
 function Hero(): JSX.Element {
   const { t } = useTranslation('common');
@@ -9,16 +10,16 @@ function Hero(): JSX.Element {
   return (
     <Wrapper>
       <Container>
-        <Side size={45}>
+        <Side size={36}>
           <Circle
-            src={'/assets/images/laptop-Hero.png'}
+            src={LAPTOP_HERO}
             alt={'laptopHero'}
             priority={true}
             circleSize={100}
             imageSize={500}
           />
         </Side>
-        <Side size={55} maxContent={true}>
+        <Side size={44}>
           <Typing>
             <Title>
               {t('hero.hey')}

@@ -5,6 +5,7 @@ import styles from '../../styles/Home.module.css';
 import NavBar from '@components/molecules/NavBar';
 import Hero from '@components/organisms/Hero';
 import SocialButtons from '@molecules/SocialButtons';
+import Quote from '@layouts/Quote';
 
 const Home: NextPage = () => {
   return (
@@ -18,8 +19,9 @@ const Home: NextPage = () => {
       <NavBar />
       <SocialButtons />
 
-      <main className={styles.main}>
+      <main>
         <Hero />
+        <Quote />
       </main>
     </div>
   );

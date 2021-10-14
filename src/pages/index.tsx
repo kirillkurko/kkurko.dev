@@ -6,6 +6,7 @@ import NavBar from '@components/molecules/NavBar';
 import Hero from '@components/organisms/Hero';
 import SocialButtons from '@molecules/SocialButtons';
 import Quote from '@layouts/Quote';
+import Skills from '@layouts/Skills';
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
       <main>
         <Hero />
         <Quote />
+        <Skills />
       </main>
     </div>
   );

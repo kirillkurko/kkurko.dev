@@ -22,7 +22,7 @@
     "import-newlines/enforce": [
       "error",
       {
-        "items": 8,
+        "items": 5,
         "max-len": 100
       }
     ]

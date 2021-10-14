@@ -22,6 +22,9 @@ export interface ThemeInterface extends Theme {
     nav: string;
     hero: string;
     words: string;
+    quote: string;
+    title: string;
+    description: string;
   };
   sizes: {
     height: {
@@ -45,6 +48,9 @@ export const theme: ThemeInterface = {
     nav: `${16 / 16}rem`,
     hero: `${35 / 16}rem`,
     words: `calc(2vw + 2.5vh)`,
+    quote: `${30 / 16}rem`,
+    title: `${40 / 16}rem`,
+    description: `${25 / 16}rem`,
   },
   sizes: {
     height: {

@@ -26,5 +26,12 @@
     "9": "INSPIRATION",
     "10": "PROGRAMMING",
     "11": "THANKSBLIFE"
+  },
+  "quote": "If you give someone a program, you will frustrate them for a day; if you teach them how to program, you will frustrate them for a lifetime",
+
+  "skills": {
+    "title": "blow my mind",
+    "description-before": "don't worry it's okay",
+    "description-after": "andy my skills can blow yours"
   }
 }

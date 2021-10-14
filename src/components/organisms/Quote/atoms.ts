@@ -26,3 +26,12 @@ export const Side = styled.div<Props>`
       color: ${({ theme }: ThemeProps) => theme.colors.white};
     `}
 `;
+
+export const Text = styled.p`
+  margin: 0;
+  max-width: 60%;
+  text-transform: uppercase;
+  font-size: ${({ theme }: ThemeProps) => theme.fontSize.quote};
+  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
+  font-weight: bold;
+`;

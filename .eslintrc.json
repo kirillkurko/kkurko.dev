@@ -6,6 +6,7 @@
     "plugin:prettier/recommended"
   ],
   "plugins": [
+    "import",
     "import-newlines"
   ],
   "parser": "@typescript-eslint/parser",

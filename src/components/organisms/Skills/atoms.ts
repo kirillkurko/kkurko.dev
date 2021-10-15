@@ -8,21 +8,39 @@ export const Wrapper = styled.section`
 
 export const Block = styled.div`
   height: ${({ theme }: ThemeProps) => theme.sizes.height.full};
+  display: flex;
 `;
 
 export const TextBlock = styled(Block)`
-  padding-left: 70px;
+  padding-left: 90px;
   width: 35%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
 export const BombBlock = styled(Block)`
   width: 20%;
-  display: flex;
   align-items: flex-end;
   padding-bottom: 20px;
+`;
+
+export const SkillsBlock = styled(Block)`
+  width: 45%;
+  padding-right: 90px;
+  align-items: center;
+`;
+
+export const SkillsWrapper = styled.div`
+  width: 100%;
+
+  img {
+    top: 50px !important;
+    left: -10px !important;
+    min-height: 100% !important;
+    min-width: 100% !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+  }
 `;
 
 export const BombWrapper = styled.div`

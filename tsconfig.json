@@ -6,7 +6,7 @@
       "@components/*": ["src/components/*"],
       "@atoms/*": ["src/components/atoms/*"],
       "@molecules/*": ["src/components/molecules/*"],
-      "@layouts/*": ["src/components/organisms/*"],
+      "@organisms/*": ["src/components/organisms/*"],
       "@theme/*": ["src/theme/*"],
     },
     "target": "es5",

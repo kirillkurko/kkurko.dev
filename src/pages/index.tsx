@@ -3,10 +3,10 @@ import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import styles from '../../styles/Home.module.css';
 import NavBar from '@components/molecules/NavBar';
-import Hero from '@components/organisms/Hero';
 import SocialButtons from '@molecules/SocialButtons';
-import Quote from '@layouts/Quote';
-import Skills from '@layouts/Skills';
+import Hero from '@organisms/Hero';
+import Quote from '@organisms/Quote';
+import Skills from '@organisms/Skills';
 
 const Home: NextPage = () => {
   return (

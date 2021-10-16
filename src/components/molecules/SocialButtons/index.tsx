@@ -15,7 +15,7 @@ function SocialButtons(): JSX.Element {
         links={links}
         buttonStyle={{
           margin: '0 20px 20px 20px',
-          backgroundColor: '#000000',
+          backgroundColor: '#1F1F1F',
           borderRadius: '50%',
         }}
         iconStyle={{ color: '#ffffff' }}

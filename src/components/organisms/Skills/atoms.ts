@@ -59,12 +59,14 @@ export const BombWrapper = styled.div`
 export const Title = styled.h2`
   font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
   font-size: ${({ theme }: ThemeProps) => theme.fontSize.title};
+  color: ${({ theme }: ThemeProps) => theme.colors.text};
   text-transform: uppercase;
   margin: 0;
 `;
 
 export const Description = styled.p`
   font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
+  color: ${({ theme }: ThemeProps) => theme.colors.text};
   font-size: ${({ theme }: ThemeProps) => theme.fontSize.description};
   text-transform: uppercase;
   margin: 0;

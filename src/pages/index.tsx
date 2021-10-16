@@ -7,6 +7,7 @@ import SocialButtons from '@molecules/SocialButtons';
 import Hero from '@organisms/Hero';
 import Quote from '@organisms/Quote';
 import Skills from '@organisms/Skills';
+import Footer from '@molecules/Footer';
 
 const Home: NextPage = () => {
   return (
@@ -25,6 +26,8 @@ const Home: NextPage = () => {
         <Quote />
         <Skills />
       </main>
+
+      <Footer />
     </div>
   );
 };

@@ -8,7 +8,7 @@ type Props = {
   onClick: (href: string) => void;
 };
 
-function NavLink({ href, label, active, onClick }: Props): JSX.Element {
+function NavLink({ href, label, active, onClick }: Props) {
   return (
     <Wrapper title={label} active={active} onClick={() => onClick(href)}>
       <Link href={href}>{label}</Link>

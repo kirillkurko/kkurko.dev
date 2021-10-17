@@ -22,6 +22,7 @@
     "react-dom": "17.0.2",
     "react-social-media-buttons": "^1.0.8",
     "react-typing-animation": "^1.6.2",
+    "react-visibility-sensor": "5.1.1",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {

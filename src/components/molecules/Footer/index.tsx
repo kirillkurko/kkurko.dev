@@ -1,7 +1,7 @@
 import { Wrapper, Text } from './atoms';
 import { useTranslation } from 'next-i18next';
 
-function Footer(): JSX.Element {
+function Footer() {
   const { t } = useTranslation('common');
 
   return (

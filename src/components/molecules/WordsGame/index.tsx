@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const ROWS_SIZE = 11;
 
-function WordsGame(): JSX.Element {
+function WordsGame() {
   const { t } = useTranslation('common');
 
   const lines = useMemo(() => {

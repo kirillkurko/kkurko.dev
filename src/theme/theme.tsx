@@ -24,6 +24,7 @@ export interface ThemeInterface extends Theme {
     words: string;
     quote: string;
     title: string;
+    header: string;
     description: string;
   };
   sizes: {
@@ -50,6 +51,7 @@ export const theme: ThemeInterface = {
     words: `calc(2vw + 2.5vh)`,
     quote: `${30 / 16}rem`,
     title: `${40 / 16}rem`,
+    header: `${50 / 16}rem`,
     description: `${25 / 16}rem`,
   },
   sizes: {

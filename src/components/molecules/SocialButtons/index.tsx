@@ -8,7 +8,7 @@ const links = [
   'https://www.linkedin.com/in/kirillkurko/',
 ];
 
-function SocialButtons(): JSX.Element {
+function SocialButtons() {
   return (
     <Wrapper>
       <SocialButtonsContainer

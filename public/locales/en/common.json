@@ -35,5 +35,17 @@
     "description-after": "andy my skills can blow yours"
   },
 
-  "footer-message": "Designed and Developed by myself"
+  "footer-message": "Designed and Developed by myself",
+
+  "contact": {
+    "contact-me": "contact me",
+    "say-hi": "say hi",
+
+    "dribble": "dribbble",
+    "instagram": "instagram",
+    "telegram": "telegram",
+    "clubhouse": "clubhouse",
+    "github": "github",
+    "linkedin": "linkedin"
+  }
 }

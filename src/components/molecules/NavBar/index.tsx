@@ -5,7 +5,7 @@ import NavLink from '@atoms/NavLink';
 import { useTranslation } from 'next-i18next';
 import { useStyles } from './atoms';
 
-function NavBar(): JSX.Element {
+function NavBar() {
   const [activeLink, setActiveLink] = useState('');
   const classes = useStyles();
   const { t } = useTranslation('common');

@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import Typing from 'react-typing-animation';
 import { LAPTOP_HERO } from '@constants/images';
 
-function Hero(): JSX.Element {
+function Hero() {
   const { t } = useTranslation('common');
 
   return (

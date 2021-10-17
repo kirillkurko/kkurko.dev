@@ -10,6 +10,5 @@ export const Text = styled.p`
   text-transform: uppercase;
   color: ${({ theme }: ThemeProps) => theme.colors.white};
   line-height: 0.8;
-  margin: 26px 0;
-  text-align: center;
+  margin: 26px 0 26px 90px;
 `;

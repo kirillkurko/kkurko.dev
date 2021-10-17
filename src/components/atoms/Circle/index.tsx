@@ -9,13 +9,7 @@ type Props = {
   imageSize: number;
 };
 
-function Circle({
-  src,
-  alt,
-  priority = false,
-  circleSize,
-  imageSize,
-}: Props): JSX.Element {
+function Circle({ src, alt, priority = false, circleSize, imageSize }: Props) {
   return (
     <Wrapper size={circleSize}>
       <Image

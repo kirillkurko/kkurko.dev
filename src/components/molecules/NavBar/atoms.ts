@@ -13,6 +13,10 @@ export const useStyles = makeStyles((theme: ThemeInterface) =>
       display: 'flex',
       justifyContent: 'flex-end',
       padding: '20px',
+
+      '& div:last-child': {
+        marginRight: 0,
+      },
     },
   }),
 );

@@ -10,10 +10,9 @@ import Quote from '@organisms/Quote';
 import Skills from '@organisms/Skills';
 import Footer from '@molecules/Footer';
 import Contact from '@organisms/Contact';
-import VisibilitySensor from 'react-visibility-sensor';
 
 const Home: NextPage = () => {
-  const [contactShown, setContactShown] = useState(false);
+  const [linksVisibility, setLinksVisibility] = useState(false);
 
   return (
     <div className={styles.container}>
@@ -23,19 +22,13 @@ const Home: NextPage = () => {
       </Head>
 
       <NavBar />
-      {!contactShown && <SocialButtons />}
+      <SocialButtons hidden={linksVisibility} />
 
       <main>
         <Hero />
         <Quote />
         <Skills />
-        <VisibilitySensor
-          partialVisibility
-          offset={{ bottom: 400 }}
-          onChange={(isVisible) => setContactShown(isVisible)}
-        >
-          <Contact />
-        </VisibilitySensor>
+        <Contact setLinksVisibility={setLinksVisibility} />
       </main>
 
       <Footer />

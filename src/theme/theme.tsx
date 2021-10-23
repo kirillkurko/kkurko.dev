@@ -14,9 +14,11 @@ export const fontFamilies: FontFamiliesType = {
 
 export interface ThemeInterface extends Theme {
   colors: {
+    background: string;
     white: string;
     primary: string;
     text: string;
+    footer: string;
   };
   fontSize: {
     nav: string;
@@ -26,6 +28,8 @@ export interface ThemeInterface extends Theme {
     title: string;
     header: string;
     description: string;
+    h4: string;
+    mail: string;
   };
   sizes: {
     height: {
@@ -41,9 +45,11 @@ export interface ThemeProps {
 
 export const theme: ThemeInterface = {
   colors: {
+    background: '#FFF',
     white: '#FFF',
     primary: '#284FCD',
-    text: '#1F1F1F',
+    text: '#121212',
+    footer: '#121212',
   },
   fontSize: {
     nav: `${16 / 16}rem`,
@@ -53,6 +59,8 @@ export const theme: ThemeInterface = {
     title: `${40 / 16}rem`,
     header: `${50 / 16}rem`,
     description: `${25 / 16}rem`,
+    h4: `${20 / 16}rem`,
+    mail: `${18 / 16}rem`,
   },
   sizes: {
     height: {
@@ -61,4 +69,31 @@ export const theme: ThemeInterface = {
   },
   fontFamilies,
   ...miuTheme,
+};
+
+export const themeDark: ThemeInterface = {
+  ...theme,
+  colors: {
+    ...theme.colors,
+    background: '#121212',
+    white: '#FFF',
+    primary: '#284FCD',
+    text: '#FFF',
+  },
+};
+
+export const device = {
+  mobileS: '(min-width: 320px)',
+  mobileM: '(min-width: 375px)',
+  mobileL: '(min-width: 425px)',
+  tablet: '(min-width: 768px)',
+  laptop: '(min-width: 1024px)',
+  laptopL: '(min-width: 1440px)',
+  desktop: '(min-width: 2560px)',
+  desktopL: '(min-width: 2560px)',
+};
+
+export const themes = {
+  DARK: themeDark,
+  LIGHT: theme,
 };

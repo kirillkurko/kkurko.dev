@@ -13,8 +13,13 @@ import {
 import links, { Link as LinkType } from '@constants/links';
 import { MAIL } from '@constants/common';
 import { useTranslation } from 'next-i18next';
+import VisibilitySensor from 'react-visibility-sensor';
 
-function Contact() {
+type Props = {
+  setLinksVisibility: (isVisible: boolean) => void;
+};
+
+function Contact({ setLinksVisibility }: Props) {
   const { t } = useTranslation('common');
 
   const socialLinks = useMemo(() => {
@@ -31,11 +36,17 @@ function Contact() {
       <Content>
         <Side>
           <Title>{t('contact.say-hi')}</Title>
-          <Mail>{MAIL}</Mail>
+          <Mail href={`mailto:${MAIL}`}>{MAIL}</Mail>
         </Side>
-        <LinksSide>
-          <LinksGroup>{socialLinks}</LinksGroup>
-        </LinksSide>
+
+        <VisibilitySensor
+          partialVisibility
+          onChange={(isVisible) => setLinksVisibility(isVisible)}
+        >
+          <LinksSide>
+            <LinksGroup>{socialLinks}</LinksGroup>
+          </LinksSide>
+        </VisibilitySensor>
       </Content>
     </Wrapper>
   );

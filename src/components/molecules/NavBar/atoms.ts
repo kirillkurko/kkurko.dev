@@ -4,7 +4,7 @@ import { ThemeInterface } from '@theme/theme';
 export const useStyles = makeStyles((theme: ThemeInterface) =>
   createStyles({
     appbar: {
-      background: theme.colors.white,
+      background: theme.colors.background,
       color: theme.colors.text,
       boxShadow: 'none',
       fontFamily: theme.fontFamilies.primary,

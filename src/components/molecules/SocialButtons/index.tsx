@@ -8,14 +8,18 @@ const links = [
   'https://www.linkedin.com/in/kirillkurko/',
 ];
 
-function SocialButtons() {
+type Props = {
+  hidden: boolean;
+};
+
+function SocialButtons({ hidden }: Props) {
   return (
-    <Wrapper>
+    <Wrapper hidden={hidden}>
       <SocialButtonsContainer
         links={links}
         buttonStyle={{
           margin: '0 20px 20px 20px',
-          backgroundColor: '#1F1F1F',
+          backgroundColor: '#121212',
           borderRadius: '50%',
         }}
         iconStyle={{ color: '#ffffff' }}

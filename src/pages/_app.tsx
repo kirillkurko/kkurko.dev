@@ -12,23 +12,25 @@ enum Mode {
   Light = 'LIGHT',
 }
 
-function CustomApp({ Component, pageProps }: AppProps) {
-  const [mode, setMode] = useState(Mode.Light);
+const MODE = Mode.Light;
 
-  useEffect(() => {
-    if (window) {
-      console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setMode(Mode.Dark);
-      }
-    }
-  }, []);
+function CustomApp({ Component, pageProps }: AppProps) {
+  // const [mode, setMode] = useState(Mode.Light);
+
+  // useEffect(() => {
+  //   if (window) {
+  //     console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  //     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  //       setMode(Mode.Dark);
+  //     }
+  //   }
+  // }, []);
 
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={themes[mode]}>
-        <MuiThemeProvider theme={themes[mode]}>
+      <ThemeProvider theme={themes[MODE]}>
+        <MuiThemeProvider theme={themes[MODE]}>
           <Component {...pageProps} />
         </MuiThemeProvider>
       </ThemeProvider>

@@ -3,13 +3,12 @@ import type { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import styles from '../../styles/Home.module.css';
-import NavBar from '@components/molecules/NavBar';
+import NavBar from '@molecules/NavBar';
 import SocialButtons from '@molecules/SocialButtons';
 import Hero from '@organisms/Hero';
-import Quote from '@organisms/Quote';
-import Skills from '@organisms/Skills';
 import Footer from '@molecules/Footer';
 import Contact from '@organisms/Contact';
+import SkillsGrid from '@organisms/SkillsGrid';
 
 const Home: NextPage = () => {
   const [linksVisibility, setLinksVisibility] = useState(false);
@@ -26,8 +25,7 @@ const Home: NextPage = () => {
 
       <main>
         <Hero />
-        <Quote />
-        <Skills />
+        <SkillsGrid />
         <Contact setLinksVisibility={setLinksVisibility} />
       </main>
 

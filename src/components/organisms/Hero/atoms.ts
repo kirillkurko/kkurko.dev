@@ -6,7 +6,7 @@ type Props = {
 };
 
 export const Wrapper = styled.section`
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;

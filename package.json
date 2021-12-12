@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.1.0",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.0.3",
     "@mui/material": "^5.0.3",
     "@mui/styles": "^5.0.1",
     "babel-runtime": "^6.26.0",
+    "framer-motion": "^4.1.17",
     "next": "11.1.2",
     "next-i18next": "^8.8.0",
     "next-images": "^1.8.1",

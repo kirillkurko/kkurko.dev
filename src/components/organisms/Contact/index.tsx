@@ -31,7 +31,7 @@ function Contact({ setLinksVisibility }: Props) {
   }, [t]);
 
   return (
-    <Wrapper>
+    <Wrapper id='contact'>
       <Header>{t('contact.contact-me')}</Header>
       <Content>
         <Side>

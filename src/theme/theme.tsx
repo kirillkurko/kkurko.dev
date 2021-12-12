@@ -28,6 +28,7 @@ export interface ThemeInterface extends Theme {
     title: string;
     header: string;
     description: string;
+    skills: string;
     h4: string;
     mail: string;
   };
@@ -55,6 +56,7 @@ export const theme: ThemeInterface = {
     nav: `${16 / 16}rem`,
     hero: `${35 / 16}rem`,
     words: `calc(2vw + 2.5vh)`,
+    skills: `${32 / 16}rem`,
     quote: `${30 / 16}rem`,
     title: `${40 / 16}rem`,
     header: `${50 / 16}rem`,

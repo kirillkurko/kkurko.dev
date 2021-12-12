@@ -35,6 +35,20 @@
     "description-after": "andy my skills can blow yours"
   },
 
+  "skills-grid": {
+    "frontend": "Frontend",
+    "startups": "Startups",
+    "design": "UI/UX",
+    "react": "React",
+    "redux": "Redux",
+    "next": "Next",
+    "graph-ql": "GraphQL",
+    "html": "HTML",
+    "css": "CSS",
+    "js": "JS",
+    "ts": "TS"
+  },
+
   "footer-message": "Designed and Developed by myself",
 
   "contact": {

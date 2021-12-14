@@ -1,7 +1,7 @@
-import Circle from '@atoms/Circle';
-import { Wrapper, Container, Title, Bold, Side } from './atoms';
+import Squire from '@atoms/Circle';
 import { useTranslation } from 'next-i18next';
 import { LAPTOP_HERO } from '@constants/images';
+import { Wrapper, Container, Title, Bold, Side } from './atoms';
 
 function Hero() {
   const { t } = useTranslation('common');
@@ -10,7 +10,7 @@ function Hero() {
     <Wrapper id='hero'>
       <Container>
         <Side size={36}>
-          <Circle
+          <Squire
             src={LAPTOP_HERO}
             alt={'laptopHero'}
             priority={true}

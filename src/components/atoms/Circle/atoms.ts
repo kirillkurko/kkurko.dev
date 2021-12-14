@@ -7,7 +7,7 @@ type Props = {
 
 export const Wrapper = styled.div<Props>`
   width: ${({ size }: Props) => `${size}%`};
-  border-radius: 50%;
+  border-radius: 20px;
   background-color: ${({ theme }: ThemeProps) => theme.colors.primary};
 
   img {

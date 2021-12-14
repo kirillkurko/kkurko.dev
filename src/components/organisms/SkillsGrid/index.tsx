@@ -1,4 +1,3 @@
-import React from 'react';
 import { Wrapper, Grid, GridItem, Text } from './atoms';
 import { useTranslation } from 'next-i18next';
 

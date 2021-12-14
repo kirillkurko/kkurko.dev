@@ -9,6 +9,7 @@ import Hero from '@organisms/Hero';
 import Footer from '@molecules/Footer';
 import Contact from '@organisms/Contact';
 import SkillsGrid from '@organisms/SkillsGrid';
+import About from '@organisms/About';
 
 const Home: NextPage = () => {
   const [linksVisibility, setLinksVisibility] = useState(false);
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
       <main>
         <Hero />
         <SkillsGrid />
+        <About />
         <Contact setLinksVisibility={setLinksVisibility} />
       </main>
 

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ThemeProps } from '@theme/theme';
 
 type Props = {
   size: number;
@@ -7,8 +6,8 @@ type Props = {
 
 export const Wrapper = styled.div<Props>`
   width: ${({ size }: Props) => `${size}%`};
-  border-radius: 20px;
-  background-color: ${({ theme }: ThemeProps) => theme.colors.primary};
+  border-radius: 50%;
+  background-color: rgba(5, 50, 99, 0.3);
 
   img {
     min-height: 85% !important;

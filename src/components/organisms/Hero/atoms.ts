@@ -10,7 +10,7 @@ export const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ theme }: ThemeProps) => theme.colors.background};
+  background: ${({ theme }: ThemeProps) => theme.colors.primary};
 `;
 
 export const Container = styled.div`
@@ -37,7 +37,7 @@ export const Side = styled.div<Props>`
 export const Title = styled.h1`
   font-size: ${({ theme }: ThemeProps) => theme.fontSize.hero};
   font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
-  color: ${({ theme }: ThemeProps) => theme.colors.text};
+  color: ${({ theme }: ThemeProps) => theme.colors.white};
   font-weight: normal;
   text-transform: uppercase;
   width: fit-content;

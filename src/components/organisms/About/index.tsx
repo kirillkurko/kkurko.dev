@@ -15,7 +15,7 @@ function About() {
 
   return (
     <Wrapper id='about' onClick={changeImage}>
-      <Text>Привет</Text>
+      <Text>Hello</Text>
       <ImageWrapper>
         <Image
           src={images[activeImageIndex]}

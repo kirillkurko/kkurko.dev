@@ -6,11 +6,9 @@ export const BLOB = '/assets/images/blob.svg';
 
 function Hero() {
   const [width, setWidth] = useState(1000);
-  const [height, setHeight] = useState(1000);
 
   useEffect(() => {
     setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
   }, []);
 
   return (
@@ -20,6 +18,7 @@ function Hero() {
         <Title>150% - Penguin.</Title>
         <Title>200% - CEO mentality.</Title>
         <Text>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           Hello, I'm Kirill. I make single employees, teams and projects grow.
         </Text>
         <Text>
@@ -28,6 +27,7 @@ function Hero() {
         </Text>
         <Text>
           I had a chance to work with many startups from small to large. Most of
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           the time I'm working on React/React Native positions, acting as a
           team-lead.
         </Text>

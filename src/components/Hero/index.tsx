@@ -1,16 +1,11 @@
 import { Wrapper, BlobWrapper, Text, TextBlock, Title } from './atoms';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
-export const BLOB = '/assets/images/blob.svg';
+const BLOB = '/assets/images/blob.svg';
+
+const WIDTH = 1000;
 
 function Hero() {
-  const [width, setWidth] = useState(1000);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-
   return (
     <Wrapper id='hero'>
       <TextBlock>
@@ -41,8 +36,8 @@ function Hero() {
           priority={true}
           src={BLOB}
           alt='abstract shape'
-          width={width / 2}
-          height={width / 2}
+          width={WIDTH / 2}
+          height={WIDTH / 2}
         />
       </BlobWrapper>
     </Wrapper>

@@ -38,6 +38,7 @@ function Hero() {
       </TextBlock>
       <BlobWrapper>
         <Image
+          priority={true}
           src={BLOB}
           alt='abstract shape'
           width={width / 2}

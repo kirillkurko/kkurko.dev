@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const BLOB = '/assets/images/blob.svg';
 
-const WIDTH = 1000;
+const WIDTH = 800;
 
 function Hero() {
   return (
@@ -36,8 +36,8 @@ function Hero() {
           priority={true}
           src={BLOB}
           alt='abstract shape'
-          width={WIDTH / 2}
-          height={WIDTH / 2}
+          width={WIDTH}
+          height={WIDTH}
         />
       </BlobWrapper>
     </Wrapper>

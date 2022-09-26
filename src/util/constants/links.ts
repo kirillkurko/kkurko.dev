@@ -9,25 +9,25 @@ const links: Link[] = [
     href: 'https://github.com/KirillKurko',
   },
   {
-    name: 'linkedin',
-    href: 'https://www.linkedin.com/in/kirillkurko/',
-  },
-  {
-    name: 'dribble',
-    href: 'https://dribbble.com/kirillkurko',
-  },
-  {
-    name: 'telegram',
-    href: 'https://t.me/Kirill_Kurko',
+    name: 'twitter',
+    href: 'https://twitter.com/kirillkurko',
   },
   {
     name: 'instagram',
     href: 'https://www.instagram.com/aqwergqwec/',
   },
   {
-    name: 'clubhouse',
-    href: 'https://www.clubhouse.com/@penguincoder',
+    name: 'gmail',
+    href: 'mailto:kirillkurko2609@gmail.com',
   },
+  {
+    name: 'linkedin',
+    href: 'https://www.linkedin.com/in/kirillkurko/',
+  },
+  // {
+  //   name: 'hashnode',
+  //   href: 'https://kkurko.hashnode.dev/',
+  // },
 ];
 
 export default links;

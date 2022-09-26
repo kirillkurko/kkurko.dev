@@ -14,17 +14,6 @@ enum Mode {
 const MODE = Mode.Light;
 
 function CustomApp({ Component, pageProps }: AppProps) {
-  // const [mode, setMode] = useState(Mode.Light);
-
-  // useEffect(() => {
-  //   if (window) {
-  //     console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
-  //     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  //       setMode(Mode.Dark);
-  //     }
-  //   }
-  // }, []);
-
   return (
     <>
       <GlobalStyle />

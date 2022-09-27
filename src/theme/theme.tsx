@@ -1,7 +1,3 @@
-import { createTheme, Theme } from '@mui/material/styles';
-
-const miuTheme = createTheme();
-
 type FontFamiliesType = {
   primary: string;
   mono: string;
@@ -12,30 +8,13 @@ export const fontFamilies: FontFamiliesType = {
   mono: ['Overpass Mono', 'monospace'].join(','),
 };
 
-export interface ThemeInterface extends Theme {
+export interface ThemeInterface {
   colors: {
     background: string;
     white: string;
     primary: string;
     text: string;
     footer: string;
-  };
-  fontSize: {
-    nav: string;
-    hero: string;
-    words: string;
-    quote: string;
-    title: string;
-    header: string;
-    description: string;
-    skills: string;
-    h4: string;
-    mail: string;
-  };
-  sizes: {
-    height: {
-      full: string;
-    };
   };
   fontFamilies: FontFamiliesType;
 }
@@ -52,25 +31,7 @@ export const theme: ThemeInterface = {
     text: '#121212',
     footer: '#121212',
   },
-  fontSize: {
-    nav: `${16 / 16}rem`,
-    hero: `${35 / 16}rem`,
-    words: `calc(2vw + 2.5vh)`,
-    skills: `${32 / 16}rem`,
-    quote: `${30 / 16}rem`,
-    title: `${40 / 16}rem`,
-    header: `${50 / 16}rem`,
-    description: `${25 / 16}rem`,
-    h4: `${20 / 16}rem`,
-    mail: `${18 / 16}rem`,
-  },
-  sizes: {
-    height: {
-      full: `calc(100vh - 64px)`,
-    },
-  },
   fontFamilies,
-  ...miuTheme,
 };
 
 export const themeDark: ThemeInterface = {

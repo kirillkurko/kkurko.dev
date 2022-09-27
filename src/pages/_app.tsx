@@ -4,7 +4,6 @@ import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '@theme/globalStyle';
 import { themes } from '@theme/theme';
-import { ThemeProvider as MuiThemeProvider } from '@mui/styles';
 
 enum Mode {
   Dark = 'DARK',
@@ -18,11 +17,10 @@ function CustomApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={themes[MODE]}>
-        <MuiThemeProvider theme={themes[MODE]}>
-          <Component {...pageProps} />
-        </MuiThemeProvider>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );
 }
+
 export default appWithTranslation(CustomApp);

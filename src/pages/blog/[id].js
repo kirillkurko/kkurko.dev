@@ -1,3 +1,5 @@
+/* eslint-disable */
+// @ts-nocheck
 import { Fragment } from 'react';
 import Head from 'next/head';
 import { getDatabase, getPage, getBlocks } from '../../util/notion';

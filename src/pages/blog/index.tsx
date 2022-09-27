@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Head from 'next/head';
 import Link from 'next/link';
 import { getDatabase } from '../../util/notion';

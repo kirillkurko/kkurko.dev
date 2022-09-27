@@ -22,12 +22,11 @@ function Hero() {
         </Text>
         <Text>
           I had a chance to work with many startups from small to large. Most of
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          the time I'm working on React/React Native positions, acting as a
-          team-lead.
+          {/* eslint-disable-next-line react/no-unescaped-entities */} the time
+          I'm working on React/React Native positions, acting as a team-lead.
         </Text>
         <Text>
-          My main focus is keep Track Factor as high as possible, making sure
+          My main focus is to keep Track Factor as high as possible, making sure
           there are no bottlenecks in processes and among employees.
         </Text>
       </TextBlock>

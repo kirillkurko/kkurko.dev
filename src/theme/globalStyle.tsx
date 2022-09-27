@@ -8,10 +8,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Red Hat Text', sans-serif;
     background-color: #121212;
     overflow: hidden;
-  }
-  
-  section {
-    height: 100vh;
+    box-sizing: border-box;
+
+    @media (max-width: 1200px) {
+      overflow: auto;
+    }
   }
 `;
 

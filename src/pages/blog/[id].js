@@ -4,7 +4,7 @@ import { getDatabase, getPage, getBlocks } from '../../util/notion';
 import Link from 'next/link';
 import { databaseId } from './index';
 import styles from './post.module.css';
-import { Text } from './Text';
+import Text from '../../components/Text';
 
 const renderNestedList = (block) => {
   const { type } = block;
@@ -29,32 +29,32 @@ const renderBlock = (block) => {
     case 'paragraph':
       return (
         <p>
-          <Text text={value.rich_text} />
+          <Text data={value.rich_text} />
         </p>
       );
     case 'heading_1':
       return (
         <h1>
-          <Text text={value.rich_text} />
+          <Text data={value.rich_text} />
         </h1>
       );
     case 'heading_2':
       return (
         <h2>
-          <Text text={value.rich_text} />
+          <Text data={value.rich_text} />
         </h2>
       );
     case 'heading_3':
       return (
         <h3>
-          <Text text={value.rich_text} />
+          <Text data={value.rich_text} />
         </h3>
       );
     case 'bulleted_list_item':
     case 'numbered_list_item':
       return (
         <li>
-          <Text text={value.rich_text} />
+          <Text data={value.rich_text} />
           {!!value.children && renderNestedList(block)}
         </li>
       );
@@ -63,7 +63,7 @@ const renderBlock = (block) => {
         <div>
           <label htmlFor={id}>
             <input type='checkbox' id={id} defaultChecked={value.checked} />{' '}
-            <Text text={value.rich_text} />
+            <Text data={value.rich_text} />
           </label>
         </div>
       );
@@ -71,7 +71,7 @@ const renderBlock = (block) => {
       return (
         <details>
           <summary>
-            <Text text={value.rich_text} />
+            <Text data={value.rich_text} />
           </summary>
           {value.children?.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
@@ -154,7 +154,7 @@ export default function Post({ page, blocks }) {
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
-          <Link href='/'>
+          <Link href='/blog'>
             <a className={styles.back}>← Go home</a>
           </Link>
         </section>
@@ -176,8 +176,6 @@ export const getStaticProps = async (context) => {
   const page = await getPage(id);
   const blocks = await getBlocks(id);
 
-  // Retrieve block children for nested blocks (one level deep), for example toggle blocks
-  // https://developers.notion.com/docs/working-with-page-content#reading-nested-blocks
   const childBlocks = await Promise.all(
     blocks
       .filter((block) => block.has_children)
@@ -189,7 +187,6 @@ export const getStaticProps = async (context) => {
       }),
   );
   const blocksWithChildren = blocks.map((block) => {
-    // Add child blocks if the block should contain children but none exists
     if (block.has_children && !block[block.type].children) {
       block[block.type].children = childBlocks.find(
         (x) => x.id === block.id,

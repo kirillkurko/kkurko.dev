@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.0",
     "babel-runtime": "^6.26.0",
     "next": "11.1.2",
     "next-i18next": "^8.8.0",

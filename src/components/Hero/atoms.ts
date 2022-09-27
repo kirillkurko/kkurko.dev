@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
   background: ${({ theme }: ThemeProps) => theme.colors.footer};
   overflow: hidden;
   padding: 2rem;
-  min-height: 100vh;
+  height: 100vh;
 
   @media (max-width: 1200px) {
     overflow: auto;

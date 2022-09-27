@@ -7,7 +7,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Red Hat Text', sans-serif;
     background-color: #121212;
-    overflow: hidden;
     box-sizing: border-box;
 
     @media (max-width: 1200px) {

@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Penguin</title>
         <meta name='description' content='My personal website' />
-        <link rel='shortcut icon' href='/favicon.ico' />
+        <link rel='shortcut icon' href='../../public/favicon.ico' />
       </Head>
       <main>
         <SocialMedia />

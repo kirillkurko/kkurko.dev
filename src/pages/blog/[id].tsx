@@ -8,7 +8,7 @@ import styles from './post.module.css';
 import Text from '../../components/Text';
 import { renderBlock } from '../../util/notion/render';
 import { PageTitle } from '@components/atoms';
-import { Article } from './atoms';
+import { Article } from '@components/Blog/atoms';
 
 export default function Post({ page, blocks }) {
   if (!page || !blocks) {

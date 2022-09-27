@@ -5,7 +5,7 @@ import { getDatabase } from '../../util/notion';
 import Text from '@components/Text';
 import styles from './index.module.css';
 import { PageTitle, Paragraph } from '@components/atoms';
-import { Wrapper, Content, Header } from './atoms';
+import { Wrapper, Content, Header } from '@components/Blog/atoms';
 
 export default function Home({ posts }) {
   return (

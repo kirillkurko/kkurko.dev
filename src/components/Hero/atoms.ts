@@ -25,22 +25,3 @@ export const BlobWrapper = styled.div`
 export const TextBlock = styled.div`
   max-width: 500px;
 `;
-
-export const Text = styled.p`
-  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
-  font-size: ${18 / 16}rem;
-  word-break: break-word;
-  color: #fff;
-`;
-
-export const Title = styled.p`
-  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
-  font-size: ${32 / 16}rem;
-  word-break: break-word;
-  font-weight: bold;
-  color: #fff;
-
-  &:first-child {
-    margin-top: 0;
-  }
-`;

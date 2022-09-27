@@ -4,21 +4,21 @@ import Link from 'next/link';
 import { getDatabase } from '../../util/notion';
 import Text from '@components/Text';
 import styles from './index.module.css';
-
-export const databaseId = process.env.NOTION_DATABASE_ID;
+import { PageTitle, Paragraph } from '@components/atoms';
+import { Wrapper, Content, Header } from './atoms';
 
 export default function Home({ posts }) {
   return (
-    <div>
+    <Wrapper>
       <Head>
-        <title>Notion Next.js blog</title>
+        <title>Blog - Kirill Kurko</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className={styles.container}>
-        <header className={styles.header}>
-          <h1>Next.js blog powered by Notion API</h1>
-          <p>
+      <Content>
+        <Header className={styles.header}>
+          <PageTitle>Blog</PageTitle>
+          <Paragraph>
             This is an example of a Next.js blog with data fetched with Notions
             API. The data comes from{' '}
             <a href={`https://www.notion.so/${databaseId}`}>this table</a>. Get
@@ -31,8 +31,8 @@ export default function Home({ posts }) {
               my blogpost
             </a>{' '}
             on building your own.
-          </p>
-        </header>
+          </Paragraph>
+        </Header>
 
         <h2 className={styles.heading}>All Posts</h2>
         <ol className={styles.posts}>
@@ -63,10 +63,12 @@ export default function Home({ posts }) {
             );
           })}
         </ol>
-      </main>
-    </div>
+      </Content>
+    </Wrapper>
   );
 }
+
+export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export const getStaticProps = async () => {
   const database = await getDatabase(databaseId);

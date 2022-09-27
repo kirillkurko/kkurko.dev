@@ -7,10 +7,10 @@ import { databaseId } from './index';
 import styles from './post.module.css';
 import Text from '../../components/Text';
 import { renderBlock } from '../../util/notion/render';
+import { PageTitle } from '@components/atoms';
+import { Article } from './atoms';
 
 export default function Post({ page, blocks }) {
-  console.log(page, blocks);
-
   if (!page || !blocks) {
     return <div />;
   }
@@ -21,10 +21,10 @@ export default function Post({ page, blocks }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <article className={styles.container}>
-        <h1 className={styles.name}>
+      <Article className={styles.container}>
+        <PageTitle>
           <Text text={page.properties.Name.title} />
-        </h1>
+        </PageTitle>
         <section>
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
@@ -33,7 +33,7 @@ export default function Post({ page, blocks }) {
             <a className={styles.back}>← Go home</a>
           </Link>
         </section>
-      </article>
+      </Article>
     </div>
   );
 }

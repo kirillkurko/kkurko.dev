@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ThemeProps } from '@theme/theme';
 
 export const Wrapper = styled.div`
-  padding: 2rem;
+  padding: 1rem;
 `;
 
 export const Header = styled.header`
@@ -19,4 +19,9 @@ export const Article = styled.article`
   p {
     font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
   }
+`;
+
+export const Blockquote = styled.blockquote`
+  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
+  margin: 0;
 `;

@@ -8,14 +8,15 @@ import styles from './post.module.css';
 import Text from '../../components/Text';
 import { renderBlock } from '../../util/notion/render';
 import { PageTitle } from '@components/atoms';
-import { Article } from '@components/Blog/atoms';
+import { Wrapper, Article } from '@components/Blog/atoms';
 
 export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
+
   return (
-    <div>
+    <Wrapper>
       <Head>
         <title>{page.properties.Name.title[0].plain_text}</title>
         <link rel='icon' href='/favicon.ico' />
@@ -23,18 +24,18 @@ export default function Post({ page, blocks }) {
 
       <Article className={styles.container}>
         <PageTitle>
-          <Text text={page.properties.Name.title} />
+          <Text data={page.properties.Name.title} />
         </PageTitle>
         <section>
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
           <Link href='/blog'>
-            <a className={styles.back}>← Go home</a>
+            <a className={styles.back}>Go home</a>
           </Link>
         </section>
       </Article>
-    </div>
+    </Wrapper>
   );
 }
 

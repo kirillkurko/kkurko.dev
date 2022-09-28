@@ -47,13 +47,14 @@
 }
 
 .pre {
-    background-color: rgb(242, 242, 242);
+    background-color: #121212;
     padding: 2px 4px;
     margin: 20px 0;
     line-height: 2.3;
     border-radius: 12px;
     overflow: auto;
     color: #fff;
+    border: 1px solid orange;
 }
 
 .code_block {

@@ -4,6 +4,9 @@ import Text from '@components/Text';
 import { Fragment } from 'react';
 import Link from 'next/link';
 import styles from '../../pages/blog/post.module.css';
+import { BorderBlock } from '@components/atoms';
+import { Blockquote } from '@components/Blog/atoms';
+import { Prism } from '@mantine/prism';
 
 const renderNestedList = (block) => {
   const { type } = block;
@@ -92,14 +95,10 @@ export const renderBlock = (block) => {
     case 'divider':
       return <hr key={id} />;
     case 'quote':
-      return <blockquote key={id}>{value.text[0].plain_text}</blockquote>;
+      return (<BorderBlock><Blockquote key={id}>{value.rich_text[0].plain_text}</Blockquote></BorderBlock>);
     case 'code':
       return (
-        <pre className={styles.pre}>
-          <code className={styles.code_block} key={id}>
-            {value.text[0].plain_text}
-          </code>
-        </pre>
+        <Prism language="tsx" colorScheme="dark" noCopy>{value.rich_text[0].plain_text}</Prism>
       );
     case 'file':
       const src_file =

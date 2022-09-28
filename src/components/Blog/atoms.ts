@@ -37,7 +37,7 @@ export const Article = styled.article`
   }
 
   p {
-    letter-spacing: 0.5px;
+    line-height: 1.6;
     font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
   }
 
@@ -49,7 +49,7 @@ export const Article = styled.article`
 export const Blockquote = styled.blockquote`
   font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
   margin: 0;
-  letter-spacing: 0.5px;
+  line-height: 1.6;
 `;
 
 export const PostsList = styled.ol`

@@ -11,6 +11,7 @@ export const Wrapper = styled.section`
   height: 100vh;
 
   @media (max-width: 1200px) {
+    height: auto;
     overflow: auto;
     padding-bottom: 5rem;
   }

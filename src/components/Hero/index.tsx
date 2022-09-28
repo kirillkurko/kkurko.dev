@@ -11,7 +11,9 @@ function Hero() {
   return (
     <Wrapper id='hero'>
       <TextBlock>
-        <PageTitle>100% - Frontend Engineer.</PageTitle>
+        <PageTitle style={{ marginTop: 0 }}>
+          100% - Frontend Engineer.
+        </PageTitle>
         <PageTitle>150% - Penguin.</PageTitle>
         <PageTitle>200% - CEO mentality.</PageTitle>
         <Paragraph>

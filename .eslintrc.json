@@ -20,11 +20,11 @@
   "rules": {
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": "off",
-    "import-newlines/enforce": [
+    "@typescript-eslint/naming-convention": [
       "error",
       {
-        "items": 5,
-        "max-len": 100
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase", "snake_case"]
       }
     ]
   }

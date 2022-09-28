@@ -3,14 +3,30 @@ import { ThemeProps } from '@theme/theme';
 
 export const PageTitle = styled.h1`
   font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
-  font-size: ${32 / 16}rem;
+  font-size: 2.4rem;
   word-break: break-word;
   font-weight: bold;
   color: #fff;
+`;
 
-  &:first-child {
-    margin-top: 0;
-  }
+export const SectionTitle = styled.h2`
+  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
+  font-size: 1.8rem;
+  word-break: break-word;
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+`;
+
+export const ArticleTitle = styled.h3`
+  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
+  font-size: 1.4rem;
+  word-break: break-word;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
 `;
 
 export const Paragraph = styled.p`
@@ -31,7 +47,6 @@ export const BorderBlock = styled.div`
   background: ${({ theme }: ThemeProps) => theme.colors.text};
   background-clip: padding-box;
   border: solid 5px transparent;
-  border-radius: 20px;
 
   &:before {
     content: '';

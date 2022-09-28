@@ -3,7 +3,7 @@
 import Text from '@components/Text';
 import { Fragment } from 'react';
 import Link from 'next/link';
-import styles from '../../pages/blog/post.module.css';
+import styles from '@components/Text/styles.module.css';
 import { BorderBlock } from '@components/atoms';
 import { Blockquote } from '@components/Blog/atoms';
 import { Prism } from '@mantine/prism';

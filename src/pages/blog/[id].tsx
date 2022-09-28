@@ -1,10 +1,10 @@
 // @ts-nocheck
 import { Fragment } from 'react';
 import Head from 'next/head';
-import { getDatabase, getPage, getBlocks } from '../../util/notion';
+import { getDatabase, getPage, getBlocks } from '../../lib/notion';
 import Link from 'next/link';
 import { databaseId } from './index';
-import styles from './post.module.css';
+import styles from '@components/Text/styles.module.css';
 import Text from '../../components/Text';
 import { renderBlock } from '../../util/notion/render';
 import { PageTitle } from '@components/atoms';
@@ -22,7 +22,7 @@ export default function Post({ page, blocks }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Article className={styles.container}>
+      <Article>
         <PageTitle>
           <Text data={page.properties.Name.title} />
         </PageTitle>
@@ -62,6 +62,7 @@ export const getStaticProps = async (context) => {
         };
       }),
   );
+
   const blocksWithChildren = blocks.map((block) => {
     if (block.has_children && !block[block.type].children) {
       block[block.type].children = childBlocks.find(

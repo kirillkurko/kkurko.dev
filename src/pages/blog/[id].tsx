@@ -10,7 +10,12 @@ import { renderBlock } from '../../util/notion/render';
 import { PageTitle } from '@components/atoms';
 import { Wrapper, Article } from '@components/Blog/atoms';
 
-export default function Post({ page, blocks }) {
+interface Props {
+  page: any;
+  blocks: any;
+}
+
+const Post = ({ page, blocks }: Props) => {
   if (!page || !blocks) {
     return <div />;
   }
@@ -37,7 +42,9 @@ export default function Post({ page, blocks }) {
       </Article>
     </Wrapper>
   );
-}
+};
+
+export default Post;
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(databaseId);

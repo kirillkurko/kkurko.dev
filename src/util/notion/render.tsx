@@ -7,6 +7,7 @@ import styles from '@components/Text/styles.module.css';
 import { BorderBlock } from '@components/atoms';
 import { Blockquote } from '@components/Blog/atoms';
 import { Prism } from '@mantine/prism';
+import theme from 'prism-react-renderer/themes/vsDark';
 
 const renderNestedList = (block) => {
   const { type } = block;
@@ -24,8 +25,6 @@ const renderNestedList = (block) => {
 export const renderBlock = (block) => {
   const { type, id } = block;
   const value = block[type];
-
-  console.log(value);
 
   switch (type) {
     case 'paragraph':
@@ -98,7 +97,7 @@ export const renderBlock = (block) => {
       return (<BorderBlock><Blockquote key={id}>{value.rich_text[0].plain_text}</Blockquote></BorderBlock>);
     case 'code':
       return (
-        <Prism language="tsx" colorScheme="dark" noCopy>{value.rich_text[0].plain_text}</Prism>
+        <Prism language="tsx" getPrismTheme={() => theme} noCopy>{value.rich_text[0].plain_text}</Prism>
       );
     case 'file':
       const src_file =

@@ -5,7 +5,7 @@ type FontFamiliesType = {
 
 export const fontFamilies: FontFamiliesType = {
   primary: ['Red Hat Text', 'sans-serif'].join(','),
-  mono: ['IBM Plex Mono', 'monospace'].join(','),
+  mono: ['IBM Plex Sans', 'sans-serif'].join(','),
 };
 
 export interface ThemeInterface {

@@ -23,7 +23,7 @@ export const Article = styled.article`
   padding: 0 20px;
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #fff;
 
   img {
@@ -34,10 +34,9 @@ export const Article = styled.article`
   figure {
     margin-left: 0;
     margin-right: 0;
-  }
 
   p {
-    line-height: 1.6;
+    letter-spacing: 1px;
     font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
   }
 
@@ -49,6 +48,7 @@ export const Article = styled.article`
 export const Blockquote = styled.blockquote`
   font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
   margin: 0;
+  letter-spacing: 1px;
   line-height: 1.6;
 `;
 

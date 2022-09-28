@@ -34,6 +34,7 @@ export const Paragraph = styled.p`
   font-size: ${18 / 16}rem;
   word-break: break-word;
   color: #fff;
+  letter-spacing: 1px;
 `;
 
 export const BorderBlock = styled.div`

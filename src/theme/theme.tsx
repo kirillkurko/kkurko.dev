@@ -5,7 +5,7 @@ type FontFamiliesType = {
 
 export const fontFamilies: FontFamiliesType = {
   primary: ['Red Hat Text', 'sans-serif'].join(','),
-  mono: ['Overpass Mono', 'monospace'].join(','),
+  mono: ['IBM Plex Sans', 'monospace'].join(','),
 };
 
 export interface ThemeInterface {

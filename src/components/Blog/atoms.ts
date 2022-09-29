@@ -14,7 +14,6 @@ export const Header = styled.header`
 export const Content = styled.section``;
 
 export const Article = styled.article`
-  padding: 0 20px;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;

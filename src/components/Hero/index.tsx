@@ -1,11 +1,11 @@
 import { Wrapper, BlobWrapper, TextBlock } from './atoms';
 import { PageTitle } from '@components/atoms';
 import { Paragraph } from '@components/atoms';
-import Image from 'next/image';
+// import Image from 'next/image';
 
-const BLOB = '/assets/images/blob.svg';
+// const BLOB = '/assets/images/blob.svg';
 
-const WIDTH = 800;
+// const WIDTH = 800;
 
 function Hero() {
   return (

@@ -3,12 +3,10 @@ import SocialMedia from '@components/SocialMedia';
 
 const Home = () => {
   return (
-    <div>
-      <main>
-        <SocialMedia />
-        <Hero />
-      </main>
-    </div>
+    <>
+      <SocialMedia />
+      <Hero />
+    </>
   );
 };
 

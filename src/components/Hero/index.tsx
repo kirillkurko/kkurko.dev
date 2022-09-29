@@ -9,7 +9,7 @@ const WIDTH = 800;
 
 function Hero() {
   return (
-    <Wrapper id='hero'>
+    <Wrapper>
       <TextBlock>
         <PageTitle style={{ marginTop: 0 }}>
           100% - Frontend Engineer.
@@ -34,15 +34,15 @@ function Hero() {
           there are no bottlenecks in processes and among employees.
         </Paragraph>
       </TextBlock>
-      <BlobWrapper>
-        <Image
-          priority={true}
-          src={BLOB}
-          alt='abstract shape'
-          width={WIDTH}
-          height={WIDTH}
-        />
-      </BlobWrapper>
+      {/*<BlobWrapper>*/}
+      {/*  <Image*/}
+      {/*    priority={true}*/}
+      {/*    src={BLOB}*/}
+      {/*    alt='abstract shape'*/}
+      {/*    width={WIDTH}*/}
+      {/*    height={WIDTH}*/}
+      {/*  />*/}
+      {/*</BlobWrapper>*/}
     </Wrapper>
   );
 }

@@ -1,14 +1,11 @@
 import styled from 'styled-components';
-import { ThemeProps } from '@theme/theme';
 
 export const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ theme }: ThemeProps) => theme.colors.footer};
   overflow: hidden;
-  padding: 2rem;
-  height: 100vh;
+  padding: 2rem 0;
 
   @media (max-width: 1200px) {
     height: auto;
@@ -23,6 +20,4 @@ export const BlobWrapper = styled.div`
   }
 `;
 
-export const TextBlock = styled.div`
-  max-width: 500px;
-`;
+export const TextBlock = styled.div``;

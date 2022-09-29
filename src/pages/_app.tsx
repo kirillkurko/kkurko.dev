@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '@theme/globalStyle';
 import { themes } from '@theme/theme';
 import Head from 'next/head';
+import Container from '@components/Container';
 
 enum Mode {
   Dark = 'DARK',
@@ -22,7 +23,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
       <GlobalStyle />
       <ThemeProvider theme={themes[MODE]}>
-        <Component {...pageProps} />
+        <Container>
+          <Component {...pageProps} />
+        </Container>
       </ThemeProvider>
     </>
   );

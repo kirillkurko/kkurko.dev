@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { ThemeProps } from '@theme/theme';
 
-export const Wrapper = styled.div`
-  padding: 1rem;
-`;
+export const Wrapper = styled.div``;
 
 export const Header = styled.header`
   margin-bottom: 50px;
@@ -13,11 +11,7 @@ export const Header = styled.header`
   }
 `;
 
-export const Content = styled.main`
-  padding: 0 20px;
-  max-width: 700px;
-  margin: 0 auto;
-`;
+export const Content = styled.section``;
 
 export const Article = styled.article`
   padding: 0 20px;
@@ -25,6 +19,12 @@ export const Article = styled.article`
   margin: 0 auto;
   line-height: 1.6;
   color: #fff;
+  
+  pre {
+    background: #121212 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+  }
 
   img {
     width: 100%;

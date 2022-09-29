@@ -31,7 +31,6 @@ export const ArticleTitle = styled.h3`
 
 export const Paragraph = styled.p`
   font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
-  font-size: ${18 / 16}rem;
   word-break: break-word;
   color: #fff;
   line-height: 1.6;

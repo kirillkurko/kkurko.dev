@@ -1,4 +1,4 @@
-import { Wrapper, BlobWrapper, TextBlock } from './atoms';
+import { Wrapper, TextBlock } from './atoms';
 import { PageTitle } from '@components/atoms';
 import { Paragraph } from '@components/atoms';
 // import Image from 'next/image';

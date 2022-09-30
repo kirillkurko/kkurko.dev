@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Link = styled.a<{ isActive: boolean }>`
   cursor: pointer;
   padding: 0.3rem 0.75rem;
-  border-radius: 5px;
+  border-radius: 8px;
 
   &:hover {
     background-color: rgb(234, 234, 234, 0.1);

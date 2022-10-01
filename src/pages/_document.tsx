@@ -46,16 +46,7 @@ export default class CustomDocument extends Document {
             rel='stylesheet'
           />
           <link
-            href='https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap'
-            rel='stylesheet'
-          />
-          <link
-            href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap'
-            rel='stylesheet'
-          />
-
-          <link
-            href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap'
+            href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap'
             rel='stylesheet'
           />
         </Head>

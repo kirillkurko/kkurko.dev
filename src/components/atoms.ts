@@ -66,6 +66,7 @@ export const Link = styled.a`
     transition-property: color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+    margin: 1rem 0 0 0;
 
     color: rgb(102, 102, 102);
 

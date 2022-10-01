@@ -1,0 +1,34 @@
+import styled from 'styled-components';
+
+export const Wrapper = styled.footer`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-bottom: 2rem;
+  padding: 0 10px;
+`;
+
+export const Line = styled.hr`
+  width: 100%;
+  height: 0.5px;
+  margin: 0 0 2rem 0;
+  background-color: rgb(102, 102, 102);
+  border: none;
+`;
+
+export const ColumnsWrapper = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+`;
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

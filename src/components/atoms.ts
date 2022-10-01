@@ -58,3 +58,19 @@ export const BorderBlock = styled.div`
     border-radius: inherit;
     background: linear-gradient(180deg, #e16c0d 0%, #ffe445 100%);
 `;
+
+export const Link = styled.a`
+  cursor: pointer;
+
+  p {
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+
+    color: rgb(102, 102, 102);
+
+    &:hover {
+      color: rgb(69, 69, 69);
+    }
+  }
+`;

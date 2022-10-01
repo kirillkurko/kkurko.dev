@@ -10,7 +10,6 @@ export const Wrapper = styled.section`
   @media (max-width: 1200px) {
     height: auto;
     overflow: auto;
-    padding-bottom: 5rem;
   }
 `;
 

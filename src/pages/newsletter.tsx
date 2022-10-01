@@ -2,12 +2,12 @@ import { Wrapper } from '@components/Blog/atoms';
 import Head from 'next/head';
 import WorkInProgress from '@components/WorkInProgress';
 
-const About = () => {
+const Newsletter = () => {
   return (
     <Wrapper>
       <Head>
-        <title>About - Kirill Kurko</title>
-        <link rel='icon' href='/favicon.ico' />
+        <title>Gallery - Kirill Kurko</title>
+        <link rel='icon' href='/public/favicon.ico' />
       </Head>
 
       <WorkInProgress />
@@ -15,4 +15,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Newsletter;

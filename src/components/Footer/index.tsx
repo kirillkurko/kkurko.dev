@@ -9,17 +9,17 @@ const Footer = () => {
       <Line />
       <ColumnsWrapper>
         <Column>
-          <NextLink href='/'>
+          <NextLink href='/' passHref>
             <Link>
               <Paragraph>Home</Paragraph>
             </Link>
           </NextLink>
-          <NextLink href='/about'>
+          <NextLink href='/about' passHref>
             <Link>
               <Paragraph>About</Paragraph>
             </Link>
           </NextLink>
-          <NextLink href='/newsletter'>
+          <NextLink href='/newsletter' passHref>
             <Link>
               <Paragraph>Newsletter</Paragraph>
             </Link>
@@ -37,17 +37,17 @@ const Footer = () => {
           </ExternalLink>
         </Column>
         <Column>
-          <NextLink href='/gallery'>
+          <NextLink href='/gallery' passHref>
             <Link>
               <Paragraph>Gallery</Paragraph>
             </Link>
           </NextLink>
-          <NextLink href='/snippets'>
+          <NextLink href='/snippets' passHref>
             <Link>
               <Paragraph>Snippets</Paragraph>
             </Link>
           </NextLink>
-          <NextLink href='/guestbook'>
+          <NextLink href='/guestbook' passHref>
             <Link>
               <Paragraph>Guestbook</Paragraph>
             </Link>

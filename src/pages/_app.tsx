@@ -7,7 +7,7 @@ import Head from 'next/head';
 import Container from '@components/Container';
 import Script from 'next/script';
 
-const googleAnalyticsId = process.env.NOTION_DATABASE_ID;
+const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
 enum Mode {
   Dark = 'DARK',
@@ -26,15 +26,15 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-        strategy='lazyOnload'
+        strategy='afterInteractive'
       />
-      <Script id='google-analytics' strategy='lazyOnload'>
+      <Script id='google-analytics' strategy='afterInteractive'>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', ${googleAnalyticsId});
+          gtag('config', '${googleAnalyticsId}');
         `}
       </Script>
       <GlobalStyle />

@@ -12,7 +12,7 @@ export const Wrapper = styled.footer`
 export const Line = styled.hr`
   width: 100%;
   height: 0.5px;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1rem 0;
   background-color: rgb(102, 102, 102);
   border: none;
 `;

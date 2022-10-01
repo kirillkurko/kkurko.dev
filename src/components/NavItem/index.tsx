@@ -6,14 +6,15 @@ import { Link } from './atoms';
 interface Props {
   href: string;
   text: string;
+  disabled?: boolean;
 }
 
-const NavItem = ({ href, text }: Props) => {
+const NavItem = ({ href, text, disabled = false }: Props) => {
   const router = useRouter();
   const isActive = router.asPath === href;
 
   return (
-    <NextLink href={href}>
+    <NextLink href={href} aria-disabled={disabled}>
       <Link isActive={isActive}>
         {/*className={cn(*/}
         {/*  isActive*/}

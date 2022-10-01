@@ -1,10 +1,10 @@
 import Hero from '@components/Hero';
-import SocialMedia from '@components/SocialMedia';
+// import SocialMedia from '@components/SocialMedia';
 
 const Home = () => {
   return (
     <>
-      <SocialMedia />
+      {/*<SocialMedia />*/}
       <Hero />
     </>
   );

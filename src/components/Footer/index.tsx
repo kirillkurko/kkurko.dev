@@ -26,20 +26,20 @@ const Footer = () => {
           </NextLink>
         </Column>
         <Column>
-          <ExternalLink href='https://twitter.com/kirillkurko'>
-            <Paragraph>Twitter</Paragraph>
-          </ExternalLink>
           <ExternalLink href='https://github.com/kirillkurko'>
             <Paragraph>GitHub</Paragraph>
+          </ExternalLink>
+          <ExternalLink href='https://twitter.com/kirillkurko'>
+            <Paragraph>Twitter</Paragraph>
           </ExternalLink>
           <ExternalLink href='https://www.instagram.com/aqwergqwec/'>
             <Paragraph>Instagram</Paragraph>
           </ExternalLink>
         </Column>
         <Column>
-          <NextLink href='/guestbook'>
+          <NextLink href='/gallery'>
             <Link>
-              <Paragraph>Guestbook</Paragraph>
+              <Paragraph>Gallery</Paragraph>
             </Link>
           </NextLink>
           <NextLink href='/snippets'>
@@ -47,9 +47,9 @@ const Footer = () => {
               <Paragraph>Snippets</Paragraph>
             </Link>
           </NextLink>
-          <NextLink href='/tweets'>
+          <NextLink href='/guestbook'>
             <Link>
-              <Paragraph>Tweets</Paragraph>
+              <Paragraph>Guestbook</Paragraph>
             </Link>
           </NextLink>
         </Column>

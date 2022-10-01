@@ -6,7 +6,8 @@ const NavBar = () => {
     <Wrapper className='ml-[-0.60rem]'>
       {/*//<MobileMenu />*/}
       <NavItem href='/' text='Home' />
-      {/*<NavItem href='/about' text='About' />*/}
+      <NavItem href='/guestbook' text='Guestbook' />
+      <NavItem href='/feed' text='Feed' />
       <NavItem href='/blog' text='Blog' />
     </Wrapper>
   );

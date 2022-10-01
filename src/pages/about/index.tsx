@@ -1,9 +1,8 @@
 import { Content, Header, PostsList, Wrapper } from '@components/Blog/atoms';
 import Head from 'next/head';
 import { PageTitle, Paragraph, SectionTitle } from '@components/atoms';
-import PostPreview from '@components/PostPreview';
 
-export default function Home({ posts }) {
+const About = () => {
   return (
     <Wrapper>
       <Head>
@@ -26,4 +25,6 @@ export default function Home({ posts }) {
       </Content>
     </Wrapper>
   );
-}
+};
+
+export default About;

@@ -12,11 +12,3 @@ export const Wrapper = styled.section`
     overflow: auto;
   }
 `;
-
-export const BlobWrapper = styled.div`
-  @media (max-width: 1200px) {
-    display: none;
-  }
-`;
-
-export const TextBlock = styled.div``;

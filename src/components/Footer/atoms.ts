@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { ThemeProps } from '@theme/theme';
+
+const colorAccent = ({ theme }: ThemeProps) => theme.colors.accent;
 
 export const Wrapper = styled.footer`
   display: flex;
@@ -13,7 +16,7 @@ export const Line = styled.hr`
   width: 100%;
   height: 0.5px;
   margin: 0 0 1rem 0;
-  background-color: rgb(102, 102, 102);
+  background-color: ${colorAccent};
   border: none;
 `;
 

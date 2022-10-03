@@ -1,20 +1,27 @@
+import { Theme } from '@app-types/theme';
+
 type FontFamiliesType = {
   primary: string;
-  mono: string;
+  secondary: string;
 };
 
 export const fontFamilies: FontFamiliesType = {
   primary: ['Red Hat Text', 'sans-serif'].join(','),
-  mono: ['IBM Plex Sans', 'sans-serif'].join(','),
+  secondary: ['IBM Plex Sans', 'sans-serif'].join(','),
 };
 
 export interface ThemeInterface {
   colors: {
+    textPrimary: string;
     background: string;
-    white: string;
-    primary: string;
-    text: string;
-    footer: string;
+    themeToggle: string;
+    icon: string;
+    border: string;
+    button: string;
+    accent: string;
+    textLink: string;
+    linkHover: string;
+    linkTextHover: string;
   };
   fontFamilies: FontFamiliesType;
 }
@@ -23,40 +30,40 @@ export interface ThemeProps {
   theme: ThemeInterface;
 }
 
-export const theme: ThemeInterface = {
+export const themeDark: ThemeInterface = {
   colors: {
-    background: '#FFF',
-    white: '#FFF',
-    primary: '#284FCD',
-    text: '#121212',
-    footer: '#121212',
+    textPrimary: '#fff',
+    background: '#121212',
+    themeToggle: '#404040',
+    icon: '#e5e7eb',
+    button: 'rgb(34, 34, 34)',
+    border: 'rgba(255, 255, 255, 0.2)',
+    accent: 'rgb(102, 102, 102)',
+    textLink: 'rgb(255, 255, 255, 0.6)',
+    linkHover: 'rgb(234, 234, 234, 0.1)',
+    linkTextHover: 'rgb(69, 69, 69)',
   },
   fontFamilies,
 };
 
-export const themeDark: ThemeInterface = {
-  ...theme,
+export const theme: ThemeInterface = {
+  ...themeDark,
   colors: {
-    ...theme.colors,
-    background: '#121212',
-    white: '#FFF',
-    primary: '#284FCD',
-    text: '#FFF',
+    ...themeDark.colors,
+    textPrimary: '#121212',
+    background: '#fff',
+    themeToggle: '#e5e7eb',
+    icon: '#1f2937',
+    button: 'rgba(234, 234, 234, 0.8)',
+    border: 'rgba(255, 255, 255, 0.2)',
+    accent: 'rgb(102, 102, 102)',
+    textLink: 'rgb(102, 102, 102)',
+    linkHover: 'rgba(234, 234, 234, 0.8)',
+    linkTextHover: 'rgb(69, 69, 69)',
   },
 };
 
-export const device = {
-  mobileS: '(min-width: 320px)',
-  mobileM: '(min-width: 375px)',
-  mobileL: '(min-width: 425px)',
-  tablet: '(min-width: 768px)',
-  laptop: '(min-width: 1024px)',
-  laptopL: '(min-width: 1440px)',
-  desktop: '(min-width: 2560px)',
-  desktopL: '(min-width: 2560px)',
-};
-
 export const themes = {
-  DARK: themeDark,
-  LIGHT: theme,
+  [Theme.Dark]: themeDark,
+  [Theme.Light]: theme,
 };

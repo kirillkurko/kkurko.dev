@@ -1,16 +1,11 @@
-import { Wrapper, TextBlock } from './atoms';
+import { Wrapper } from './atoms';
 import { PageTitle } from '@components/atoms';
 import { Paragraph } from '@components/atoms';
-// import Image from 'next/image';
 
-// const BLOB = '/assets/images/blob.svg';
-
-// const WIDTH = 800;
-
-function Hero() {
+const Hero = () => {
   return (
     <Wrapper>
-      <TextBlock>
+      <div>
         <PageTitle style={{ marginTop: 0 }}>
           100% - Frontend Engineer.
         </PageTitle>
@@ -33,18 +28,9 @@ function Hero() {
           My main focus is to keep Track Factor as high as possible, making sure
           there are no bottlenecks in processes and among employees.
         </Paragraph>
-      </TextBlock>
-      {/*<BlobWrapper>*/}
-      {/*  <Image*/}
-      {/*    priority={true}*/}
-      {/*    src={BLOB}*/}
-      {/*    alt='abstract shape'*/}
-      {/*    width={WIDTH}*/}
-      {/*    height={WIDTH}*/}
-      {/*  />*/}
-      {/*</BlobWrapper>*/}
+      </div>
     </Wrapper>
   );
-}
+};
 
 export default Hero;

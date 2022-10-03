@@ -1,38 +1,46 @@
 import styled from 'styled-components';
 import { ThemeProps } from '@theme/theme';
 
+const fontPrimary = ({ theme }: ThemeProps) => theme.fontFamilies.primary;
+const fontSecondary = ({ theme }: ThemeProps) => theme.fontFamilies.secondary;
+const colorTextPrimary = ({ theme }: ThemeProps) => theme.colors.textPrimary;
+const colorBackground = ({ theme }: ThemeProps) => theme.colors.background;
+const colorAccent = ({ theme }: ThemeProps) => theme.colors.accent;
+const colorLinkTextHover = ({ theme }: ThemeProps) =>
+  theme.colors.linkTextHover;
+
 export const PageTitle = styled.h1`
-  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
+  font-family: ${fontPrimary};
   font-size: 2.4rem;
   word-break: break-word;
   font-weight: bold;
-  color: #fff;
+  color: ${colorTextPrimary};
 `;
 
 export const SectionTitle = styled.h2`
-  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
+  font-family: ${fontPrimary};
   font-size: 1.8rem;
   word-break: break-word;
   font-weight: bold;
-  color: #fff;
-  border-bottom: 1px solid #fff;
+  color: ${colorTextPrimary};
+  border-bottom: 1px solid ${colorTextPrimary};
   margin-bottom: 20px;
   padding-bottom: 20px;
 `;
 
 export const ArticleTitle = styled.h3`
-  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.primary};
+  font-family: ${fontPrimary};
   font-size: 1.4rem;
   word-break: break-word;
   font-weight: bold;
-  color: #fff;
+  color: ${colorTextPrimary};
   margin-bottom: 10px;
 `;
 
 export const Paragraph = styled.p`
-  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
+  font-family: ${fontSecondary};
   word-break: break-word;
-  color: #fff;
+  color: ${colorTextPrimary};
   line-height: 1.6;
   letter-spacing: 1px;
 `;
@@ -44,8 +52,8 @@ export const BorderBlock = styled.div`
   position: relative;
   padding: 1.5rem;
   box-sizing: border-box;
-  color: #FFF;
-  background: ${({ theme }: ThemeProps) => theme.colors.text};
+  color: ${colorTextPrimary};
+  background: ${colorBackground};
   background-clip: padding-box;
   border: solid 5px transparent;
 
@@ -68,10 +76,10 @@ export const Link = styled.a`
     transition-duration: 150ms;
     margin: 1rem 0 0 0;
 
-    color: rgb(102, 102, 102);
+    color: ${colorAccent};
 
     &:hover {
-      color: rgb(69, 69, 69);
+      color: ${colorLinkTextHover};
     }
   }
 `;

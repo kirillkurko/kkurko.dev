@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { ArticleTitle } from '@components/atoms';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import Text from '@components/Text';
-import { Wrapper, PublishDate } from './atoms';
+import { Wrapper, PublishDate, Link } from './atoms';
 
 type Props = {
   post: any;
@@ -22,17 +22,17 @@ const PostPreview = ({ post }: Props) => {
   return (
     <Wrapper>
       <ArticleTitle>
-        <Link href={link}>
+        <NextLink href={link}>
           <a>
             <Text data={post.properties.Name.title} />
           </a>
-        </Link>
+        </NextLink>
       </ArticleTitle>
 
       <PublishDate>{date}</PublishDate>
-      <Link href={link}>
-        <a style={{ color: '#fff' }}> Read post →</a>
-      </Link>
+      <NextLink href={link}>
+        <Link>Read post →</Link>
+      </NextLink>
     </Wrapper>
   );
 };

@@ -3,9 +3,10 @@ import type { AppProps } from 'next/app';
 import GlobalStyle from '@theme/globalStyle';
 import Head from 'next/head';
 import Container from '@components/Container';
-import { Theme } from '@app-types/theme';
 import Script from 'next/script';
-import { ThemeProvider as NextThemeProvider } from 'next-themes';
+import { themes } from '@theme/theme';
+import { Theme } from '@app-types/theme';
+import { ThemeProvider } from 'styled-components';
 
 const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
@@ -29,15 +30,12 @@ function CustomApp({ Component, pageProps }: AppProps) {
           gtag('config', '${googleAnalyticsId}');
         `}
       </Script>
-      <NextThemeProvider
-        defaultTheme={Theme.Dark}
-        themes={[Theme.Dark, Theme.Light]}
-      >
+      <ThemeProvider theme={themes[Theme.Dark]}>
         <Container>
           <GlobalStyle />
           <Component {...pageProps} />
         </Container>
-      </NextThemeProvider>
+      </ThemeProvider>
     </>
   );
 }

@@ -1,4 +1,9 @@
 import styled, { css } from 'styled-components';
+import { ThemeProps } from '@theme/theme';
+
+const colorTextPrimary = ({ theme }: ThemeProps) => theme.colors.textPrimary;
+const colorTextLink = ({ theme }: ThemeProps) => theme.colors.textLink;
+const colorLinkHover = ({ theme }: ThemeProps) => theme.colors.linkHover;
 
 export const Link = styled.a<{ isActive: boolean }>`
   cursor: pointer;
@@ -6,12 +11,12 @@ export const Link = styled.a<{ isActive: boolean }>`
   border-radius: 8px;
 
   &:hover {
-    background-color: rgb(234, 234, 234, 0.1);
+    background-color: ${colorLinkHover};
   }
 
   p {
     margin: 0;
-    color: rgb(255, 255, 255, 0.6);
+    color: ${colorTextLink};
   }
 
   ${({ isActive }) =>
@@ -20,7 +25,7 @@ export const Link = styled.a<{ isActive: boolean }>`
       font-weight: bold;
 
       p {
-        color: #fff;
+        color: ${colorTextPrimary};
       }
     `}
 `;

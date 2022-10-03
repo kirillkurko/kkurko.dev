@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { ThemeProps } from '@theme/theme';
 
+const colorBorder = ({ theme }: ThemeProps) => theme.colors.border;
+const colorBackground = ({ theme }: ThemeProps) => theme.colors.background;
+const colorTextPrimary = ({ theme }: ThemeProps) => theme.colors.textPrimary;
+const fontSecondary = ({ theme }: ThemeProps) => theme.fontFamilies.secondary;
+
 export const Wrapper = styled.div``;
 
 export const Header = styled.header`
@@ -17,11 +22,11 @@ export const Article = styled.article`
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
-  color: #fff;
+  color: ${colorTextPrimary};
   
   pre {
-    background: #121212 !important;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: ${colorBackground}; !important;
+    border: 1px solid ${colorBorder};
     border-radius: 0;
   }
 
@@ -36,7 +41,7 @@ export const Article = styled.article`
 
   p {
     letter-spacing: 1px;
-    font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
+    font-family: ${fontSecondary};
   }
 
   figcaption {
@@ -45,7 +50,7 @@ export const Article = styled.article`
 `;
 
 export const Blockquote = styled.blockquote`
-  font-family: ${({ theme }: ThemeProps) => theme.fontFamilies.mono};
+  font-family: ${fontSecondary};
   margin: 0;
   letter-spacing: 1px;
   line-height: 1.6;

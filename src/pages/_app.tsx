@@ -37,7 +37,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         `}
       </Script>
       <ThemeProvider theme={theme} toggleTheme={mode.toggle}>
-        <StyledThemeProvider theme={themes[theme]}>
+        <StyledThemeProvider theme={themes[theme] ?? themes[Theme.Dark]}>
           <Container>
             <GlobalStyle />
             <Component {...pageProps} />

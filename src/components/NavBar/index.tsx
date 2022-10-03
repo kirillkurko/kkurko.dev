@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import NavItem from '@components/NavItem';
 import { Theme } from '@app-types/theme';
-import { useTheme } from '@hooks/useTheme';
+import { useTheme } from 'next-themes';
 import ToggleThemeIcon from '@components/ToggleThemeIcon';
 import { Wrapper, ToggleThemeButton, NavItemsWrapper } from './atoms';
 
 const NavBar = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () =>
+    theme === Theme.Dark ? setTheme(Theme.Light) : setTheme(Theme.Dark);
 
   useEffect(() => {
     setMounted(true);

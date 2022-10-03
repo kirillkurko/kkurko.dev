@@ -1,27 +1,23 @@
-import { createContext, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Theme } from '@app-types/theme';
-
-type ThemeContext = {
-  theme: Theme;
-  toggleTheme: () => void;
-};
-
-export const themeContext = createContext<ThemeContext>({
-  theme: Theme.Dark,
-  toggleTheme: () => {},
-});
+import { themes } from '@theme/theme';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { useTheme } from 'next-themes';
 
 type Props = {
-  theme: Theme;
-  toggleTheme: () => void;
   children: ReactNode;
 };
 
-const ThemeProvider = ({ children, theme, toggleTheme }: Props) => {
+const ThemeProvider = ({ children }: Props) => {
+  const { theme } = useTheme();
+
+  console.log(theme);
+
+  // @ts-ignore
+  const currentTheme = themes[theme ?? Theme.Dark];
+
   return (
-    <themeContext.Provider value={{ toggleTheme, theme }}>
-      {children}
-    </themeContext.Provider>
+    <StyledThemeProvider theme={currentTheme}>{children}</StyledThemeProvider>
   );
 };
 

@@ -1,22 +1,15 @@
 import '../../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import GlobalStyle from '@theme/globalStyle';
-import { themes } from '@theme/theme';
 import Head from 'next/head';
 import Container from '@components/Container';
 import { Theme } from '@app-types/theme';
-import useDarkMode from 'use-dark-mode';
-import ThemeProvider from '@contexts/ThemeContext';
 import Script from 'next/script';
+import { ThemeProvider as NextThemeProvider } from 'next-themes';
 
 const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
 function CustomApp({ Component, pageProps }: AppProps) {
-  const mode = useDarkMode(true);
-
-  const theme = mode.value ? Theme.Dark : Theme.Light;
-
   return (
     <>
       <Head>
@@ -36,14 +29,15 @@ function CustomApp({ Component, pageProps }: AppProps) {
           gtag('config', '${googleAnalyticsId}');
         `}
       </Script>
-      <ThemeProvider theme={theme} toggleTheme={mode.toggle}>
-        <StyledThemeProvider theme={themes[theme] || themes[Theme.Dark]}>
-          <Container>
-            <GlobalStyle />
-            <Component {...pageProps} />
-          </Container>
-        </StyledThemeProvider>
-      </ThemeProvider>
+      <NextThemeProvider
+        defaultTheme={Theme.Dark}
+        themes={[Theme.Dark, Theme.Light]}
+      >
+        <Container>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </Container>
+      </NextThemeProvider>
     </>
   );
 }

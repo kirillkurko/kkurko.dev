@@ -1,5 +1,6 @@
 import '../../styles/globals.css';
 import type { AppProps } from 'next/app';
+import { useState, useEffect } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import GlobalStyle from '@theme/globalStyle';
 import { themes } from '@theme/theme';
@@ -14,8 +15,13 @@ const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const mode = useDarkMode(true);
+  const [mounted, setMounted] = useState(false);
 
   const theme = mode.value ? Theme.Dark : Theme.Light;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
@@ -37,10 +43,10 @@ function CustomApp({ Component, pageProps }: AppProps) {
         `}
       </Script>
       <ThemeProvider theme={theme} toggleTheme={mode.toggle}>
-        <StyledThemeProvider theme={themes[theme] ?? themes[Theme.Dark]}>
+        <StyledThemeProvider theme={themes[theme]}>
           <Container>
             <GlobalStyle />
-            <Component {...pageProps} />
+            {mounted && <Component {...pageProps} />}
           </Container>
         </StyledThemeProvider>
       </ThemeProvider>

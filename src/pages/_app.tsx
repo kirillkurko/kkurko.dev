@@ -23,6 +23,12 @@ function CustomApp({ Component, pageProps }: AppProps) {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (!mode.value) {
+      mode.toggle();
+    }
+  }, []);
+
   return (
     <>
       <Head>

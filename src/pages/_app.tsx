@@ -24,10 +24,10 @@ function CustomApp({ Component, pageProps }: AppProps) {
   }, []);
 
   useEffect(() => {
-    if (!mode.value) {
+    if (mounted && !mode.value) {
       mode.toggle();
     }
-  }, []);
+  }, [mounted]);
 
   return (
     <>

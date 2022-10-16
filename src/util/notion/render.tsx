@@ -8,6 +8,7 @@ import { BorderBlock } from '@components/atoms';
 import { Blockquote } from '@components/Blog/atoms';
 import { Prism } from '@mantine/prism';
 import theme from 'prism-react-renderer/themes/vsDark';
+import Callout from "@components/Callout";
 
 const renderNestedList = (block) => {
   const { type } = block;
@@ -95,6 +96,8 @@ export const renderBlock = (block) => {
       return <hr key={id} />;
     case 'quote':
       return (<BorderBlock><Blockquote key={id}>{value.rich_text[0].plain_text}</Blockquote></BorderBlock>);
+    case 'callout':
+      return <Callout text={value.rich_text[0].plain_text} />
     case 'code':
       return (
         <Prism language="tsx" getPrismTheme={() => theme} noCopy>{value.rich_text[0].plain_text}</Prism>

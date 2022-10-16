@@ -22,6 +22,7 @@ export interface ThemeInterface {
     textLink: string;
     linkHover: string;
     linkTextHover: string;
+    callout: string;
   };
   fontFamilies: FontFamiliesType;
 }
@@ -42,6 +43,7 @@ export const themeDark: ThemeInterface = {
     textLink: 'rgb(255, 255, 255, 0.6)',
     linkHover: 'rgb(234, 234, 234, 0.1)',
     linkTextHover: 'rgb(69, 69, 69)',
+    callout: 'rgba(64, 64, 64, 0.4)',
   },
   fontFamilies,
 };
@@ -60,6 +62,7 @@ export const theme: ThemeInterface = {
     textLink: 'rgb(102, 102, 102)',
     linkHover: 'rgba(234, 234, 234, 0.8)',
     linkTextHover: 'rgb(69, 69, 69)',
+    callout: 'rgba(229, 231, 235, 0.6)',
   },
 };
 

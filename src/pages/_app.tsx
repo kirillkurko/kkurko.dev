@@ -9,9 +9,7 @@ import Container from '@components/Container';
 import { Theme } from '@app-types/theme';
 import useDarkMode from 'use-dark-mode';
 import ThemeProvider from '@contexts/ThemeContext';
-import Script from 'next/script';
-
-const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+import { Analytics } from '@vercel/analytics/react';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const mode = useDarkMode(true);
@@ -36,18 +34,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <meta name='description' content='My personal website' />
         <link rel='shortcut icon' href='/favicon.ico' />
       </Head>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-        strategy='afterInteractive'
-      />
-      <Script id='google-analytics' strategy='afterInteractive'>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${googleAnalyticsId}');
-        `}
-      </Script>
+      <Analytics />
       <ThemeProvider theme={theme} toggleTheme={mode.toggle}>
         <StyledThemeProvider theme={themes[theme]}>
           <Container>

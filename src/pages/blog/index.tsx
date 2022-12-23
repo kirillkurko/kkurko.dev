@@ -1,36 +1,35 @@
 // @ts-nocheck
 import Head from 'next/head';
 import { getDatabase } from '../../lib/notion';
-import { PageTitle, Paragraph, SectionTitle } from '@components/atoms';
-import { Wrapper, Content, Header, PostsList } from '@components/Blog/atoms';
-import PostPreview from '@components/PostPreview';
+import { PageTitle, Paragraph, SectionTitle } from '@components/typography';
+import ArticlePreview from '@components/ArticlePreview';
 
 export default function Home({ posts }) {
   return (
-    <Wrapper>
+    <div>
       <Head>
         <title>Blog - Kirill Kurko</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Content>
-        <Header>
+      <section className='mt-8'>
+        <header className='mb-[50px]'>
           <PageTitle>Blog</PageTitle>
-          <Paragraph>
+          <Paragraph className='opacity-60'>
             Weekly content about frontend development, productivity, team
             performance, management, and collaboration. All from own experience
             and real cases.
           </Paragraph>
-        </Header>
+        </header>
 
         <SectionTitle>All Posts</SectionTitle>
-        <PostsList>
+        <ol className='list-none m-0 p-0'>
           {posts.map((post) => (
-            <PostPreview post={post} key={post.id} />
+            <ArticlePreview post={post} key={post.id} />
           ))}
-        </PostsList>
-      </Content>
-    </Wrapper>
+        </ol>
+      </section>
+    </div>
   );
 }
 

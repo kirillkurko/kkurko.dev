@@ -55,9 +55,3 @@ export const Blockquote = styled.blockquote`
   letter-spacing: 1px;
   line-height: 1.6;
 `;
-
-export const PostsList = styled.ol`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-`;

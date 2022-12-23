@@ -1,6 +1,5 @@
-import { PageTitle, Paragraph } from '@components/atoms';
+import { PageTitle, Paragraph } from '@components/typography';
 import NextLink from 'next/link';
-import { Wrapper, LinkButton } from './atoms';
 
 interface Props {
   title: string;
@@ -9,15 +8,15 @@ interface Props {
 
 const EmptyPage = ({ title, description }: Props) => {
   return (
-    <Wrapper>
+    <div className='flex flex-col justify-center my-8'>
       <PageTitle>{title}</PageTitle>
       <Paragraph>{description}</Paragraph>
       <NextLink href='/'>
-        <LinkButton className='p-1 sm:p-4 w-64 font-bold mx-auto bg-gray-200 dark:bg-gray-800 text-center rounded-md text-black dark:text-white'>
+        <a className='rounded-lg font-bold text-center py-4 px-16 cursor-pointer mt-8 mb-0 mx-auto text-neutral-900 dark:text-neutral-50 dark:bg-zinc-700 bg-zinc-400'>
           Return Home
-        </LinkButton>
+        </a>
       </NextLink>
-    </Wrapper>
+    </div>
   );
 };
 

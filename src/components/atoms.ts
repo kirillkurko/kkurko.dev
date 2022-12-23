@@ -1,49 +1,11 @@
 import styled from 'styled-components';
 import { ThemeProps } from '@theme/theme';
 
-const fontPrimary = ({ theme }: ThemeProps) => theme.fontFamilies.primary;
-const fontSecondary = ({ theme }: ThemeProps) => theme.fontFamilies.secondary;
 const colorTextPrimary = ({ theme }: ThemeProps) => theme.colors.textPrimary;
 const colorBackground = ({ theme }: ThemeProps) => theme.colors.background;
 const colorAccent = ({ theme }: ThemeProps) => theme.colors.accent;
 const colorLinkTextHover = ({ theme }: ThemeProps) =>
   theme.colors.linkTextHover;
-
-export const PageTitle = styled.h1`
-  font-family: ${fontPrimary};
-  font-size: 2.4rem;
-  word-break: break-word;
-  font-weight: bold;
-  color: ${colorTextPrimary};
-`;
-
-export const SectionTitle = styled.h2`
-  font-family: ${fontPrimary};
-  font-size: 1.8rem;
-  word-break: break-word;
-  font-weight: bold;
-  color: ${colorTextPrimary};
-  border-bottom: 1px solid ${colorTextPrimary};
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-`;
-
-export const ArticleTitle = styled.h3`
-  font-family: ${fontPrimary};
-  font-size: 1.4rem;
-  word-break: break-word;
-  font-weight: bold;
-  color: ${colorTextPrimary};
-  margin-bottom: 10px;
-`;
-
-export const Paragraph = styled.p`
-  font-family: ${fontSecondary};
-  word-break: break-word;
-  color: ${colorTextPrimary};
-  line-height: 1.6;
-  letter-spacing: 1px;
-`;
 
 export const BorderBlock = styled.div`
   display: flex;

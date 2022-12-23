@@ -1,14 +1,14 @@
 import NextLink from 'next/link';
-import { Paragraph, Link } from '@components/atoms';
+import { Link } from '@components/atoms';
+import { Paragraph } from '@components/typography';
 import ExternalLink from '@components/ExternalLink';
-import { Wrapper, Line, ColumnsWrapper, Column } from './atoms';
 
 const Footer = () => {
   return (
-    <Wrapper>
-      <Line />
-      <ColumnsWrapper>
-        <Column>
+    <footer className='flex flex-col justify-center items-start mb-8 py-0'>
+      <hr className='w-full h-[0.5px] mt-0 mx-0 mb-4 bg-zinc-500 border-none' />
+      <div className='w-[80%] flex flex-row justify-between max-[600px]:flex-col'>
+        <div className='flex flex-col'>
           <NextLink href='/' passHref>
             <Link>
               <Paragraph>Home</Paragraph>
@@ -24,8 +24,8 @@ const Footer = () => {
               <Paragraph>Newsletter</Paragraph>
             </Link>
           </NextLink>
-        </Column>
-        <Column>
+        </div>
+        <div className='flex flex-col'>
           <ExternalLink href='https://github.com/kirillkurko'>
             <Paragraph>GitHub</Paragraph>
           </ExternalLink>
@@ -35,8 +35,8 @@ const Footer = () => {
           <ExternalLink href='https://www.instagram.com/aqwergqwec/'>
             <Paragraph>Instagram</Paragraph>
           </ExternalLink>
-        </Column>
-        <Column>
+        </div>
+        <div className='flex flex-col'>
           <NextLink href='/gallery' passHref>
             <Link>
               <Paragraph>Gallery</Paragraph>
@@ -52,9 +52,9 @@ const Footer = () => {
               <Paragraph>Guestbook</Paragraph>
             </Link>
           </NextLink>
-        </Column>
-      </ColumnsWrapper>
-    </Wrapper>
+        </div>
+      </div>
+    </footer>
   );
 };
 

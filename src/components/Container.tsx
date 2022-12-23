@@ -1,6 +1,5 @@
 import React from 'react';
 import NavBar from '@components/NavBar';
-import { Wrapper, Main } from './atoms';
 import Footer from '@components/Footer';
 
 interface Props {
@@ -9,11 +8,11 @@ interface Props {
 
 const Container = ({ children }: Props) => {
   return (
-    <Wrapper>
+    <div className='mx-auto my-0 max-w-[700px] pt-8 pb-0 px-[20px]'>
       <NavBar />
-      <Main>{children}</Main>
+      <main className='py-0'>{children}</main>
       <Footer />
-    </Wrapper>
+    </div>
   );
 };
 

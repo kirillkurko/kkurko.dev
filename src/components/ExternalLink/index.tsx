@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Link } from '@components/atoms';
 
 interface Props {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const ExternalLink = ({ href, children }: Props) => {

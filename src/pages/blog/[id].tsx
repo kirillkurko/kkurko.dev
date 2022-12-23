@@ -7,7 +7,7 @@ import { databaseId } from './index';
 import styles from '@components/Text/styles.module.css';
 import Text from '../../components/Text';
 import { renderBlock } from '../../util/notion/render';
-import { PageTitle } from '@components/atoms';
+import { PageTitle } from '@components/typography';
 import { Wrapper, Article } from '@components/Blog/atoms';
 
 interface Props {

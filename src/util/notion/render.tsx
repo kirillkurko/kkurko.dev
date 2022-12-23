@@ -8,6 +8,7 @@ import { BorderBlock } from '@components/atoms';
 import { Blockquote } from '@components/Blog/atoms';
 import { Prism } from '@mantine/prism';
 import theme from 'prism-react-renderer/themes/vsDark';
+import Callout from '@components/Callout';
 
 const renderNestedList = (block) => {
   const { type } = block;
@@ -123,6 +124,8 @@ export const renderBlock = (block) => {
           {href}
         </a>
       );
+    case 'callout':
+      return <Callout text={value.rich_text[0].plain_text} />
     default:
       return `❌ Unsupported block (${
         type === 'unsupported' ? 'unsupported by Notion API' : type

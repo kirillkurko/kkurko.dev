@@ -1,20 +1,41 @@
 import Head from 'next/head';
+import { useState } from 'react';
 import Emoji from '@components/Emoji';
 import { PageTitle, Paragraph } from '@components/typography';
+import { EmojiName, getAllEmojis } from '@lib/models/emoji';
+import { InferGetStaticPropsType } from 'next';
 
-const data = [
-  { emoji: '👋', counter: 100 },
-  { emoji: '🔥', counter: 100 },
-  { emoji: '🚀', counter: 100 },
-  { emoji: '🚢', counter: 100 },
-  { emoji: '🐧', counter: 100 },
-  { emoji: '💻', counter: 100 },
-  { emoji: '❤️', counter: 100 },
-  { emoji: '🤣', counter: 100 },
-  { emoji: '🐕', counter: 100 },
-];
+const EmojiMap = {
+  [EmojiName.WavingHand]: '👋',
+  [EmojiName.Fire]: '🔥',
+  [EmojiName.Rocket]: '🚀',
+  [EmojiName.Ship]: '🚢',
+  [EmojiName.Penguin]: '🐧',
+  [EmojiName.Laptop]: '💻',
+  [EmojiName.RedHeart]: '❤️',
+  [EmojiName.RollingOnTheFloorLaughing]: '🤣',
+  [EmojiName.Dog]: '🐕',
+};
 
-const EmojiBoard = () => {
+const EmojiBoard = ({
+  emojis,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [data, setData] = useState(emojis);
+  const upvoteEmoji = async (emoji: EmojiName) => {
+    const response = await fetch('/api/emoji', {
+      method: 'POST',
+      body: JSON.stringify({ emoji }),
+    });
+
+    const updatedData = await response.json();
+
+    setData((prevState) =>
+      prevState.map((item) =>
+        item.id == updatedData.emoji.id ? updatedData.emoji : item,
+      ),
+    );
+  };
+
   return (
     <div>
       <Head>
@@ -26,12 +47,19 @@ const EmojiBoard = () => {
         <header className='mb-[50px]'>
           <PageTitle>Emoji board</PageTitle>
           <Paragraph className='opacity-60'>
-            Add the emoji you like to or upvote the existing ones.
+            This is the board on which the battle for the title of the best
+            emoji takes place. Click on an item with your favorite emoji to
+            support it.
           </Paragraph>
         </header>
         <div className='grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-3 gap-4 mb-8'>
-          {data.map(({ emoji, counter }, index) => (
-            <Emoji key={index} emoji={emoji} counter={counter} />
+          {data.map(({ emoji, upvoteCount }) => (
+            <Emoji
+              key={emoji}
+              emoji={EmojiMap[emoji]}
+              counter={upvoteCount}
+              onClick={() => upvoteEmoji(emoji)}
+            />
           ))}
         </div>
       </section>
@@ -40,3 +68,14 @@ const EmojiBoard = () => {
 };
 
 export default EmojiBoard;
+
+export async function getStaticProps() {
+  const emojis = await getAllEmojis();
+
+  return {
+    props: {
+      emojis,
+    },
+    revalidate: 1,
+  };
+}

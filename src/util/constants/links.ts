@@ -24,10 +24,6 @@ const links: Link[] = [
     name: 'linkedin',
     href: 'https://www.linkedin.com/in/kirillkurko/',
   },
-  // {
-  //   name: 'hashnode',
-  //   href: 'https://kkurko.hashnode.dev/',
-  // },
 ];
 
 export default links;

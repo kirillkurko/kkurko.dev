@@ -1,7 +1,5 @@
 import NextLink from 'next/link';
-import { Link } from '@components/atoms';
-import { Paragraph } from '@components/typography';
-import ExternalLink from '@components/ExternalLink';
+import ExternalLink, { Link } from '@components/ExternalLink';
 
 const Footer = () => {
   return (
@@ -10,47 +8,35 @@ const Footer = () => {
       <div className='w-[80%] flex flex-row justify-between max-[600px]:flex-col'>
         <div className='flex flex-col'>
           <NextLink href='/' passHref>
-            <Link>
-              <Paragraph>Home</Paragraph>
-            </Link>
+            <Link>Home</Link>
           </NextLink>
           <NextLink href='/about' passHref>
-            <Link>
-              <Paragraph>About</Paragraph>
-            </Link>
+            <Link>About</Link>
           </NextLink>
           <NextLink href='/newsletter' passHref>
-            <Link>
-              <Paragraph>Newsletter</Paragraph>
-            </Link>
+            <Link>Newsletter</Link>
           </NextLink>
         </div>
         <div className='flex flex-col'>
           <ExternalLink href='https://github.com/kirillkurko'>
-            <Paragraph>GitHub</Paragraph>
+            GitHub
           </ExternalLink>
           <ExternalLink href='https://twitter.com/kirillkurko'>
-            <Paragraph>Twitter</Paragraph>
+            Twitter
           </ExternalLink>
           <ExternalLink href='https://www.instagram.com/aqwergqwec/'>
-            <Paragraph>Instagram</Paragraph>
+            Instagram
           </ExternalLink>
         </div>
         <div className='flex flex-col'>
           <NextLink href='/gallery' passHref>
-            <Link>
-              <Paragraph>Gallery</Paragraph>
-            </Link>
+            <Link>Gallery</Link>
           </NextLink>
           <NextLink href='/snippets' passHref>
-            <Link>
-              <Paragraph>Snippets</Paragraph>
-            </Link>
+            <Link>Snippets</Link>
           </NextLink>
           <NextLink href='/guestbook' passHref>
-            <Link>
-              <Paragraph>Guestbook</Paragraph>
-            </Link>
+            <Link>Guestbook</Link>
           </NextLink>
         </div>
       </div>

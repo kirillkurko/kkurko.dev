@@ -2,10 +2,22 @@ import Head from 'next/head';
 import { PageTitle, Paragraph } from '@components/typography';
 import { Mdx } from '@components/mdx';
 import { allBlogs } from '@contentlayer/generated';
+import { ParsedUrlQuery } from 'querystring';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
-const Blog = ({ post }) => {
+interface Props {
+  post: {
+    title: string;
+    summary: string;
+    body: {
+      code: string;
+    };
+  };
+}
+
+const Blog = ({ post }: Props) => {
   if (!post) {
-    return;
+    return null;
   }
 
   return (
@@ -30,15 +42,19 @@ const Blog = ({ post }) => {
 
 export default Blog;
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: allBlogs.map((post) => ({ params: { slug: post.slug } })),
     fallback: true,
   };
 };
 
-export const getStaticProps = async (context) => {
-  const { slug } = context.params;
+interface Params extends ParsedUrlQuery {
+  slug: string;
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { slug } = context.params as Params;
 
   const post = allBlogs.find((blog) => blog.slug === slug);
 

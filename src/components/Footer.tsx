@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import ExternalLink, { Link } from '@components/ExternalLink';
+import ExternalLink, { Link } from '@components/links';
 
 const Footer = () => {
   return (

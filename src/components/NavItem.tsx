@@ -18,9 +18,9 @@ const NavItem = ({ href, text, disabled = false }: Props) => {
       <a
         className={classnames(
           isActive
-            ? 'font-semibold text-gray-800 dark:text-gray-200'
-            : 'font-normal text-gray-600 dark:text-gray-400',
-          'max-[600px]:hidden inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-zinc-800 transition-all',
+            ? 'font-semibold text-gray-200'
+            : 'font-normal text-gray-400',
+          'max-[600px]:hidden inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-zinc-800 transition-all',
         )}
       >
         <Paragraph className='capsize !mb-0'>{text}</Paragraph>

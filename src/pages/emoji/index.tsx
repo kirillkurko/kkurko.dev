@@ -29,7 +29,7 @@ const EmojiBoard = () => {
             Add the emoji you like to or upvote the existing ones.
           </Paragraph>
         </header>
-        <div className='grid grid-cols-3 gap-4 mb-8'>
+        <div className='grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-3 gap-4 mb-8'>
           {data.map(({ emoji, counter }, index) => (
             <Emoji key={index} emoji={emoji} counter={counter} />
           ))}

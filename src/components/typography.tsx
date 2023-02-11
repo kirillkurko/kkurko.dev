@@ -49,7 +49,7 @@ export const ArticleTitle = ({ children, className }: TypographyProps) => {
   return (
     <h3
       className={classnames(
-        'font-primary text-[1.4rem] mb-[20px] font-bold mb-[10px] text-neutral-900 dark:text-neutral-50',
+        'font-primary text-[1.4rem] mb-[20px] font-bold mb-[10px] text-neutral-50',
         className,
       )}
     >

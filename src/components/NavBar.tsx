@@ -4,7 +4,6 @@ const NavBar = () => {
   return (
     <nav className='flex justify-between ml-[-0.60rem]'>
       <div className='flex'>
-        {/*//<MobileMenu />*/}
         <NavItem href='/' text='Home' />
         {/*<NavItem href='/guestbook' text='Guestbook' />*/}
         <NavItem href='/emoji' text='Emoji' />

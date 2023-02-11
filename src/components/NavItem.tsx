@@ -20,7 +20,7 @@ const NavItem = ({ href, text, disabled = false }: Props) => {
           isActive
             ? 'font-semibold text-gray-200'
             : 'font-normal text-gray-400',
-          'max-[600px]:hidden inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-zinc-800 transition-all',
+          'inline-block px-3 sm:py-2 rounded-lg hover:bg-zinc-800 transition-all',
         )}
       >
         <Paragraph className='capsize !mb-0'>{text}</Paragraph>

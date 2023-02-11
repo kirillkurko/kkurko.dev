@@ -10,7 +10,7 @@ export const PageTitle = ({ children, className }: TypographyProps) => {
   return (
     <h1
       className={classnames(
-        'font-primary text-[2.4rem] mb-3 font-bold text-neutral-900 dark:text-neutral-50',
+        'font-primary text-[2.4rem] mb-3 font-bold text-neutral-50',
         className,
       )}
     >
@@ -23,7 +23,7 @@ export const Paragraph = ({ children, className }: TypographyProps) => {
   return (
     <p
       className={classnames(
-        'mb-4 font-secondary text-neutral-900 dark:text-neutral-50 leading-relaxed tracking-[1px]',
+        'mb-4 font-secondary text-neutral-50 leading-relaxed tracking-[1px]',
         className,
       )}
     >
@@ -36,7 +36,7 @@ export const SectionTitle = ({ children, className }: TypographyProps) => {
   return (
     <h2
       className={classnames(
-        'font-primary text-[1.8rem] mb-[20px] pb-[20px] font-bold text-neutral-900 dark:text-neutral-50 border-b border-neutral-900 dark:border-neutral-50',
+        'font-primary text-[1.8rem] mb-[20px] pb-[20px] font-bold text-neutral-50 border-b border-neutral-50',
         className,
       )}
     >

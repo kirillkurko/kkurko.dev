@@ -12,7 +12,7 @@ const EmptyPage = ({ title, description }: Props) => {
       <PageTitle>{title}</PageTitle>
       <Paragraph>{description}</Paragraph>
       <NextLink href='/'>
-        <a className='rounded-lg font-bold text-center py-4 px-16 cursor-pointer mt-8 mb-0 mx-auto text-neutral-900 dark:text-neutral-50 dark:bg-zinc-700 bg-zinc-400'>
+        <a className='rounded-lg font-bold text-center py-4 px-16 cursor-pointer mt-8 mb-0 mx-auto text-neutral-50 bg-zinc-700'>
           Return Home
         </a>
       </NextLink>

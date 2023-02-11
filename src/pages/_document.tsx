@@ -14,7 +14,7 @@ export default class CustomDocument extends Document {
             rel='stylesheet'
           />
         </Head>
-        <body className='font-primary box-border max-[1200px]:overflow-auto bg-white dark:bg-zinc-900'>
+        <body className='font-primary box-border max-[1200px]:overflow-auto bg-zinc-900'>
           <Main />
           <NextScript />
         </body>

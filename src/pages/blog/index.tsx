@@ -1,10 +1,10 @@
 // @ts-nocheck
 import Head from 'next/head';
-import { getDatabase } from '../../lib/notion';
 import { PageTitle, Paragraph, SectionTitle } from '@components/typography';
 import ArticlePreview from '@components/ArticlePreview';
+import { allBlogs } from '@contentlayer/generated';
 
-export default function Home({ posts }) {
+export default function Blog() {
   return (
     <div>
       <Head>
@@ -24,24 +24,11 @@ export default function Home({ posts }) {
 
         <SectionTitle>All Posts</SectionTitle>
         <ol className='list-none m-0 p-0'>
-          {posts.map((post) => (
-            <ArticlePreview post={post} key={post.id} />
+          {allBlogs.map((blog, index) => (
+            <ArticlePreview blog={blog} key={index} />
           ))}
         </ol>
       </section>
     </div>
   );
 }
-
-export const databaseId = process.env.NOTION_DATABASE_ID;
-
-export const getStaticProps = async () => {
-  const database = await getDatabase(databaseId);
-
-  return {
-    props: {
-      posts: database,
-    },
-    revalidate: 1,
-  };
-};

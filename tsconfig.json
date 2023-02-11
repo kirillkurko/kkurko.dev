@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@contentlayer/generated": [".contentlayer/generated"],
       "@constants/*": [
         "src/util/constants/*"
       ],
@@ -53,7 +54,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/**/*"
+    "src/**/*",
+    ".contentlayer/generated"
   ],
   "exclude": [
     "node_modules"

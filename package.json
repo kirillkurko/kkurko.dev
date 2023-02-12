@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "planetscale-connent-main": "pscale connect personal-website main --port 3309"
+    "pscale-main": "pscale connect personal-website main --port 3309"
   },
   "dependencies": {
     "@prisma/client": "4.10.1",

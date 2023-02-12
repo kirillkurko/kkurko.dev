@@ -8,5 +8,6 @@ import penguinMentalityEmployeeMdx from './penguin-mentality-employee.mdx.json'
 import slackCommunicationTipsMdx from './slack-communication-tips.mdx.json'
 import theShortcutThatRevolutionizedMyWorkflowMdx from './the-shortcut-that-revolutionized-my-workflow.mdx.json'
 import whyIStartedMyBlogMdx from './why-i-started-my-blog.mdx.json'
+import howToUseAmplitudeWithReactNativeMdx from './how-to-use-amplitude-with-react-native.mdx.json'
 
-export const allBlogs = [directMessagesShouldBeDeadMdx, fastestFlutterVsReactNativeComparisonMdx, improveYourImportsWithTypescriptPathAliasesMdx, oneMoreArticleAboutUseEffectHookMdx, penguinMentalityEmployeeMdx, slackCommunicationTipsMdx, theShortcutThatRevolutionizedMyWorkflowMdx, whyIStartedMyBlogMdx]
+export const allBlogs = [directMessagesShouldBeDeadMdx, fastestFlutterVsReactNativeComparisonMdx, improveYourImportsWithTypescriptPathAliasesMdx, oneMoreArticleAboutUseEffectHookMdx, penguinMentalityEmployeeMdx, slackCommunicationTipsMdx, theShortcutThatRevolutionizedMyWorkflowMdx, whyIStartedMyBlogMdx, howToUseAmplitudeWithReactNativeMdx]

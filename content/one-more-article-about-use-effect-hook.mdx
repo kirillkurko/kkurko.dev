@@ -1,0 +1,166 @@
+---
+title: 'One more article about useEffect hook'
+publishedAt: '2022-05-21'
+summary: 'The article shows when effects are executed and how you can control it'
+---
+
+I saw a lot of articles named like “useEffect explained”, “master useEffect hook”, “useEffect hook for beginners” and more. Most of them were great - with clear explanations, beautiful images or even animations and different use cases covered. But you know what? At the same time a lot of them were unclear about one `useEffect` detail. And this is why I’m creating one more article about this topic. Hopefully, when you are reading this I do not see  “useEffect explained” articles anymore and sleep well.
+
+## Hooks motivation
+
+There are two types of components - class based and functional ones. Initially functional components were used only to display stuff without much logic inside the component. While class-based components with access to lifecycle methods and ability to have state were working as containers providing a bridge between the logic and functional component displaying the UI.
+
+But there were a few problems:
+
+- **Hard to reuse stateful logic between components** - and this is one of the reasons of why *render props* and *higher-order components* exist
+- **Complex components become hard to understand** - with all the logic inside componentDidMount or componentDidUpdate there is almost no way to split class-based component into separate pieces and it’s much harder to test
+- **Classes are harder to understand than regular functions**
+
+## What is a hook?
+
+To solve the problems I pointed out in the section above in React 16.8 hooks were introduced. So what is a hook? Hook is just a function giving power to your functional components. With hooks you can have state, perform side effects and much more inside your functional components.
+
+<Image
+    alt={`Functional components with and without hooks`}
+    src={`/images/one-more-article-about-use-effect-hook/meme.webp`}
+    width={1400}
+    height={900}
+/>
+
+## Meet useEffect
+
+`useEffect` is one of the hooks you have out of the box and it's used to create “side effects” like API calls, adding (and removing) listeners, manipulating DOM and more.
+
+Let's review the syntax:
+```tsx
+useEffect(() => {
+  // callback
+
+  return () => {
+    // cleanup function
+  }
+}, [dependencies])
+```
+`useEffect` takes two arguments - callback function to execute and array of dependencies. Callback can return a cleanup function (more about cleanup in the section at the end of the article). So how `useEffect` works? Basically it's executes the callback function on initial render or when some of the dependencies were changed. We can have four cases with dependencies:
+
+1. No dependencies array - callback will be executed on every re-render
+2. Empty dependencies array - executed only once after initial render
+3. One dependency - executed when dependency value is changed
+4. Multiple dependencies - executed when one of the dependencies is changed
+
+One dependency and multiple dependencies cases can be united "Non-empty dependencies array", but I decided to split them just to make it more clear.
+
+That's probably it, but let's review an example. In the component below we have two counters stored in a state via `useState` hook. And we have two buttons to increase the corresponding counter value by one. What's more interesting is four `useEffects` covering four cases with dependencies I introduced earlier.
+
+```tsx
+import { useState, useEffect } from "react";
+
+const UseEffectDemo = () => {
+  const [firstCounterValue, setFirstCounterValue] = useState(0);
+  const [secondCounterValue, setSecondCounterValue] = useState(0);
+
+  useEffect(() => {
+    console.log("[No dependencies array]\nExecuted on every re-render");
+  });
+
+  useEffect(() => {
+    console.log("[Empty dependencies array]\nExecuted only once");
+  }, []);
+
+  useEffect(() => {
+    console.log("[One dependency]\nExecuted when dependency value is changed");
+  }, [firstCounterValue]);
+
+  useEffect(() => {
+    console.log(
+      "[Multiple dependencies]\nExecuted when one of the dependencies is changed"
+    );
+  }, [firstCounterValue, secondCounterValue]);
+
+  return (
+    <>
+      <p>firstCounterValue is {firstCounterValue}</p>
+      <p>secondCounterValue is {secondCounterValue}</p>
+      <button
+        onClick={() => setFirstCounterValue((prevState) => prevState + 1)}
+      >
+        Increase firstCounterValue
+      </button>
+      <button
+        onClick={() => setSecondCounterValue((prevState) => prevState + 1)}
+      >
+        Increase secondCounterValue
+      </button>
+    </>
+  );
+};
+
+export default UseEffectDemo;
+```
+
+Let's try to interact with our small app to see what happens. This is how it looks like:
+
+<Image
+    alt={'Default app UI'}
+    src={'/images/one-more-article-about-use-effect-hook/default-ui.webp'}
+    width={714}
+    height={230}
+/>
+
+And in console you will see four logs as in the screenshot below:
+
+<Image
+    alt={'Initial console logs'}
+    src={'/images/one-more-article-about-use-effect-hook/initial-console-logs.webp'}
+    width={922}
+    height={402}
+/>
+
+We have logs from all the four callbacks, because effects are always executed after initial render.
+
+Let's click *Increase firstCounterValue* button. It leads to state update, our `firstCounterValue` is one now and we have more logs in console. You should know that component is re-rendered when its state or props are changed. So component is re-rendered and we have some effects here - callbacks from hooks with no dependencies, with single `firstCounterValue` dependency and with both `firstCounterValue` and `secondCounterValues` dependencies are executed.
+
+<Image
+    alt={'UI after firstCounterValue update'}
+    src={'/images/one-more-article-about-use-effect-hook/ui-first-counter-increased.webp'}
+    width={712}
+    height={220}
+/>
+
+<br/><br/>
+
+<Image
+    alt={'Logs after firstCounterValue update'}
+    src={'/images/one-more-article-about-use-effect-hook/logs-first-counter-increased.webp'}
+    width={926}
+    height={300}
+/>
+
+I guess you already know what will happen after click on *increase secondCounterValue* button, but let's review it.
+
+<Image
+    alt={'UI after secondCounterValue update'}
+    src={'/images/one-more-article-about-use-effect-hook/ui-second-counter-increased.webp'}
+    width={718}
+    height={236}
+/>
+
+<br/><br/>
+
+<Image
+    alt={'Logs after secondCounterValue update'}
+    src={'/images/one-more-article-about-use-effect-hook/logs-second-counter-increased.webp'}
+    width={910}
+    height={200}
+/>
+You're right! New `secondCounterValue` is two, state is updated, component is re-rendered and callback from useEffect with no dependencies and with both `firstCounterValue` and `secondCounterValues` dependencies are executed.
+
+## Cleanup function
+
+Let's review the last piece of `useEffect's` syntax, so you have a complete understanding of it. Cleanup function is something that you can return from your `useEffect` callback. Why do you need it? Some use cases are to cancel subscriptions or abort API requests. When it's executed? Well, on every `useEffect` run or when component unmounts. Before executing the callback from `useEffect` cleanup function will be executed (except initial render). If you want it to run only once you need to have empty dependencies array, so it will be executed only on unmount.
+
+And yeah, this is the problem I've been facing in some other articles. They were saying that cleanup function is only executed on component unmount. But it's not. And because of wrong understanding of it you can even have some issues when something will be cleaned when you think it shouldn't.
+
+## Conclusion
+
+I hope it's clear now how `useEffect` works, when it runs and how you can control it using dependencies array. Also I briefly covered cleanup function, but I will probably create a separate article covering it in a more details and with examples

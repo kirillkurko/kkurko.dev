@@ -39,6 +39,7 @@ export const Blog = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'content',
+  disableImportAliasWarning: true,
   documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm],

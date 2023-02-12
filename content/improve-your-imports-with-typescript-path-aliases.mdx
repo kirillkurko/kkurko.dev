@@ -1,0 +1,170 @@
+---
+title: 'Improve your imports with TypeScript path aliases'
+publishedAt: '2023-01-07'
+summary: 'This article describes how to configure TypeScript path aliases in React Native projects.'
+---
+
+## Motivation
+
+Without many words, let’s jump into some examples of usual imports:
+
+```typescript
+import Header from '../../../components/Header';
+import ThemeProvider from '../../../../theme/ThemeProvider';
+import useLoadData from '../../hooks/useLoadData';
+```
+
+This is what you see and use a lot, right? You probably know the pain of making structural changes. You just moved a file one level deeper in your project structure, and oops… Now you need to add one more `../` in this file to all your imports to fix them.
+
+This is a problem of relative imports – it becomes harder and harder to manage them as the project grows. They also have no sense – to understand them, you need to remember project structure pretty well. And you know what – with relative imports you’ll never learn the project structure well, because usually, you’re just typing `../` and looking into suggestions from your IDE until you find the right one.
+
+Imagine, we can have something like in the snippet below:
+
+```typescript
+import Header from '@components/Header';
+import ThemeProvider from '@theme/ThemeProvider';
+import useLoadData from '@hooks/useLoadData';
+```
+
+No weird dots and slashes, and imports have much more sense. No refactoring or scale problems as well – imports are absolute, so you can just move your file here and there without any changes in imports. And you can build a great mental model of your project structure, so you don’t even need any help from IDE to import something.
+
+Sounds good, do you agree? Let’s improve our imports with TypeScript path aliases and one babel plugin.
+
+## Update TypeScript config
+
+Open your `tsconfig.json` file. Here we need to add `baseUrl` and `paths` properties to compiler options:
+
+```json
+"compilerOptions": {
+    ...
+    "baseUrl": "./src/",
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
+      "@contexts/*": ["contexts/*"],
+      "@hooks/*": ["hooks/*"],
+      "@modules/*": ["modules/*"],
+      "@navigators/*": ["navigators/*"],
+      "@screens/*": ["screens/*"],
+      "@app-types/*": ["types/*"],
+      "@utils/*": ["utils/*"]
+    }
+}
+```
+
+Different combinations of `baseUrl` and `paths` are possible, but you just need to make sure that they form a real absolute path to a file or folder. In the example below `baseUrl` is `./src/` and it means that all our imports will come from `src` directory. On the other hand, it means that you cannot use path aliases for imports outside `src`.
+
+To determine your `baseUrl` you can follow the closest common parent rule – if all imports are coming from one directory than path to this directory is probably a `baseUrl`. For example, if all imports are coming from `src` directory, then you might consider to use `./src/` as your `baseUrl`. If something is imported outside `src` (e.g., from `assets` or `public` folders) than you may want to use `./`(root of the project) as your `baseUrl`.
+
+You can already use path aliases in your project, and they’ll work perfectly fine in your IDE. The error will happen when you’ll try to launch your app. Our beautiful new imports will not be resolved. To fix this, we need to add a plugin to our babel transpiler that will help to resolve our recently added path aliases.
+
+## Install Babel plugin
+
+We are going to use [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver). To install it, run the command:
+
+```bash
+npm install babel-plugin-module-resolver --save-dev
+```
+
+Or for `yarn` users:
+
+```bash
+yarn add -D babel-plugin-module-resolver
+```
+
+Let’s move on to our final step – plugin configuration.
+
+## Update Babel config
+
+We need to configure the plugin we just installed and edit `babel.config.js` file. Open the file and simply copy-paste the code from the snippet below:
+
+```javascript
+const config = require('./tsconfig.json')
+
+const { baseUrl, paths } = config.compilerOptions
+
+const getAliases = () => {
+  return Object.entries(paths).reduce((aliases, alias) => {
+    const key = alias[0].replace('/*', '')
+    const value = baseUrl + alias[1][0].replace('*', '')
+    return {
+      ...aliases,
+      [key]: value,
+    }
+  }, {})
+}
+```
+
+`getAliases` function is here to reduce the frustration of adding new aliases – it uses `baseUrl` and `paths` properties from our `tsconfig.json` and constructs a new object in the format required by the plugin. Babel plugin expects to have full absolute paths and without `/*` at the end:
+
+```javascript
+// The format used in our tsconfig.json
+{
+  baseUrl: "./src/",
+  paths: {
+    "@components/*": ["components/*"]
+  }
+}
+
+// The format we need to have in babel plugin config
+{
+  '@components': './src/components'
+}
+```
+
+Then we need to add our `babel-plugin-module-resolver` config to `plugins` section:
+
+```javascript
+module.exports = function (api) {
+  api.cache(true)
+  return {
+    // ...
+    plugins: [
+      [
+        'module-resolver',
+        {
+          extensions: [
+            '.js',
+            '.jsx',
+            '.ts',
+            '.tsx',
+            '.android.js',
+            '.android.tsx',
+            '.ios.js',
+            '.ios.tsx',
+          ],
+          alias: getAliases(),
+        },
+      ],
+    ],
+  }
+}
+```
+
+## It’s not working – how to fix
+
+Well… This is the main reason I decided to create this guideline. Configuration usually takes minutes, but then… You can be stuck with a weird `unable to resolve module` error for hours.
+
+First solution that helps almost always. In one terminal, run the command below:
+
+```bash
+# react-native start --reset-cache
+yarn start --reset-cache
+```
+
+In a new terminal, run `yarn ios` or `yarn android` command:
+
+```bash
+# react-native run-ios
+yarn ios
+# or
+# react-native run-android
+yarn android
+```
+
+If you still see the error, try to reinstall `node_modules` and run `watchman watch-del-all` command. Repeat the steps above.
+
+Still not working? 🪄 🧙‍️ 🔮 I hope it’ll help you. And feel free to contribute and write down your spells in the comments.
+
+## Links
+- <a href="https://github.com/tleunen/babel-plugin-module-resolver/blob/HEAD/DOCS.md">babel-plugin-module-resolver docs</a>

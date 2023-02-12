@@ -8,11 +8,13 @@ interface CustomLinkProps {
   children?: ReactNode;
 }
 
-const CustomLink = ({ href, children, ...props }: CustomLinkProps) => {
+const CustomLink = (props: CustomLinkProps) => {
+  const href = props.href;
+
   if (href?.startsWith('/')) {
     return (
-      <Link {...props} href={href}>
-        {children}
+      <Link href={href} {...props}>
+        {props.children}
       </Link>
     );
   }

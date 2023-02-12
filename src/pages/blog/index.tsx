@@ -2,8 +2,11 @@ import Head from 'next/head';
 import { PageTitle, Paragraph, SectionTitle } from '@components/typography';
 import ArticlePreview from '@components/ArticlePreview';
 import { allBlogs } from '@contentlayer/generated';
+import { InferGetStaticPropsType } from 'next';
 
-export default function Blog() {
+export default function Blog({
+  blogs,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div>
       <Head>
@@ -23,11 +26,21 @@ export default function Blog() {
 
         <SectionTitle>All Posts</SectionTitle>
         <ol className='list-none m-0 p-0'>
-          {allBlogs.map((blog, index) => (
+          {blogs.map((blog, index) => (
             <ArticlePreview blog={blog} key={index} />
           ))}
         </ol>
       </section>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const blogs = allBlogs.sort((a, b) => {
+    if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
+      return -1;
+    }
+    return 1;
+  });
+  return { props: { blogs } };
 }

@@ -3,19 +3,13 @@ import { PageTitle, Paragraph } from '@components/typography';
 import { Mdx } from '@components/mdx';
 import { allBlogs } from '@contentlayer/generated';
 import { ParsedUrlQuery } from 'querystring';
-import { GetStaticProps, GetStaticPaths } from 'next';
+import {
+  GetStaticPropsContext,
+  GetStaticPaths,
+  InferGetStaticPropsType,
+} from 'next';
 
-interface Props {
-  post: {
-    title: string;
-    summary: string;
-    body: {
-      code: string;
-    };
-  };
-}
-
-const Blog = ({ post }: Props) => {
+const Blog = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!post) {
     return null;
   }
@@ -53,7 +47,7 @@ interface Params extends ParsedUrlQuery {
   slug: string;
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export async function getStaticProps(context: GetStaticPropsContext<Params>) {
   const { slug } = context.params as Params;
 
   const post = allBlogs.find((blog) => blog.slug === slug);
@@ -64,4 +58,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
     revalidate: 1,
   };
-};
+}

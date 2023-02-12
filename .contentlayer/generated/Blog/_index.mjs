@@ -2,12 +2,12 @@
 
 import directMessagesShouldBeDeadMdx from './direct-messages-should-be-dead.mdx.json'
 import fastestFlutterVsReactNativeComparisonMdx from './fastest-flutter-vs-react-native-comparison.mdx.json'
+import howToUseAmplitudeWithReactNativeMdx from './how-to-use-amplitude-with-react-native.mdx.json'
 import improveYourImportsWithTypescriptPathAliasesMdx from './improve-your-imports-with-typescript-path-aliases.mdx.json'
 import oneMoreArticleAboutUseEffectHookMdx from './one-more-article-about-use-effect-hook.mdx.json'
 import penguinMentalityEmployeeMdx from './penguin-mentality-employee.mdx.json'
 import slackCommunicationTipsMdx from './slack-communication-tips.mdx.json'
 import theShortcutThatRevolutionizedMyWorkflowMdx from './the-shortcut-that-revolutionized-my-workflow.mdx.json'
 import whyIStartedMyBlogMdx from './why-i-started-my-blog.mdx.json'
-import howToUseAmplitudeWithReactNativeMdx from './how-to-use-amplitude-with-react-native.mdx.json'
 
-export const allBlogs = [directMessagesShouldBeDeadMdx, fastestFlutterVsReactNativeComparisonMdx, improveYourImportsWithTypescriptPathAliasesMdx, oneMoreArticleAboutUseEffectHookMdx, penguinMentalityEmployeeMdx, slackCommunicationTipsMdx, theShortcutThatRevolutionizedMyWorkflowMdx, whyIStartedMyBlogMdx, howToUseAmplitudeWithReactNativeMdx]
+export const allBlogs = [directMessagesShouldBeDeadMdx, fastestFlutterVsReactNativeComparisonMdx, howToUseAmplitudeWithReactNativeMdx, improveYourImportsWithTypescriptPathAliasesMdx, oneMoreArticleAboutUseEffectHookMdx, penguinMentalityEmployeeMdx, slackCommunicationTipsMdx, theShortcutThatRevolutionizedMyWorkflowMdx, whyIStartedMyBlogMdx]

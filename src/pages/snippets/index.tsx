@@ -5,7 +5,7 @@ const Snippets = () => {
   return (
     <div>
       <Head>
-        <title>Snippets - Kirill Kurko</title>
+        <title>Snippets | Kirill Kurko</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

@@ -18,6 +18,8 @@
 # misc
 .DS_Store
 *.pem
+.idea
+.yarn
 
 # debug
 npm-debug.log*
@@ -32,8 +34,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-.idea
-.yarn
 
 # contentlayer
 .contentlayer

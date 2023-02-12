@@ -5,7 +5,7 @@ const Guestbook = () => {
   return (
     <div>
       <Head>
-        <title>Guestbook - Kirill Kurko</title>
+        <title>Guestbook | Kirill Kurko</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

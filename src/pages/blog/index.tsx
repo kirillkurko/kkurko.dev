@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Head from 'next/head';
 import { PageTitle, Paragraph, SectionTitle } from '@components/typography';
 import ArticlePreview from '@components/ArticlePreview';
@@ -8,7 +7,7 @@ export default function Blog() {
   return (
     <div>
       <Head>
-        <title>Blog - Kirill Kurko</title>
+        <title>Blog | Kirill Kurko</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

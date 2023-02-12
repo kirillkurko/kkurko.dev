@@ -43,7 +43,7 @@ const EmojiBoard = ({
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <section className='mt-8'>
+      <section className='mt-8 mb-12'>
         <header className='mb-[50px]'>
           <PageTitle>Emoji board</PageTitle>
           <Paragraph className='opacity-60'>
@@ -52,7 +52,7 @@ const EmojiBoard = ({
             support it.
           </Paragraph>
         </header>
-        <div className='grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-3 gap-4 mb-8'>
+        <div className='grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-3 gap-4'>
           {data.map(({ emoji, upvoteCount }) => (
             <Emoji
               key={emoji}

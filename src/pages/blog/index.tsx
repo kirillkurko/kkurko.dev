@@ -12,7 +12,7 @@ export default function Blog() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <section className='mt-8'>
+      <section className='mt-8 mb-12'>
         <header className='mb-[50px]'>
           <PageTitle>Blog</PageTitle>
           <Paragraph className='opacity-60'>

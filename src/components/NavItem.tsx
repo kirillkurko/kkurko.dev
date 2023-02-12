@@ -11,7 +11,9 @@ interface Props {
 
 const NavItem = ({ href, text, disabled = false }: Props) => {
   const router = useRouter();
-  const isActive = router.asPath === href;
+  const isActive =
+    router.asPath === href ||
+    (href === '/blog' && router.pathname.includes('/blog'));
 
   return (
     <NextLink href={href} aria-disabled={disabled}>

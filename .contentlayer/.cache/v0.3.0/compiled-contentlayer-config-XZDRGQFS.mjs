@@ -36,6 +36,7 @@ var Blog = defineDocumentType(() => ({
 }));
 var contentlayer_config_default = makeSource({
   contentDirPath: "content",
+  disableImportAliasWarning: true,
   documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm],
@@ -73,4 +74,4 @@ export {
   Blog,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-MDTAEKJV.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-XZDRGQFS.mjs.map

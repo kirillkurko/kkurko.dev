@@ -43,8 +43,8 @@ const EmojiBoard = ({
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <section className='mt-8 mb-12'>
-        <header className='mb-[50px]'>
+      <section className='mt-8 mb-12 inline-block'>
+        <header className='mb-8'>
           <PageTitle>Emoji board</PageTitle>
           <Paragraph className='opacity-60'>
             This is the board on which the battle for the title of the best
@@ -52,7 +52,7 @@ const EmojiBoard = ({
             support it.
           </Paragraph>
         </header>
-        <div className='grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-3 gap-4'>
+        <div className='grid grid-cols-1 select-none min-[360px]:grid-cols-2 sm:grid-cols-3 gap-4'>
           {data.map(({ emoji, upvoteCount }) => (
             <Emoji
               key={emoji}

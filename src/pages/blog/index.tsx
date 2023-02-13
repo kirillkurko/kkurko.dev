@@ -15,8 +15,8 @@ export default function Blog({
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <section className='mt-8 mb-12'>
-        <header className='mb-[50px]'>
+      <section className='my-8 inline-block'>
+        <header className='mb-8'>
           <PageTitle>Blog</PageTitle>
           <Paragraph className='opacity-60'>
             Weekly content about frontend development, productivity, team

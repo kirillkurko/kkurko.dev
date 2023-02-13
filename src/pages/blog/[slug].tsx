@@ -30,7 +30,7 @@ const Blog = ({ blog }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <article className='mt-8'>
+      <article className='mt-8 inline-block'>
         <header>
           <PageTitle>{blog.title}</PageTitle>
           <Paragraph className='opacity-60'>{blog.summary}</Paragraph>

@@ -12,12 +12,13 @@ Analytics can be really important for your application - with data you can bette
 
 Go to [https://www.amplitude.com](https://www.amplitude.com/), press get started and create your account - nothing difficult here, but it’s expected that you’re creating it for an organization or a team (you can be a team of one, so that’s okay). Once everything is created, you will see a screen as in the image below.
 
-
 <Image
     alt={`Amplitude setup data source screen`}
     src={`/images/how-to-use-amplitude-with-react-native/amplitude-dashboard.webp`}
     width={3024}
     height={1732}
+    placeholder='blur'
+    blurDataURL={`/images/how-to-use-amplitude-with-react-native/amplitude-dashboard.webp`}
 />
 
 There are a number of SDKs for your choice to integrate into your app. We are going to add to our existing React Native app, so let’s click on React Native SDK. Once clicked, you will see a two-steps guide for adding Amplitude to your app. But you know what? Guide here is outdated, and it’s suggests to use package that considered legacy. What we need here is our API token - you can find it on step two as an argument of init function. Here is the code from step two:

@@ -15,3 +15,9 @@ model Emoji {
   emoji String  @unique
   upvote_count Int @default(1)
 }
+
+model Blog {
+    id    Int     @id @default(autoincrement())
+    slug  String  @unique
+    views Int     @default(0)
+}

@@ -3,6 +3,7 @@ import { PageTitle, Paragraph, SectionTitle } from '@components/typography';
 import ArticlePreview from '@components/ArticlePreview';
 import { allBlogs } from '@contentlayer/generated';
 import { InferGetStaticPropsType } from 'next';
+import { getAllBlogs } from '@lib/models/blog';
 
 export default function Blog({
   blogs,
@@ -26,8 +27,8 @@ export default function Blog({
 
         <SectionTitle>All Posts</SectionTitle>
         <ol className='list-none m-0 p-0'>
-          {blogs.map((blog, index) => (
-            <ArticlePreview blog={blog} key={index} />
+          {blogs.map((blog) => (
+            <ArticlePreview blog={blog} key={blog.slug} />
           ))}
         </ol>
       </section>
@@ -36,11 +37,25 @@ export default function Blog({
 }
 
 export async function getStaticProps() {
-  const blogs = allBlogs.sort((a, b) => {
+  const sortedBlogs = allBlogs.sort((a, b) => {
     if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
       return -1;
     }
     return 1;
   });
-  return { props: { blogs } };
+  const views = await getAllBlogs();
+
+  const blogs = sortedBlogs.map((blog) => ({
+    slug: blog.slug,
+    title: blog.title,
+    publishedAt: blog.publishedAt,
+    views: views.find((view) => view.slug === blog.slug)?.views || 0,
+  }));
+
+  return {
+    props: {
+      blogs,
+    },
+    revalidate: 1,
+  };
 }

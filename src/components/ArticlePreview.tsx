@@ -3,7 +3,12 @@ import NextLink from 'next/link';
 import { Paragraph, ArticleTitle } from '@components/typography';
 
 type Props = {
-  blog: any;
+  blog: {
+    slug: string;
+    title: string;
+    publishedAt: string;
+    views: number;
+  };
 };
 
 const ArticlePreview = ({ blog }: Props) => {
@@ -24,9 +29,14 @@ const ArticlePreview = ({ blog }: Props) => {
           <div className='py-4 px-8'>
             <ArticleTitle>{blog.title}</ArticleTitle>
 
-            <Paragraph className='!my-0 opacity-60 font-primary text-base'>
-              {date}
-            </Paragraph>
+            <div className='flex flex-row justify-between'>
+              <Paragraph className='!my-0 opacity-60 font-primary text-base'>
+                {date}
+              </Paragraph>
+              <Paragraph className='!my-0 opacity-60 font-primary text-base'>
+                {blog.views} views
+              </Paragraph>
+            </div>
           </div>
         </a>
       </NextLink>

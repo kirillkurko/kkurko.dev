@@ -8,26 +8,35 @@ import {
   GetStaticPaths,
   InferGetStaticPropsType,
 } from 'next';
+import { useEffect } from 'react';
 
-const Blog = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  if (!post) {
+const Blog = ({ blog }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  useEffect(() => {
+    if (blog) {
+      fetch(`/api/blog/${blog.slug}`, {
+        method: 'POST',
+      });
+    }
+  }, [blog]);
+
+  if (!blog) {
     return null;
   }
 
   return (
     <div>
       <Head>
-        <title>{post.title}</title>
+        <title>{blog.title}</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <article className='mt-8'>
         <header>
-          <PageTitle>{post.title}</PageTitle>
-          <Paragraph className='opacity-60'>{post.summary}</Paragraph>
+          <PageTitle>{blog.title}</PageTitle>
+          <Paragraph className='opacity-60'>{blog.summary}</Paragraph>
         </header>
         <section>
-          <Mdx code={post.body.code} />
+          <Mdx code={blog.body.code} />
         </section>
       </article>
     </div>
@@ -38,7 +47,7 @@ export default Blog;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: allBlogs.map((post) => ({ params: { slug: post.slug } })),
+    paths: allBlogs.map((blog) => ({ params: { slug: blog.slug } })),
     fallback: true,
   };
 };
@@ -50,11 +59,11 @@ interface Params extends ParsedUrlQuery {
 export async function getStaticProps(context: GetStaticPropsContext<Params>) {
   const { slug } = context.params as Params;
 
-  const post = allBlogs.find((blog) => blog.slug === slug);
+  const currentBlog = allBlogs.find((blog) => blog.slug === slug);
 
   return {
     props: {
-      post,
+      blog: currentBlog,
     },
     revalidate: 1,
   };

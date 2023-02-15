@@ -41,8 +41,7 @@ Let’s start from creating your personal access token. This token is required f
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/gitlab-personal-access-token-page.webp`}
   width={3024}
   height={1632}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/gitlab-personal-access-token-page.webp`}
+  priority={true}
 />
 
 To create an access token, you need to enter name, choose expiration date and select scope.
@@ -64,8 +63,6 @@ Compare what you have to the image below.
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/gitlab-personal-access-token-page-final.webp`}
   width={3024}
   height={1514}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/gitlab-personal-access-token-page-final.webp`}
 />
 
 Create personal access token button should be active now. Click on it, and you should see your new access token at the top of the page.
@@ -75,8 +72,6 @@ Create personal access token button should be active now. Click on it, and you s
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/gitlab-personal-access-token-created.webp`}
   width={2504}
   height={582}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/gitlab-personal-access-token-created.webp`}
 />
 
 Copy and save it for now - we will add it as an environment variable to our project repository.
@@ -92,8 +87,6 @@ Open GitHub [Developer settings](https://github.com/settings/tokens) and choose 
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/github-personal-access-token-page.webp`}
   width={3024}
   height={1460}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/github-personal-access-token-page.webp`}
 />
 
 Click on generate new token button and pick generate new token (classic) from the dropdown. Now you will see some details you can configure before creating a token including note, expiration period and scopes our token will have access to.
@@ -103,8 +96,6 @@ Click on generate new token button and pick generate new token (classic) from th
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/github-personal-access-token-classic-page.webp`}
   width={3024}
   height={1610}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/github-personal-access-token-classic-page.webp`}
 />
 
 Note should match the name of the GitLab access token (e.g. `DependabotMagicRemote`, `DepedabotOculus`, `DependabotAwesomeHabits`), expiration date is up to developer here, but it is recommended not to choose `No expiration`. And for scopes you just need to tick `repo` checkbox, so our token will have access to repositories and information like deployment and commit statuses.
@@ -114,8 +105,6 @@ Note should match the name of the GitLab access token (e.g. `DependabotMagicRemo
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/github-personal-access-token-page-final.webp`}
   width={3018}
   height={1612}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/github-personal-access-token-page-final.webp`}
 />
 
 Make sure that you have everything configured like in the screenshot above and click on the `Generate token` button on the bottom of the page.
@@ -125,8 +114,6 @@ Make sure that you have everything configured like in the screenshot above and c
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/github-personal-access-token-created.webp`}
   width={3024}
   height={998}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/github-personal-access-token-created.webp`}
 />
 
 Copy the token and save it for later - you will need it in the next step.
@@ -142,8 +129,6 @@ Our GitLab access token will be used by our Dependabot pipeline to analyze depen
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/gitlab-ci-cd-settings.webp`}
   width={3024}
   height={1476}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/gitlab-ci-cd-settings.webp`}
 />
 
 Find variables section and expand it - you may see some already added variables, but we are interested in `Add variable` button - click on it.
@@ -153,8 +138,6 @@ Find variables section and expand it - you may see some already added variables,
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/environment-variables-expanded.webp`}
   width={1964}
   height={930}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/environment-variables-expanded.webp`}
 />
 
 You should see add variable modal now. Key is like a name of the variable - we need to use `SETTINGS__GITLAB_ACCESS_TOKEN` here. Value is your personal access token you created earlier. No changes for type and environment scope required.
@@ -170,8 +153,6 @@ With mask checked, actual value, will be hidden in different logs. It can improv
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/add-environment-variable-modal.webp`}
   width={1628}
   height={1112}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/add-environment-variable-modal.webp`}
 />
 
 Add variable button is active now - click on it.
@@ -181,8 +162,6 @@ Add variable button is active now - click on it.
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/add-environment-variable-modal-final.webp`}
   width={1642}
   height={1110}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/add-environment-variable-modal-final.webp`}
 />
 
 Personal access token that we created in GitHub is needed in order for Dependabot to authenticate requests to GitHub API. Create one more environment variable the same way you just did for GitLab token and name it as `SETTINGS__GITHUB_ACCESS_TOKEN` with GitHub access token used as a value.
@@ -200,8 +179,6 @@ Go to CI/CD → Schedules and click on new schedule button. You should see the U
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/schedule-pipeline.webp`}
   width={3024}
   height={1537}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/schedule-pipeline.webp`}
 />
 
 Simply put `dependabot` as a description, and it'll be completely clear for everyone. For `interval`, you can choose every week if Wednesday works for you. The day of the week isn't important, but try to turn the process of reviewing and merging dependency updates into a habit - with a habit it will be much easier and faster. A fixed day and time will help you (e.g., every Friday at 12 am I'll review merge requests from Dependabot and merge them). I suggest setting the schedule to Monday morning, so you can review and merge them though the day, and developers will work with updated dependencies for the rest of the week.
@@ -221,8 +198,6 @@ Compare your schedule to the image below.
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/schedule-final.webp`}
   width={2513}
   height={1631}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/schedule-final.webp`}
 />
 
 If everything looks similar, click on Save pipeline changes button - now we’re finally moving to our Dependabot configuration.
@@ -313,8 +288,6 @@ You will see merge requests with updates to your project dependencies on configu
   src={`/images/stay-up-to-date-with-dependabot-on-gitlab/merge-requests-from-dependabot.webp`}
   width={3024}
   height={1474}
-  placeholder='blur'
-  blurDataURL={`/images/stay-up-to-date-with-dependabot-on-gitlab/merge-requests-from-dependabot.webp`}
 />
 
 Basic setup is done and that’s enough for most project, but there are a lot of configuration options for Dependabot. Check links section to learn more.

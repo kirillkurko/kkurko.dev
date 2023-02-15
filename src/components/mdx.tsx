@@ -27,7 +27,7 @@ const CustomLink = (props: CustomLinkProps) => {
 };
 
 function RoundedImage(props: ImageProps) {
-  return <Image alt={props.alt} className='rounded-lg' {...props} />;
+  return <Image className='rounded-lg' {...props} alt={props.alt} />;
 }
 
 interface CalloutProps {

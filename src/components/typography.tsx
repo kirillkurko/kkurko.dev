@@ -1,9 +1,13 @@
-import { ReactNode } from 'react';
+import React, { AnchorHTMLAttributes, ReactNode } from 'react';
 import classnames from 'classnames';
 
 interface TypographyProps {
   children: ReactNode;
   className?: string;
+}
+
+interface LinkProps {
+  children: ReactNode;
 }
 
 export const PageTitle = ({ children, className }: TypographyProps) => {
@@ -55,5 +59,13 @@ export const ArticleTitle = ({ children, className }: TypographyProps) => {
     >
       {children}
     </h3>
+  );
+};
+
+export const LinkText = ({ children }: LinkProps) => {
+  return (
+    <Paragraph className='transition-colors ease-out duration-150 mt-4 mb-0 mx-0 !text-neutral-500 hover:!text-neutral-700'>
+      {children}
+    </Paragraph>
   );
 };

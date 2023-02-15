@@ -11,10 +11,11 @@ const EmptyPage = ({ title, description }: Props) => {
     <div className='flex flex-col justify-center my-8'>
       <PageTitle>{title}</PageTitle>
       <Paragraph>{description}</Paragraph>
-      <NextLink href='/'>
-        <a className='rounded-lg font-bold text-center py-4 px-16 cursor-pointer mt-8 mb-0 mx-auto text-neutral-50 bg-zinc-700'>
-          Return Home
-        </a>
+      <NextLink
+        href='/'
+        className='rounded-lg font-bold text-center py-4 px-16 cursor-pointer mt-8 mb-0 mx-auto text-neutral-50 bg-zinc-700'
+      >
+        Return Home
       </NextLink>
     </div>
   );

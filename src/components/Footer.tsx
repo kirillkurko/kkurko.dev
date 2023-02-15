@@ -1,5 +1,6 @@
 import NextLink from 'next/link';
-import ExternalLink, { Link } from '@components/links';
+import ExternalLink from '@components/links';
+import { LinkText } from '@components/typography';
 
 const Footer = () => {
   return (
@@ -8,13 +9,13 @@ const Footer = () => {
       <div className='w-[80%] flex flex-row justify-between max-[600px]:flex-col'>
         <div className='flex flex-col'>
           <NextLink href='/' passHref>
-            <Link>Home</Link>
+            <LinkText>Home</LinkText>
           </NextLink>
           <NextLink href='/about' passHref>
-            <Link>About</Link>
+            <LinkText>About</LinkText>
           </NextLink>
           <NextLink href='/newsletter' passHref>
-            <Link>Newsletter</Link>
+            <LinkText>Newsletter</LinkText>
           </NextLink>
         </div>
         <div className='flex flex-col'>
@@ -30,13 +31,13 @@ const Footer = () => {
         </div>
         <div className='flex flex-col'>
           <NextLink href='/gallery' passHref>
-            <Link>Gallery</Link>
+            <LinkText>Gallery</LinkText>
           </NextLink>
           <NextLink href='/snippets' passHref>
-            <Link>Snippets</Link>
+            <LinkText>Snippets</LinkText>
           </NextLink>
           <NextLink href='/guestbook' passHref>
-            <Link>Guestbook</Link>
+            <LinkText>Guestbook</LinkText>
           </NextLink>
         </div>
       </div>

@@ -25,8 +25,7 @@ To solve the problems I pointed out in the section above in React 16.8 hooks wer
     src={`/images/one-more-article-about-use-effect-hook/meme.webp`}
     width={1400}
     height={900}
-    placeholder={'blur'}
-    blurDataURL={'/images/one-more-article-about-use-effect-hook/meme.webp'}
+    priority={true}
 />
 
 ## Meet useEffect
@@ -107,8 +106,6 @@ Let's try to interact with our small app to see what happens. This is how it loo
     src={'/images/one-more-article-about-use-effect-hook/default-ui.webp'}
     width={714}
     height={230}
-    placeholder={'blur'}
-    blurDataURL={'/images/one-more-article-about-use-effect-hook/default-ui.webp'}
 />
 
 And in console you will see four logs as in the screenshot below:
@@ -118,8 +115,6 @@ And in console you will see four logs as in the screenshot below:
     src={'/images/one-more-article-about-use-effect-hook/initial-console-logs.webp'}
     width={922}
     height={402}
-    placeholder={'blur'}
-    blurDataURL={'/images/one-more-article-about-use-effect-hook/initial-console-logs.webp'}
 />
 
 We have logs from all the four callbacks, because effects are always executed after initial render.
@@ -131,8 +126,6 @@ Let's click *Increase firstCounterValue* button. It leads to state update, our `
     src={'/images/one-more-article-about-use-effect-hook/ui-first-counter-increased.webp'}
     width={712}
     height={220}
-    placeholder={'blur'}
-    blurDataURL={'/images/one-more-article-about-use-effect-hook/ui-first-counter-increased.webp'}
 />
 
 <br/><br/>
@@ -142,8 +135,6 @@ Let's click *Increase firstCounterValue* button. It leads to state update, our `
     src={'/images/one-more-article-about-use-effect-hook/logs-first-counter-increased.webp'}
     width={926}
     height={300}
-    placeholder={'blur'}
-    blurDataURL={'/images/one-more-article-about-use-effect-hook/logs-first-counter-increased.webp'}
 />
 
 I guess you already know what will happen after click on *increase secondCounterValue* button, but let's review it.
@@ -153,8 +144,6 @@ I guess you already know what will happen after click on *increase secondCounter
     src={'/images/one-more-article-about-use-effect-hook/ui-second-counter-increased.webp'}
     width={718}
     height={236}
-    placeholder={'blur'}
-    blurDataURL={'/images/one-more-article-about-use-effect-hook/ui-second-counter-increased.webp'}
 />
 
 <br/><br/>
@@ -164,8 +153,6 @@ I guess you already know what will happen after click on *increase secondCounter
     src={'/images/one-more-article-about-use-effect-hook/logs-second-counter-increased.webp'}
     width={910}
     height={200}
-    placeholder={'blur'}
-    blurDataURL={'/images/one-more-article-about-use-effect-hook/logs-second-counter-increased.webp'}
 />
 You're right! New `secondCounterValue` is two, state is updated, component is re-rendered and callback from useEffect with no dependencies and with both `firstCounterValue` and `secondCounterValues` dependencies are executed.
 

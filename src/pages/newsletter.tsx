@@ -5,7 +5,7 @@ const Newsletter = () => {
   return (
     <div>
       <Head>
-        <title>Gallery | Kirill Kurko</title>
+        <title>Newsletter | Kirill Kurko</title>
         <link rel='icon' href='/public/favicon.ico' />
       </Head>
 

@@ -39,7 +39,7 @@ const EmojiBoard = ({
   return (
     <div>
       <Head>
-        <title>Feed | Kirill Kurko</title>
+        <title>Emoji | Kirill Kurko</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

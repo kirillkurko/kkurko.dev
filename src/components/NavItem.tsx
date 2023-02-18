@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router';
+'use client';
+
+import { usePathname } from 'next/navigation';
 import NextLink from 'next/link';
 import { Paragraph } from '@components/typography';
 import classnames from 'classnames';
@@ -10,10 +12,9 @@ interface Props {
 }
 
 const NavItem = ({ href, text, disabled = false }: Props) => {
-  const router = useRouter();
+  const pathname = usePathname();
   const isActive =
-    router.asPath === href ||
-    (href === '/blog' && router.pathname.includes('/blog'));
+    pathname === href || (href === '/blog' && pathname?.includes('/blog'));
 
   return (
     <NextLink

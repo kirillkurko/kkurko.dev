@@ -1,3 +1,5 @@
+'use client';
+
 import NavItem from '@components/NavItem';
 
 const NavBar = () => {

@@ -1,5 +1,6 @@
 module.exports = {
   content: [
+    './app/**/*.{js,ts,jsx,tsx}',
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
@@ -7,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Red Hat Text', 'sans-serif'],
-        secondary: ['IBM Plex Sans', 'sans-serif'],
+        primary: ['var(--font-red-hat-text)'],
+        secondary: ['var(--font-ibm-plex-sans)'],
       },
     },
   },

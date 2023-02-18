@@ -24,7 +24,8 @@ const AboutCard = ({ avatar, username, message }: Props) => {
           {message.map((item, index) => (
             <Paragraph
               key={index}
-              className='text-neutral-400 font-primary text-base last:mb-0'
+              primary={false}
+              className='font-primary text-base last:mb-0'
             >
               {item}
             </Paragraph>

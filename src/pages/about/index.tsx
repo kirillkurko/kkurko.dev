@@ -37,7 +37,7 @@ const About = () => {
       <section className='mt-8 mb-12 inline-block'>
         <header className='mb-8'>
           <PageTitle>About</PageTitle>
-          <Paragraph className='text-neutral-400'>
+          <Paragraph primary={false}>
             This is the board on which the battle for the title of the best
             emoji takes place. Click on an item with your favorite emoji to
             support it.

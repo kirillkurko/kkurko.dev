@@ -3,7 +3,6 @@ import classnames from 'classnames';
 
 interface TypographyProps {
   children: ReactNode;
-
   className?: string;
 }
 

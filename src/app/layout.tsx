@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import type { Metadata } from 'next';
 import { Red_Hat_Text, IBM_Plex_Sans } from '@next/font/google';
 import AnalyticsWrapper from '@components/AnalyticsWrapper';
 import NavBar from '@components/NavBar';
@@ -19,6 +20,17 @@ const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
   display: 'swap',
 });
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Kirill Kurko',
+    template: '%s | Kirill Kurko',
+  },
+  description: 'Frontend Developer and Penguin',
+  icons: {
+    shortcut: '/favicon.ico',
+  },
+};
 
 interface Props {
   children: React.ReactNode;

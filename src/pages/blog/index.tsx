@@ -18,7 +18,7 @@ export default function Blog({
       <section className='my-8 inline-block'>
         <header className='mb-8'>
           <PageTitle>Blog</PageTitle>
-          <Paragraph className='opacity-60'>
+          <Paragraph primary={false}>
             Weekly content about frontend development, productivity, team
             performance, management, and collaboration. All from own experience
             and real cases.

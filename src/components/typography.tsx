@@ -3,7 +3,12 @@ import classnames from 'classnames';
 
 interface TypographyProps {
   children: ReactNode;
+
   className?: string;
+}
+
+interface ParagraphProps extends TypographyProps {
+  primary?: boolean;
 }
 
 interface LinkProps {
@@ -23,11 +28,16 @@ export const PageTitle = ({ children, className }: TypographyProps) => {
   );
 };
 
-export const Paragraph = ({ children, className }: TypographyProps) => {
+export const Paragraph = ({
+  children,
+  primary = true,
+  className,
+}: ParagraphProps) => {
   return (
     <p
       className={classnames(
-        'mb-4 font-secondary text-neutral-50 leading-relaxed tracking-[1px]',
+        'mb-4 font-secondary leading-relaxed tracking-[1px]',
+        primary ? 'text-neutral-50' : 'text-neutral-400',
         className,
       )}
     >

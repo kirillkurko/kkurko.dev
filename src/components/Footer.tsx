@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import ExternalLink from '@components/links';
+import ExternalLink from '@components/ExternalLink';
 import { LinkText } from '@components/typography';
 
 const Footer = () => {

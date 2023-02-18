@@ -28,7 +28,7 @@ const ArticlePreview = ({ blog }: Props) => {
         <div className='py-4 px-8'>
           <ArticleTitle>{blog.title}</ArticleTitle>
 
-          <Paragraph className='!my-0 opacity-60 font-primary text-base'>
+          <Paragraph primary={false} className='!my-0 font-primary text-base'>
             {date} • {blog.views} views
           </Paragraph>
         </div>

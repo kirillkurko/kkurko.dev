@@ -7,17 +7,17 @@ const Hero = () => {
         <PageTitle>100% - Frontend Engineer.</PageTitle>
         <PageTitle>150% - Penguin.</PageTitle>
         <PageTitle>200% - CEO mentality.</PageTitle>
-        <Paragraph className='opacity-60'>
+        <Paragraph primary={false}>
           {`Hello, I'm Kirill. I make single employees, teams and projects grow.`}
         </Paragraph>
-        <Paragraph className='opacity-60'>
+        <Paragraph primary={false}>
           I started my career with backend and then switched to frontend. I have
           a good understanding of design.
         </Paragraph>
-        <Paragraph className='opacity-60'>
+        <Paragraph primary={false}>
           {`I had a chance to work with many startups from small to large. Most of the time I'm working on React/React Native positions, acting as a team-lead.`}
         </Paragraph>
-        <Paragraph className='opacity-60'>
+        <Paragraph primary={false}>
           My main focus is to keep Track Factor as high as possible, making sure
           there are no bottlenecks in processes and among employees.
         </Paragraph>

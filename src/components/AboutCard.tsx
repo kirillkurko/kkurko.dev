@@ -13,7 +13,7 @@ const AboutCard = ({ avatar, username, message }: Props) => {
       <div className='p-4 flex flex-row'>
         <div
           className={classnames(
-            'w-12 h-12 min-w-[3rem] mr-4 bg-gradient-to-r rounded-full',
+            'w-12 h-12 min-w-[3rem] mr-4 hidden sm:block bg-gradient-to-r rounded-full',
             avatar,
           )}
         />

@@ -10,6 +10,14 @@ interface Feedback {
 
 const data: Feedback[] = [
   {
+    avatar: 'from-rose-300 to-rose-500',
+    username: 'detailed-lion933',
+    message: [
+      `You know, there are people who you look at and understand that everything will be cool for them. As cool as they imagine it to be. People usually say about them, "dude, this is too much, stop" or "man, are you crazy??" For them, the world has no limits. And the funny thing is, you can't even imagine how they will do it. You just KNOW that they will reach their final destination. Sooner or later. It's some kind of magic.`,
+      `I only know three people like that. Kirill is the first on the list.`,
+    ],
+  },
+  {
     avatar: 'from-amber-300 to-amber-700',
     username: 'knowing-pelican118',
     message: [
@@ -18,11 +26,10 @@ const data: Feedback[] = [
     ],
   },
   {
-    avatar: 'from-rose-300 to-rose-500',
-    username: 'detailed-lion933',
+    avatar: 'from-green-400 to-green-800',
+    username: 'impressive-otter549',
     message: [
-      `You know, there are people who you look at and understand that everything will be cool for them. As cool as they imagine it to be. People usually say about them, "dude, this is too much, stop" or "man, are you crazy??" For them, the world has no limits. And the funny thing is, you can't even imagine how they will do it. You just KNOW that they will reach their final destination. Sooner or later. It's some kind of magic.`,
-      `I only know three people like that. Kirill is the first on the list.`,
+      `Kirill is a very pleasant person who is happy to listen to you and give advice. At first, he may seem quiet, but in reality Kirill is talkative, just in his own way. You'll find out what that means when you sign up for the Premium subscription. Despite being a programmer and already a little bit of a manager, Kirill knows a lot about HR, which undoubtedly makes him the best programmer in the world!`,
     ],
   },
 ];
@@ -38,9 +45,7 @@ const About = () => {
         <header className='mb-8'>
           <PageTitle>About</PageTitle>
           <Paragraph primary={false}>
-            This is the board on which the battle for the title of the best
-            emoji takes place. Click on an item with your favorite emoji to
-            support it.
+            {`This page is about me, but not from me. I asked some of my close friends, managers and peers to write something about me without format restrictions. Usernames are generated - I wanted to "blur" their roles - what matters is people and what they say, not their titles.`}
           </Paragraph>
         </header>
         <ol className='list-none m-0 p-0'>

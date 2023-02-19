@@ -18,7 +18,7 @@ const AboutCard = ({ avatar, username, message }: Props) => {
           )}
         />
         <div>
-          <Paragraph className='!mb-2 font-primary text-base font-bold leading-none'>
+          <Paragraph className='!mb-2 font-primary text-base font-bold !leading-none'>
             {username}
           </Paragraph>
           {message.map((item, index) => (

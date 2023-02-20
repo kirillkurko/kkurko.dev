@@ -1,10 +1,14 @@
 import '../../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { SessionProvider } from 'next-auth/react';
 import Container from '@components/Container';
 import { Analytics } from '@vercel/analytics/react';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+function CustomApp({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   return (
     <>
       <Head>
@@ -13,9 +17,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <link rel='shortcut icon' href='/favicon.ico' />
       </Head>
       <Analytics />
-      <Container>
-        <Component {...pageProps} />
-      </Container>
+      <SessionProvider session={session}>
+        <Container>
+          <Component {...pageProps} />
+        </Container>
+      </SessionProvider>
     </>
   );
 }

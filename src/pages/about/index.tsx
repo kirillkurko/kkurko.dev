@@ -32,6 +32,16 @@ const data: Feedback[] = [
       `Kirill is a very pleasant person who is happy to listen to you and give advice. At first, he may seem quiet, but in reality Kirill is talkative, just in his own way. You'll find out what that means when you sign up for the Premium subscription. Despite being a programmer and already a little bit of a manager, Kirill knows a lot about HR, which undoubtedly makes him the best programmer in the world!`,
     ],
   },
+  {
+    avatar: 'from-sky-300 to-sky-600',
+    username: 'responsible-bee152',
+    message: [
+      `(I wrote this as if from you, but it can be presented as some interesting facts that your acquaintances say about you)`,
+      `I know, I know, in this section you all want to see the answer to the question: "Who am I?" So, here are a few facts about me:`,
+      `I'm a big fan of Vercel, and it shows in every piece of my work. I love programming so much that I gave my colleagues a program written in cupcakes as a gift for the holiday! I'm against personal work messages. I'm all for group (channel) messages where everyone has the same information. I read the book "Project Phoenix" and recommended it to my PM and she loved it. Every day, I try to read new articles and strengthen my knowledge.`,
+      `I have my own perspective on many things, which is why you're on my website right now, to immerse yourself in the atmosphere and enjoy my experience.`,
+    ],
+  },
 ];
 
 const About = () => {

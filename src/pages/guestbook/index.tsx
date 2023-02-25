@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import { getGuestbook } from '@lib/models/guestbook';
 import { InferGetStaticPropsType } from 'next';
-import { PageTitle, Paragraph } from '@components/typography';
+import { PageTitle, Paragraph, SectionTitle } from '@components/typography';
 import GuestbookCard from '@components/GuestbookCard';
 import GuestbookForm from '@components/GuestbookForm';
-import { useSession } from 'next-auth/react';
 import { SignIn, SignOut } from '@components/guestbook/actions';
 import fetcher from '@lib/fetcher';
 import useSWR from 'swr';
+import React from 'react';
+import { useSession } from 'next-auth/react';
 
 type Response = InferGetStaticPropsType<typeof getStaticProps>;
 type GuestbookResponse = Response['guestbook'];
@@ -33,23 +34,23 @@ const Guestbook = ({ guestbook }: Response) => {
         <header className='mb-8'>
           <PageTitle>Guestbook</PageTitle>
           <Paragraph primary={false}>
-            {`Welcome to my guestbook! Share your thoughts, leave a note, and
-            become a part of my story. Can't wait to hear from you!`}
+            {`Welcome to my guestbook! Here you can offer suggestions for improvement, share experiences, or simply leave a friendly message.`}
           </Paragraph>
         </header>
         {!session ? (
           <SignIn />
         ) : (
           <>
-            <SignOut />
             <GuestbookForm />
+            <SignOut />
           </>
         )}
-        <ol className='list-none m-0 p-0'>
+        <SectionTitle>Recent Messages</SectionTitle>
+        <ul className='list-none m-0 p-0'>
           {entries?.map(({ id, username, message }) => (
             <GuestbookCard key={id} username={username} message={message} />
           ))}
-        </ol>
+        </ul>
       </section>
     </div>
   );

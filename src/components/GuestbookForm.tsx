@@ -12,8 +12,6 @@ const GuestbookForm = () => {
     const form = e.currentTarget;
     const input = form.elements.namedItem('entry') as HTMLInputElement;
 
-    console.log(input.value, 'input.value');
-
     await fetch('/api/guestbook', {
       method: 'POST',
       body: JSON.stringify({

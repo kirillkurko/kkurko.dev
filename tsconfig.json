@@ -5,9 +5,6 @@
       "@contentlayer/generated": [
         ".contentlayer/generated"
       ],
-      "@models/*": [
-        "src/models/*"
-      ],
       "@lib/*": [
         "src/lib/*"
       ],
@@ -16,27 +13,6 @@
       ],
       "@components/*": [
         "src/components/*"
-      ],
-      "@atoms/*": [
-        "src/components/atoms/*"
-      ],
-      "@molecules/*": [
-        "src/components/molecules/*"
-      ],
-      "@organisms/*": [
-        "src/components/organisms/*"
-      ],
-      "@theme/*": [
-        "src/theme/*"
-      ],
-      "@contexts/*": [
-        "src/contexts/*"
-      ],
-      "@app-types/*": [
-        "src/types/*"
-      ],
-      "@hooks/*": [
-        "src/hooks/*"
       ],
     },
     "target": "es5",

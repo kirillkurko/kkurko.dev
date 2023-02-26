@@ -10,7 +10,7 @@ interface Feedback {
 
 const data: Feedback[] = [
   {
-    avatar: 'from-rose-300 to-rose-500',
+    avatar: 'from-rose-300 to-sky-300',
     username: 'detailed-lion933',
     message: [
       `You know, there are people who you look at and understand that everything will be cool for them. As cool as they imagine it to be. People usually say about them, "dude, this is too much, stop" or "man, are you crazy??" For them, the world has no limits. And the funny thing is, you can't even imagine how they will do it. You just KNOW that they will reach their final destination. Sooner or later. It's some kind of magic.`,
@@ -18,7 +18,7 @@ const data: Feedback[] = [
     ],
   },
   {
-    avatar: 'from-amber-300 to-amber-700',
+    avatar: 'from-amber-300 to-rose-700',
     username: 'knowing-pelican118',
     message: [
       `Well, I’ve heard that penguins are intelligent, but this individual seems to be on top of his kind. Kirill is one of the most inspiring personalities that I have ever met. I’d like to say that he is an outstanding developer - but I can hardly read the code. However, I can say for sure that he is a perfect problem solver - no matter what kind of problems we face, if Kirill joins the discussion I feel safe.`,
@@ -26,14 +26,14 @@ const data: Feedback[] = [
     ],
   },
   {
-    avatar: 'from-green-400 to-green-800',
+    avatar: 'from-green-400 to-blue-800',
     username: 'impressive-otter549',
     message: [
       `Kirill is a very pleasant person who is happy to listen to you and give advice. At first, he may seem quiet, but in reality Kirill is talkative, just in his own way. You'll find out what that means when you sign up for the Premium subscription. Despite being a programmer and already a little bit of a manager, Kirill knows a lot about HR, which undoubtedly makes him the best programmer in the world!`,
     ],
   },
   {
-    avatar: 'from-sky-300 to-sky-600',
+    avatar: 'from-orange-500 to-cyan-300',
     username: 'responsible-bee152',
     message: [
       `(I wrote this as if from you, but it can be presented as some interesting facts that your acquaintances say about you)`,

@@ -1,5 +1,5 @@
 import { Paragraph } from '@components/typography';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 interface Props {
   avatar: string;
@@ -12,7 +12,7 @@ const AboutCard = ({ avatar, username, message }: Props) => {
     <li className='mb-4 border border-neutral-700 rounded-md'>
       <div className='p-4 flex flex-row'>
         <div
-          className={classnames(
+          className={clsx(
             'w-12 h-12 min-w-[3rem] mr-4 hidden sm:block bg-gradient-to-r rounded-full',
             avatar,
           )}

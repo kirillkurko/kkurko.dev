@@ -14,7 +14,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@vercel/analytics": "^0.1.6",
     "babel-runtime": "^6.26.0",
-    "classnames": "^2.3.2",
+    "clsx": "^1.2.1",
     "contentlayer": "^0.3.0",
     "next": "^13.1.6",
     "next-auth": "^4.19.2",

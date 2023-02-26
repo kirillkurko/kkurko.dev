@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
-import { Paragraph } from '@components/typography';
 import clsx from 'clsx';
 
 interface Props {

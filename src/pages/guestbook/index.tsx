@@ -63,7 +63,13 @@ export async function getServerSideProps({
   req,
   res,
 }: GetServerSidePropsContext) {
-  const guestbook = await getGuestbook();
+  const guestbookPromise = getGuestbook();
+  const sessionPromise = getServerSession(req, res, authOptions);
+
+  const [guestbook, session] = await Promise.all([
+    guestbookPromise,
+    sessionPromise,
+  ]);
 
   const entries = guestbook.map((entry) => ({
     id: entry.id,
@@ -73,7 +79,7 @@ export async function getServerSideProps({
 
   return {
     props: {
-      session: await getServerSession(req, res, authOptions),
+      session,
       guestbook: entries,
     },
   };

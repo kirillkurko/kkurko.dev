@@ -37,7 +37,7 @@ export default async function handler(
 
     const guestbookEntry = await createEntry(email!, username!, message);
 
-    res.status(200).json({ success: true, entry: guestbookEntry });
+    return res.status(200).json({ success: true, entry: guestbookEntry });
   }
 
   return res.send('Method not allowed');

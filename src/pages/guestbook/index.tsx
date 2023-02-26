@@ -2,9 +2,10 @@ import Head from 'next/head';
 import { getGuestbook } from '@lib/models/guestbook';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { PageTitle, Paragraph, SectionTitle } from '@components/typography';
-import GuestbookCard from '@components/GuestbookCard';
-import GuestbookForm from '@components/GuestbookForm';
-import { SignIn, SignOut } from '@components/guestbook/actions';
+import GuestbookCard from '@components/guestbook/GuestbookCard';
+import GuestbookForm from '@components/guestbook/GuestbookForm';
+import SignInButton from '@components/guestbook/SignInButton';
+import SignOutButton from '@components/guestbook/SignOutButton';
 import fetcher from '@lib/fetcher';
 import useSWR from 'swr';
 import React from 'react';
@@ -38,11 +39,11 @@ const Guestbook = ({ guestbook }: Response) => {
           </Paragraph>
         </header>
         {!session ? (
-          <SignIn />
+          <SignInButton />
         ) : (
           <>
             <GuestbookForm />
-            <SignOut />
+            <SignOutButton />
           </>
         )}
         <SectionTitle>Recent Messages</SectionTitle>

@@ -9,7 +9,9 @@ import SignOutButton from '@components/guestbook/SignOutButton';
 import fetcher from '@lib/fetcher';
 import useSWR from 'swr';
 import React from 'react';
-import { getSession, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../api/auth/[...nextauth]';
 
 type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 type GuestbookResponse = Props['guestbook'];
@@ -57,8 +59,17 @@ const Guestbook = ({ guestbook }: Props) => {
   );
 };
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const guestbook = await getGuestbook();
+export async function getServerSideProps({
+  req,
+  res,
+}: GetServerSidePropsContext) {
+  const guestbookPromise = getGuestbook();
+  const sessionPromise = getServerSession(req, res, authOptions);
+
+  const [guestbook, session] = await Promise.all([
+    guestbookPromise,
+    sessionPromise,
+  ]);
 
   const entries = guestbook.map((entry) => ({
     id: entry.id,
@@ -68,7 +79,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   return {
     props: {
-      session: await getSession(context),
+      session,
       guestbook: entries,
     },
   };

@@ -11,13 +11,21 @@ datasource db {
 }
 
 model Emoji {
-  id    Int     @id @default(autoincrement())
-  emoji String  @unique
-  upvote_count Int @default(1)
+    id           Int     @id @default(autoincrement())
+    emoji        String  @unique
+    upvote_count Int     @default(1)
 }
 
 model Blog {
-    id    Int     @id @default(autoincrement())
-    slug  String  @unique
-    views Int     @default(0)
+    id    Int    @id @default(autoincrement())
+    slug  String @unique
+    views Int    @default(0)
+}
+
+model Guestbook {
+    id      Int    @id @default(autoincrement())
+    email   String
+    username String
+    message String  @db.VarChar(512)
+    created_at DateTime @default(now()) @db.DateTime(6)
 }

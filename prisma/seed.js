@@ -1,5 +1,5 @@
 const { PrismaClient } = require('@prisma/client');
-const { emojis } = require('./data.js');
+const { emojis, guestbook } = require('./data.js');
 
 const prisma = new PrismaClient();
 
@@ -15,6 +15,17 @@ const load = async () => {
       data: emojis,
     });
     console.log('Added Emoji data');
+
+    await prisma.guestbook.deleteMany();
+    console.log('Deleted records in Guestbook table');
+
+    await prisma.$queryRaw`ALTER TABLE Guestbook AUTO_INCREMENT = 1`;
+    console.log('Reset Guestbook auto increment to 1');
+
+    await prisma.guestbook.createMany({
+      data: guestbook,
+    });
+    console.log('Added Guestbook data');
   } catch (e) {
     console.error(e);
     process.exit(1);

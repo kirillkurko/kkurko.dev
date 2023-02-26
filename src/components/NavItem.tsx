@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 import { Paragraph } from '@components/typography';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 interface Props {
   href: string;
@@ -19,7 +19,7 @@ const NavItem = ({ href, text, disabled = false }: Props) => {
     <NextLink
       href={href}
       aria-disabled={disabled}
-      className={classnames(
+      className={clsx(
         isActive ? 'font-semibold text-gray-200' : 'font-normal text-gray-400',
         'inline-block px-3 sm:py-2 rounded-lg hover:bg-zinc-800 transition-all',
       )}

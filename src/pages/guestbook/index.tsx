@@ -11,10 +11,10 @@ import useSWR from 'swr';
 import React from 'react';
 import { getSession, useSession } from 'next-auth/react';
 
-type Response = InferGetServerSidePropsType<typeof getServerSideProps>;
-type GuestbookResponse = Response['guestbook'];
+type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
+type GuestbookResponse = Props['guestbook'];
 
-const Guestbook = ({ guestbook }: Response) => {
+const Guestbook = ({ guestbook }: Props) => {
   const { data: session } = useSession();
   const { data: entries } = useSWR<GuestbookResponse>(
     '/api/guestbook',

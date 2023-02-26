@@ -10,7 +10,7 @@
       ],
       "@components/*": [
         "src/components/*"
-      ]
+      ],
     },
     "target": "es5",
     "lib": [

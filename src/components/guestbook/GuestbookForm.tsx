@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSWRConfig } from 'swr';
 
+const MAX_MESSAGE_LENGTH = 512;
+
 const GuestbookForm = () => {
   const { mutate } = useSWRConfig();
   const [isFetching, setIsFetching] = useState(false);
@@ -39,6 +41,7 @@ const GuestbookForm = () => {
         name='entry'
         type='text'
         required
+        maxLength={MAX_MESSAGE_LENGTH}
         className='pl-4 pr-32 py-2 block font-primary text-base w-full focus:outline-none focus:border-white placeholder-neutral-400 border border-neutral-700 rounded-md bg-zinc-900 text-neutral-50'
       />
       <button

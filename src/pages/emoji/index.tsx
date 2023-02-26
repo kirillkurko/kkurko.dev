@@ -17,9 +17,9 @@ const EmojiMap = {
   [EmojiName.Dog]: '🐕',
 };
 
-const EmojiBoard = ({
-  emojis,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+const EmojiBoard = ({ emojis }: Props) => {
   const [data, setData] = useState(emojis);
   const upvoteEmoji = async (emoji: EmojiName) => {
     const response = await fetch('/api/emoji', {

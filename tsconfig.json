@@ -8,9 +8,6 @@
       "@lib/*": [
         "src/lib/*"
       ],
-      "@constants/*": [
-        "src/util/constants/*"
-      ],
       "@components/*": [
         "src/components/*"
       ],

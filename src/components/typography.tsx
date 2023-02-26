@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 interface TypographyProps {
   children: ReactNode;
@@ -17,7 +17,7 @@ interface LinkProps {
 export const PageTitle = ({ children, className }: TypographyProps) => {
   return (
     <h1
-      className={classnames(
+      className={clsx(
         'font-primary text-[2.4rem] mb-3 font-bold text-neutral-50',
         className,
       )}
@@ -34,7 +34,7 @@ export const Paragraph = ({
 }: ParagraphProps) => {
   return (
     <p
-      className={classnames(
+      className={clsx(
         'mb-4 font-secondary leading-relaxed tracking-[1px]',
         primary ? 'text-neutral-50' : 'text-neutral-400',
         className,
@@ -48,7 +48,7 @@ export const Paragraph = ({
 export const SectionTitle = ({ children, className }: TypographyProps) => {
   return (
     <h2
-      className={classnames(
+      className={clsx(
         'font-primary text-[1.8rem] mb-[20px] pb-[20px] font-bold text-neutral-50 border-b border-neutral-50',
         className,
       )}
@@ -61,7 +61,7 @@ export const SectionTitle = ({ children, className }: TypographyProps) => {
 export const ArticleTitle = ({ children, className }: TypographyProps) => {
   return (
     <h3
-      className={classnames(
+      className={clsx(
         'font-primary text-[1.4rem] mb-[20px] font-bold mb-[10px] text-neutral-50',
         className,
       )}

@@ -25,7 +25,7 @@ const ArticlePreview = ({ blog }: Props) => {
   return (
     <li className='mb-4 border border-neutral-700 rounded-md'>
       <NextLink href={link}>
-        <div className='py-4 px-8'>
+        <div className='py-4 px-6'>
           <ArticleTitle>{blog.title}</ArticleTitle>
 
           <Paragraph primary={false} className='!my-0 font-primary text-base'>

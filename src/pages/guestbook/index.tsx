@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { getGuestbook } from '@lib/models/guestbook';
-import { InferGetStaticPropsType } from 'next';
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { PageTitle, Paragraph, SectionTitle } from '@components/typography';
 import GuestbookCard from '@components/GuestbookCard';
 import GuestbookForm from '@components/GuestbookForm';
@@ -8,9 +8,9 @@ import { SignIn, SignOut } from '@components/guestbook/actions';
 import fetcher from '@lib/fetcher';
 import useSWR from 'swr';
 import React from 'react';
-import { useSession } from 'next-auth/react';
+import { getSession, useSession } from 'next-auth/react';
 
-type Response = InferGetStaticPropsType<typeof getStaticProps>;
+type Response = InferGetServerSidePropsType<typeof getServerSideProps>;
 type GuestbookResponse = Response['guestbook'];
 
 const Guestbook = ({ guestbook }: Response) => {
@@ -56,7 +56,7 @@ const Guestbook = ({ guestbook }: Response) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   const guestbook = await getGuestbook();
 
   const entries = guestbook.map((entry) => ({
@@ -67,9 +67,9 @@ export async function getStaticProps() {
 
   return {
     props: {
+      session: await getSession(context),
       guestbook: entries,
     },
-    revalidate: 60,
   };
 }
 

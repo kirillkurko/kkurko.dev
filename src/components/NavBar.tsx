@@ -44,11 +44,11 @@ const NavBar = () => {
 
   return (
     <nav className='flex justify-between ml-[-0.60rem]'>
-      <div className='flex'>
+      <div className='flex items-center'>
         {NAV_ITEMS[pathname] ? (
           <motion.div
             className='absolute bg-zinc-800 h-[40px] rounded-lg z-[-1]'
-            layoutId='test2'
+            layoutId='nav-items'
             initial={{ opacity: 0, x: NAV_ITEMS[pathname].x }}
             animate={{
               opacity: 1,

@@ -1,30 +1,24 @@
-import { useRouter } from 'next/router';
 import NextLink from 'next/link';
-import { Paragraph } from '@components/typography';
 import clsx from 'clsx';
 
 interface Props {
   href: string;
   text: string;
+  isActive: boolean;
   disabled?: boolean;
 }
 
-const NavItem = ({ href, text, disabled = false }: Props) => {
-  const router = useRouter();
-  const isActive =
-    router.asPath === href ||
-    (href === '/blog' && router.pathname.includes('/blog'));
-
+const NavItem = ({ href, text, isActive, disabled = false }: Props) => {
   return (
     <NextLink
       href={href}
       aria-disabled={disabled}
       className={clsx(
-        isActive ? 'font-semibold text-gray-200' : 'font-normal text-gray-400',
-        'inline-block px-3 sm:py-2 rounded-lg hover:bg-zinc-800 transition-all',
+        'inline-block px-3 sm:py-2 font-medium transition-all text-neutral-400 hover:text-neutral-200',
+        isActive && '!text-neutral-200',
       )}
     >
-      <Paragraph className='capsize !mb-0'>{text}</Paragraph>
+      <p className='capsize'>{text}</p>
     </NextLink>
   );
 };

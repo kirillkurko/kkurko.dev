@@ -6,7 +6,7 @@ export default class CustomDocument extends Document {
       <Html lang='en' className='scroll-smooth bg-zinc-900'>
         <Head>
           <link
-            href='https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;700&display=swap'
             rel='stylesheet'
           />
           <link

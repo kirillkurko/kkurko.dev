@@ -5,7 +5,7 @@ export default class CustomDocument extends Document {
     return (
       <Html lang='en' className='scroll-smooth bg-zinc-900'>
         <Head />
-        <body className='font-primary box-border max-[1200px]:overflow-auto'>
+        <body className='box-border max-[1200px]:overflow-auto'>
           <Main />
           <NextScript />
         </body>

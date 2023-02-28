@@ -42,6 +42,18 @@ const data: Feedback[] = [
       `I have my own perspective on many things, which is why you're on my website right now, to immerse yourself in the atmosphere and enjoy my experience.`,
     ],
   },
+  {
+    avatar: 'from-blue-600 to-rose-400',
+    username: 'practical-dolphin845',
+    message: [
+      `Hello everyone, I'm the cat on the gate. I have known a man named Kirill for a long time...`,
+      `Together we have been through a lot of fire (Belarusian summer) and water (Belarusian rain). About Kirill, I can say that this is my old friend, but gold, and no, he's not metal, he's just handsome guy :) Kirill is really a very versatile person with whom you can talk on any topic and in many of them he shows a high degree of competence and knowledge, over the years of friendship with him, I can say with confidence that he always does his job efficiently and hard-working!`,
+      `It is not surprising that this guy will break into businesses and will definitely achieve his goal, but please not 5 stars in GTA.`,
+      `In the end, I would like to add that everything on this site is made with love and absolutely unique, not to mention how cool and simple information on a variety of topics is presented here.`,
+      `Sincerely, my dear readers, Kirill's humble friend Nikita is a Java Developer (they rule, if anything).`,
+      `P.S. We will definitely send you a photo from the Maldives!`,
+    ],
+  },
 ];
 
 const About = () => {

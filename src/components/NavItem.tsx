@@ -14,7 +14,7 @@ const NavItem = ({ href, text, isActive, disabled = false }: Props) => {
       href={href}
       aria-disabled={disabled}
       className={clsx(
-        'inline-block px-3 sm:py-2 font-primary font-medium transition-all text-neutral-400 hover:text-neutral-200',
+        'inline-block px-3 sm:py-2 font-medium transition-all text-neutral-400 hover:text-neutral-200',
         isActive && '!text-neutral-200',
       )}
     >

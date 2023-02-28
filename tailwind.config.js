@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -7,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Red Hat Text', 'sans-serif'],
-        secondary: ['IBM Plex Sans', 'sans-serif'],
+        primary: ['var(--font-red-hat-text)', ...fontFamily.sans],
+        secondary: ['var(--font-ibm-plex-sans)', ...fontFamily.sans],
       },
     },
   },

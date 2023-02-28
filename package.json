@@ -45,7 +45,7 @@
     "eslint-plugin-import-newlines": "^1.1.5",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.21",
     "prettier": "^2.4.1",
     "prisma": "^4.10.1",
     "tailwindcss": "^3.2.4",

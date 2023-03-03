@@ -43,7 +43,14 @@ const data: Feedback[] = [
     ],
   },
   {
-    avatar: 'from-blue-600 to-rose-400',
+    avatar: 'from-stone-300 to-indigo-700',
+    username: 'reliable-owl231',
+    message: [
+      `Krill is a fascinating conversationalist, a top-notch professional, and a person of exceptional depth. You can talk to him about any topic, and it will be fascinating. He knows exactly what human values are, and he knows how to convey them both in his professional activities and in the process of communication with his team and clients. Communicating with Krill is easy, comfortable, and beneficial!`,
+    ],
+  },
+  {
+    avatar: 'from-rose-400 to-yellow-200',
     username: 'practical-dolphin845',
     message: [
       `Hello everyone, I'm the cat on the goal.`,

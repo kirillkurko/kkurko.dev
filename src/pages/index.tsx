@@ -8,7 +8,7 @@ const Home = () => {
         <PageTitle>150% - Penguin.</PageTitle>
         <PageTitle>200% - CEO mentality.</PageTitle>
         <Paragraph primary={false}>
-          {`Hello, I'm Kirill. I make single employees, teams and projects grow.`}
+          {`Hello, I'm Kirill. I make single employees, teams and projects grow`}
         </Paragraph>
         <Paragraph primary={false}>
           I started my career with backend and then switched to frontend. I have

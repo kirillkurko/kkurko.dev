@@ -1,6 +1,7 @@
 import NavItem from '@components/NavItem';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import MobileMenu from '@components/MobileMenu';
 
 interface ItemInfo {
   name: string;
@@ -47,7 +48,7 @@ const NavBar = () => {
       <div className='flex items-center'>
         {NAV_ITEMS[pathname] ? (
           <motion.div
-            className='absolute bg-zinc-800 h-[40px] rounded-lg z-[-1]'
+            className='absolute !hidden sm:!block bg-zinc-800 h-[40px] rounded-lg z-[-1]'
             layoutId='nav-items'
             initial={{ opacity: 0, x: NAV_ITEMS[pathname].x }}
             animate={{
@@ -62,6 +63,7 @@ const NavBar = () => {
             }}
           />
         ) : null}
+        <MobileMenu />
         {Object.entries(NAV_ITEMS).map(([path, { name }]) => {
           const isActive = pathname === path;
           return (

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import useDelayedRender from 'use-delayed-render';
 import { useState, useEffect } from 'react';
 import styles from 'styles/mobile-menu.module.css';
+import { useRouter } from 'next/router';
 
 const items = [
   {
@@ -48,6 +49,7 @@ const items = [
 ];
 
 const MobileMenu = () => {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
     isMenuOpen,
@@ -63,10 +65,11 @@ const MobileMenu = () => {
   };
 
   useEffect(() => {
-    return function cleanup() {
+    return () => {
+      setIsMenuOpen(false);
       document.body.style.overflow = '';
     };
-  }, []);
+  }, [router.pathname]);
 
   return (
     <div>
@@ -115,7 +118,7 @@ const MobileMenu = () => {
 
 export default MobileMenu;
 
-function MenuIcon(props: JSX.IntrinsicElements['svg']) {
+const MenuIcon = (props: JSX.IntrinsicElements['svg']) => {
   return (
     <svg
       className='h-6 w-6 text-neutral-400'
@@ -141,9 +144,9 @@ function MenuIcon(props: JSX.IntrinsicElements['svg']) {
       />
     </svg>
   );
-}
+};
 
-function CrossIcon(props: JSX.IntrinsicElements['svg']) {
+const CrossIcon = (props: JSX.IntrinsicElements['svg']) => {
   return (
     <svg
       className='h-6 w-6 text-neutral-400'
@@ -162,4 +165,4 @@ function CrossIcon(props: JSX.IntrinsicElements['svg']) {
       <path d='M6 6l12 12' />
     </svg>
   );
-}
+};

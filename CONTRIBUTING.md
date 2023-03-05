@@ -26,7 +26,7 @@ Before submitting a pull request, consider the following guidelines:
 2. To prevent duplication of work, please search for an existing PR (open or closed) that relates to yours.
 3. Make sure your pull request is addressing only a single concern.
 
-** How to submit a pull request? **
+**How to submit a pull request?**
 
 1. Fork the repo.
 2. Create a branch with the name provided by me in the issue.

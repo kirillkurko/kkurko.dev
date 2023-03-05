@@ -48,5 +48,5 @@ You are more than welcome. Before contributing please check the [guidelines](htt
 
 If you want to fix something feel free to fork it and create a PR. Check Contributions section above to learn more.
 
-If you want to build your personal website based on this repository please review the [license](https://github.com/kirillkurko/kkurko.dev/blob/dev/LICENSE) and remove all of my personal information (blog posts, images, about page content and etc.).  
+If you want to build your personal website based on this repository please review the [license](https://github.com/kirillkurko/kkurko.dev/blob/dev/LICENSE) and remove all of my personal information like blog posts, images, about page content etc.  
 

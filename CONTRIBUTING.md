@@ -4,7 +4,7 @@ This page will help you to start contributing to the project. I have plenty of i
 
 ## 🐛 Found a bug?
 
-In the case of bugs, you can contribute by submitting an issue. If you are really into it, submit a Pull Request with your fix. 
+In the case of bugs, you can contribute by [submitting an issue](https://github.com/kirillkurko/kkurko.dev/blob/dev/CONTRIBUTING.md#-submitting-an-issue). If you are really into it, [submit a Pull Request](https://github.com/kirillkurko/kkurko.dev/blob/dev/CONTRIBUTING.md#-submitting-an-issue) with your fix. 
 
 ## 🤔 Want to see the feature?
 

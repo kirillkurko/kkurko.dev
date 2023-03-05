@@ -31,7 +31,7 @@ $ yarn
 $ yarn dev
 ```
 
-In order to make [Guestbook](https://www.kkurko.dev/guestbook), [Emoji](https://www.kkurko.dev/emoji) pages and [Blog](https://www.kkurko.dev/blog) views work you need to setup your own PlantScale database and GitHub auth and create a `.env` file similar to [`.env.example`](https://github.com/kirillkurko/kkurko.dev/blob/dev/.env.example). A detailed guide on doing this is coming soon.
+In order to make [Guestbook](https://www.kkurko.dev/guestbook), [Emoji](https://www.kkurko.dev/emoji) pages and [Blog](https://www.kkurko.dev/blog) views work you need to set up your own PlantScale database and GitHub auth and create a `.env` file similar to [`.env.example`](https://github.com/kirillkurko/kkurko.dev/blob/dev/.env.example). A detailed guide on doing this is coming soon.
 
 ## 🙌 Contributions
 

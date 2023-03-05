@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🐧 kkurko.dev
 
-## Getting Started
+This is my personal website built with the following technologies:
+- **Framework**: [Next.js](https://nextjs.org)
+- **Database**: [PlanetScale](https://planetscale.com)
+- **ORM**: [Prisma](https://www.prisma.io)
+- **Authentication**: [NextAuth.js](https://next-auth.js.org)
+- **Content**: [MDX](https://mdxjs.com) and [Contentlayer](https://www.contentlayer.dev)
+- **Deployment**: [Vercel](https://vercel.com)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com)
+- **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
 
-First, run the development server:
+## 👀 Overview
+
+- `content/*` - MDX data that is used for blogs.
+- `prisma/*` - Prisma schema, which uses a PlanetScale MySQL database.
+- `public/*` - Static assets including images for blog posts.
+- `layouts/*` - The different page layouts each MDX category (blog, snippets) uses.
+- `src/lib/*` - Some "API" utilities and `models` layer for getting data from the database.
+- `pages/*` - API routes and pages present on the website.
+- `pages/api/*` - [API Routes](https://nextjs.org/docs/api-routes/introduction) powering [`/emoji`](https://www.kkurko.dev/emoji), guestbook, blog and auth.
+- `pages/blog/*` - Static pre-rendered blog pages using Contenlayer and MDX.
+- `styles/*` - A small amount of global styles and styles for hamburger menu on mobile.
+
+## 🚀 Running Locally
 
 ```bash
-npm run dev
-# or
-yarn dev
+$ git clone https://github.com/kirillkurko/kkurko.dev.git
+$ cd kkurko.dev
+$ yarn
+$ yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In order to make [Guestbook](https://www.kkurko.dev/guestbook), [Emoji](https://www.kkurko.dev/emoji) pages and [Blog](https://www.kkurko.dev/blog) views work you need to set up your own PlantScale database and GitHub auth and create a `.env` file similar to [`.env.example`](https://github.com/kirillkurko/kkurko.dev/blob/dev/.env.example). A detailed guide on doing this is coming soon.
 
-You can start editing the page by modifying `pages/Container.tsx`. The page auto-updates as you edit the file.
+## 🙌 Contributions
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+I wanted this project to be open-source to share ideas, inspire (as [Lee Robinson](https://github.com/leerob/leerob.io) inspired me) and help others to learn, so all kinds of contributions are welcome and will be highly appreciated. If you want to:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- 🤔 Suggest a feature
+- 🐛 Report an issue
+- 👨‍💻 Implement the feature or fix some bugs
+- 🧑‍🎓 Learn something
 
-## Learn More
+You are more than welcome. Before contributing please check the [guidelines](https://github.com/kirillkurko/kkurko.dev/blob/dev/CONTRIBUTING.md).    
 
-To learn more about Next.js, take a look at the following resources:
+## 📤 Cloning / Forking
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you want to fix something feel free to fork it and create a PR. Check Contributions section above to learn more.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+If you want to build your personal website based on this repository please review the [license](https://github.com/kirillkurko/kkurko.dev/blob/dev/LICENSE) and remove all of my personal information like blog posts, images, about page content etc.  
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

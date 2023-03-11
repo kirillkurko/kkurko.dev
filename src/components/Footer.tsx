@@ -8,13 +8,13 @@ const Footer = () => {
       <hr className='w-full h-[0.5px] mt-0 mx-0 mb-4 bg-zinc-500 border-none' />
       <div className='w-[80%] flex flex-row justify-between max-[600px]:flex-col'>
         <div className='flex flex-col'>
-          <NextLink href='/' passHref>
+          <NextLink href='/'>
             <LinkText>Home</LinkText>
           </NextLink>
-          <NextLink href='/about' passHref>
+          <NextLink href='/about'>
             <LinkText>About</LinkText>
           </NextLink>
-          <NextLink href='/newsletter' passHref>
+          <NextLink href='/newsletter'>
             <LinkText>Newsletter</LinkText>
           </NextLink>
         </div>
@@ -30,13 +30,13 @@ const Footer = () => {
           </ExternalLink>
         </div>
         <div className='flex flex-col'>
-          <NextLink href='/gallery' passHref>
+          <NextLink href='/gallery'>
             <LinkText>Gallery</LinkText>
           </NextLink>
-          <NextLink href='/snippets' passHref>
+          <NextLink href='/snippets'>
             <LinkText>Snippets</LinkText>
           </NextLink>
-          <NextLink href='/guestbook' passHref>
+          <NextLink href='/guestbook'>
             <LinkText>Guestbook</LinkText>
           </NextLink>
         </div>

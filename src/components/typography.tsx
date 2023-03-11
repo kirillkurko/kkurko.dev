@@ -62,7 +62,7 @@ export const ArticleTitle = ({ children, className }: TypographyProps) => {
   return (
     <h3
       className={clsx(
-        'font-primary text-[1.4rem] mb-[20px] font-bold mb-[10px] text-neutral-50',
+        'font-primary text-[1.4rem] font-bold mb-2.5 text-neutral-50',
         className,
       )}
     >
@@ -73,7 +73,7 @@ export const ArticleTitle = ({ children, className }: TypographyProps) => {
 
 export const LinkText = ({ children }: LinkProps) => {
   return (
-    <Paragraph className='transition-colors ease-out duration-150 mt-4 mb-0 mx-0 underline underline-offset-4 !text-neutral-400 hover:!text-neutral-700'>
+    <Paragraph className='transition-colors ease-out duration-150 mt-4 !mb-0 mx-0 underline underline-offset-4 !text-neutral-400 hover:!text-neutral-700'>
       {children}
     </Paragraph>
   );

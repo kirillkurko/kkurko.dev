@@ -61,6 +61,14 @@ const data: Feedback[] = [
       `P.S. We will definitely send you a photo from the Maldives!`,
     ],
   },
+  {
+    avatar: 'from-blue-600 to-cyan-300',
+    username: 'hilarious-elephant983',
+    message: [
+      `I am pleased to have Kirill as my colleague. He is not only a talented programmer and Lead Slack Emoji Manager, but also a true mentor to me. Thanks to his help and advice, I have been able to significantly strengthen my programming skills. Additionally, he is a very versatile person that is always ready to share his knowledge and experience in various fields. Besides, with Kirill, we can spend hours discussing not only work-related matters but also various life topics. He is an open and friendly person with whom it is easy and pleasant to communicate. Thanks to our conversations, I not only learn new things about programming, but also receive valuable lessons and advice in other areas of life.`,
+      `However, the coolest memory is the super delicious cupcakes 😂 that Kirill made specifically for his colleagues!`,
+    ],
+  },
 ];
 
 const About = () => {

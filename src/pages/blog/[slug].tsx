@@ -33,7 +33,6 @@ const Blog = ({ blog }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <article className='mt-8 inline-block'>
         <header>
           <PageTitle>{blog.title}</PageTitle>
-          <Paragraph primary={false}>{blog.summary}</Paragraph>
         </header>
         <section>
           <Mdx code={blog.body.code} />

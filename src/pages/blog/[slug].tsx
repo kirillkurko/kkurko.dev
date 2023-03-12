@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { PageTitle, Paragraph } from '@components/typography';
+import { PageTitle } from '@components/typography';
 import { Mdx } from '@components/mdx';
 import { allBlogs } from '@contentlayer/generated';
 import { ParsedUrlQuery } from 'querystring';

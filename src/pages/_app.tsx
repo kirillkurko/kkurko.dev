@@ -29,7 +29,10 @@ function CustomApp({
     <>
       <Head>
         <title>kkurko.dev</title>
-        <meta name='description' content='My personal website' />
+        <meta
+          name='description'
+          content='Frontend Developer, Creator, and Penguin.'
+        />
         <link rel='shortcut icon' href='/favicon.ico' />
       </Head>
       <Analytics />

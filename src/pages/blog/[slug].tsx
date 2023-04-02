@@ -27,6 +27,7 @@ const Blog = ({ blog }: InferGetStaticPropsType<typeof getStaticProps>) => {
     <div>
       <Head>
         <title>{blog.title}</title>
+        <meta name='description' content={blog.summary} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

@@ -17,7 +17,7 @@
     "clsx": "^1.2.1",
     "contentlayer": "^0.3.0",
     "framer-motion": "^10.2.4",
-    "next": "^13.2.3",
+    "next": "^13.3.0",
     "next-auth": "^4.20.1",
     "next-contentlayer": "^0.3.0",
     "next-images": "^1.8.1",

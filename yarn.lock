@@ -3795,10 +3795,10 @@ next-contentlayer@^0.3.0:
     "@contentlayer/core" "0.3.0"
     "@contentlayer/utils" "0.3.0"
 
-next-images@^1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/next-images/-/next-images-1.8.1.tgz#adea0c46a2e837cb49b6f95b478500a7ed4eea4f"
-  integrity sha512-/DoXucQKWkEBT2rCQKtm9bb+KTAnd1vVTLO12lX4oxdiBQa2uqn5vhcMPwKsdJlxNBzwg6EVnddFs3aqcwiiGA==
+next-images@^1.8.5:
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/next-images/-/next-images-1.8.5.tgz#2eb5535bb1d6c58a5c4e03bc3be6c72c8a053a45"
+  integrity sha512-YLBERp92v+Nu2EVxI9+wa32KRuxyxTC8ItbiHUWVPlatUoTl0yRqsNtP39c2vYv27VRvY4LlYcUGjNRBSMUIZA==
   dependencies:
     file-loader "^6.2.0"
     url-loader "^4.1.0"

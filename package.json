@@ -11,7 +11,7 @@
     "seed": "node prisma/seed.js"
   },
   "dependencies": {
-    "@prisma/client": "4.13.0",
+    "@prisma/client": "5.0.0",
     "@tailwindcss/typography": "^0.5.9",
     "@vercel/analytics": "^1.0.1",
     "babel-runtime": "^6.26.0",

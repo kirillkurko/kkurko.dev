@@ -22,8 +22,8 @@ const Footer = () => {
           <ExternalLink href='https://github.com/kirillkurko'>
             GitHub
           </ExternalLink>
-          <ExternalLink href='https://twitter.com/kirillkurko'>
-            Twitter
+          <ExternalLink href='https://www.threads.net/@aqwergqwec'>
+            Threads
           </ExternalLink>
           <ExternalLink href='https://www.instagram.com/aqwergqwec/'>
             Instagram

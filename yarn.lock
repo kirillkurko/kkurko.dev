@@ -660,10 +660,10 @@
   resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-5.3.1-2.61e140623197a131c2a6189271ffee05a7aa9a59.tgz#7eb6f5c6b7628b8b39df55c903f411528a6f761c"
   integrity sha512-y5qbUi3ql2Xg7XraqcXEdMHh0MocBfnBzDn5GbV1xk23S3Mq8MGs+VjacTNiBh3dtEdUERCrUUG7Z3QaJ+h79w==
 
-"@prisma/engines@4.10.1":
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-4.10.1.tgz#c7062747f254e5d5fce98a8cae566c25f9f29fb2"
-  integrity sha512-B3tcTxjx196nuAu1GOTKO9cGPUgTFHYRdkPkTS4m5ptb2cejyBlH9X7GOfSt3xlI7p4zAJDshJP4JJivCg9ouA==
+"@prisma/engines@5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-5.3.1.tgz#53cc72a5ed176dc27d22305fe5569c64cc78b381"
+  integrity sha512-6QkILNyfeeN67BNEPEtkgh3Xo2tm6D7V+UhrkBbRHqKw9CTaz/vvTP/ROwYSP/3JT2MtIutZm/EnhxUiuOPVDA==
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -4455,12 +4455,12 @@ pretty-format@^3.8.0:
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-3.8.0.tgz#bfbed56d5e9a776645f4b1ff7aa1a3ac4fa3c385"
   integrity sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==
 
-prisma@^4.10.1:
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/prisma/-/prisma-4.10.1.tgz#88084695d7b364ae6bebf93d5006f84439c4e7d1"
-  integrity sha512-0jDxgg+DruB1kHVNlcspXQB9au62IFfVg9drkhzXudszHNUAQn0lVuu+T8np0uC2z1nKD5S3qPeCyR8u5YFLnA==
+prisma@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-5.3.1.tgz#a0932c1c1a5ed4ff449d064b193d9c7e94e8bf77"
+  integrity sha512-Wp2msQIlMPHe+5k5Od6xnsI/WNG7UJGgFUJgqv/ygc7kOECZapcSz/iU4NIEzISs3H1W9sFLjAPbg/gOqqtB7A==
   dependencies:
-    "@prisma/engines" "4.10.1"
+    "@prisma/engines" "5.3.1"
 
 progress@^2.0.0:
   version "2.0.3"

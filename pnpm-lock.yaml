@@ -17,7 +17,7 @@ dependencies:
     specifier: ^2.0.0
     version: 2.0.0
   contentlayer:
-    specifier: ^0.3.0
+    specifier: ^0.3.4
     version: 0.3.4(esbuild@0.19.3)
   framer-motion:
     specifier: ^10.16.4
@@ -29,7 +29,7 @@ dependencies:
     specifier: ^4.23.1
     version: 4.23.1(next@13.5.3)(react-dom@18.2.0)(react@18.2.0)
   next-contentlayer:
-    specifier: ^0.3.0
+    specifier: ^0.3.4
     version: 0.3.4(contentlayer@0.3.4)(esbuild@0.19.3)(next@13.5.3)(react-dom@18.2.0)(react@18.2.0)
   next-images:
     specifier: ^1.8.5

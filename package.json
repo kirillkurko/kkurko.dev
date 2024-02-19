@@ -18,7 +18,7 @@
     "babel-runtime": "^6.26.0",
     "clsx": "^2.1.0",
     "contentlayer": "^0.3.4",
-    "framer-motion": "^11.0.3",
+    "framer-motion": "^11.0.5",
     "next": "^13.5.4",
     "next-auth": "^4.24.5",
     "next-contentlayer": "^0.3.4",

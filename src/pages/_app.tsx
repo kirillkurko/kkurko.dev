@@ -1,7 +1,6 @@
 import '../../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { SessionProvider } from 'next-auth/react';
 import Container from '@components/Container';
 import { Analytics } from '@vercel/analytics/react';
 import { Red_Hat_Text, IBM_Plex_Sans } from 'next/font/google';
@@ -21,10 +20,7 @@ export const ibmPlexSans = IBM_Plex_Sans({
   display: 'swap',
 });
 
-function CustomApp({
-  Component,
-  pageProps: { session, ...pageProps },
-}: AppProps) {
+function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -36,17 +32,15 @@ function CustomApp({
         <link rel='shortcut icon' href='/favicon.ico' />
       </Head>
       <Analytics />
-      <SessionProvider session={session}>
-        <Container
-          className={clsx(
-            'font-primary',
-            redHatText.variable,
-            ibmPlexSans.variable,
-          )}
-        >
-          <Component {...pageProps} />
-        </Container>
-      </SessionProvider>
+      <Container
+        className={clsx(
+          'font-primary',
+          redHatText.variable,
+          ibmPlexSans.variable,
+        )}
+      >
+        <Component {...pageProps} />
+      </Container>
     </>
   );
 }

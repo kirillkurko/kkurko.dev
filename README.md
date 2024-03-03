@@ -4,7 +4,6 @@ This is my personal website built with the following technologies:
 - **Framework**: [Next.js](https://nextjs.org)
 - **Database**: [PlanetScale](https://planetscale.com)
 - **ORM**: [Prisma](https://www.prisma.io)
-- **Authentication**: [NextAuth.js](https://next-auth.js.org)
 - **Content**: [MDX](https://mdxjs.com) and [Contentlayer](https://www.contentlayer.dev)
 - **Deployment**: [Vercel](https://vercel.com)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
@@ -18,7 +17,7 @@ This is my personal website built with the following technologies:
 - `layouts/*` - The different page layouts each MDX category (blog, snippets) uses.
 - `src/lib/*` - Some "API" utilities and `models` layer for getting data from the database.
 - `pages/*` - API routes and pages present on the website.
-- `pages/api/*` - [API Routes](https://nextjs.org/docs/api-routes/introduction) powering [`/emoji`](https://www.kkurko.dev/emoji), guestbook, blog and auth.
+- `pages/api/*` - [API Routes](https://nextjs.org/docs/api-routes/introduction) powering [`/emoji`](https://www.kkurko.dev/emoji) and blog.
 - `pages/blog/*` - Static pre-rendered blog pages using Contenlayer and MDX.
 - `styles/*` - A small amount of global styles and styles for hamburger menu on mobile.
 
@@ -31,7 +30,7 @@ $ yarn
 $ yarn dev
 ```
 
-In order to make [Guestbook](https://www.kkurko.dev/guestbook), [Emoji](https://www.kkurko.dev/emoji) pages and [Blog](https://www.kkurko.dev/blog) views work you need to set up your own PlantScale database and GitHub auth and create a `.env` file similar to [`.env.example`](https://github.com/kirillkurko/kkurko.dev/blob/dev/.env.example). A detailed guide on doing this is coming soon.
+In order to make [Emoji](https://www.kkurko.dev/emoji) page and [Blog](https://www.kkurko.dev/blog) views work you need to set up your own PlantScale database and create a `.env` file similar to [`.env.example`](https://github.com/kirillkurko/kkurko.dev/blob/dev/.env.example).
 
 ## 🙌 Contributions
 

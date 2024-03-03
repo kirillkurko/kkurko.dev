@@ -28,23 +28,6 @@ const emojis = [
   },
 ];
 
-const guestbook = [
-  {
-    email: 'kirillkurko2609@gmail.com',
-    message: 'test message',
-  },
-  {
-    email: 'kkurko2609@gmail.com',
-    message: 'Nice website',
-  },
-  {
-    email: 'kirill@gmail.com',
-    message:
-      'This is the board on which the battle for the title of the best emoji takes place. Click on an item with your favorite emoji to support it.',
-  },
-];
-
 module.exports = {
   emojis,
-  guestbook,
 };

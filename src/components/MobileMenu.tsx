@@ -17,11 +17,6 @@ const items = [
     transitionDelay: '175ms',
   },
   {
-    href: '/guestbook',
-    title: 'Guestbook',
-    transitionDelay: '190ms',
-  },
-  {
     href: '/emoji',
     title: 'Emoji',
     transitionDelay: '205ms',

@@ -36,9 +36,6 @@ const Footer = () => {
           <NextLink href='/snippets'>
             <LinkText>Snippets</LinkText>
           </NextLink>
-          <NextLink href='/guestbook'>
-            <LinkText>Guestbook</LinkText>
-          </NextLink>
         </div>
       </div>
     </footer>

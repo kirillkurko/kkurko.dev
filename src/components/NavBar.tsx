@@ -35,12 +35,6 @@ const NAV_ITEMS: Record<string, ItemInfo> = {
     y: 0,
     w: '65.9px',
   },
-  '/guestbook': {
-    name: 'Guestbook',
-    x: 263.47,
-    y: 0,
-    w: '107.06px',
-  },
 };
 
 const NavBar = () => {

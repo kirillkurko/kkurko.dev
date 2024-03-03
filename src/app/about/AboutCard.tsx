@@ -4,10 +4,10 @@ import clsx from 'clsx';
 interface Props {
   avatar: string;
   username: string;
-  message: string[];
+  message: Array<string>;
 }
 
-const AboutCard = ({ avatar, username, message }: Props) => {
+function AboutCard({ avatar, username, message }: Props) {
   return (
     <li className='mb-4 border border-neutral-700 rounded-md'>
       <div className='p-4 flex flex-row'>
@@ -34,6 +34,6 @@ const AboutCard = ({ avatar, username, message }: Props) => {
       </div>
     </li>
   );
-};
+}
 
 export default AboutCard;

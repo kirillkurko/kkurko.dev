@@ -1,14 +1,14 @@
-import Head from 'next/head';
 import { PageTitle, Paragraph } from '@components/typography';
-import AboutCard from '@components/AboutCard';
+import AboutCard from './AboutCard';
+import type { Metadata } from 'next';
 
 interface Feedback {
   avatar: string;
   username: string;
-  message: string[];
+  message: Array<string>;
 }
 
-const data: Feedback[] = [
+const DATA: Array<Feedback> = [
   {
     avatar: 'from-rose-300 to-sky-300',
     username: 'detailed-lion933',
@@ -71,33 +71,31 @@ const data: Feedback[] = [
   },
 ];
 
-const About = () => {
-  return (
-    <div>
-      <Head>
-        <title>About | Kirill Kurko</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <section className='mt-8 mb-12 inline-block'>
-        <header className='mb-8'>
-          <PageTitle>About</PageTitle>
-          <Paragraph primary={false}>
-            {`This page is about me, but not from me. I asked some of my close friends, managers and peers to write something about me without format restrictions. Usernames are generated - I wanted to "blur" their roles - what matters is people and what they say, not their titles.`}
-          </Paragraph>
-        </header>
-        <ol className='list-none m-0 p-0'>
-          {data.map(({ avatar, username, message }) => (
-            <AboutCard
-              key={username}
-              avatar={avatar}
-              username={username}
-              message={message}
-            />
-          ))}
-        </ol>
-      </section>
-    </div>
-  );
+export const metadata: Metadata = {
+  title: 'About',
 };
 
-export default About;
+function Page() {
+  return (
+    <section className='mt-8 mb-12 inline-block'>
+      <header className='mb-8'>
+        <PageTitle>About</PageTitle>
+        <Paragraph primary={false}>
+          {`This page is about me, but not from me. I asked some of my close friends, managers and peers to write something about me without format restrictions. Usernames are generated - I wanted to "blur" their roles - what matters is people and what they say, not their titles.`}
+        </Paragraph>
+      </header>
+      <ul className='m-0 p-0'>
+        {DATA.map(({ avatar, username, message }) => (
+          <AboutCard
+            key={username}
+            avatar={avatar}
+            username={username}
+            message={message}
+          />
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export default Page;

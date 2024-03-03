@@ -1,11 +1,12 @@
+'use client';
 import clsx from 'clsx';
 import Link from 'next/link';
 import useDelayedRender from 'use-delayed-render';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from 'styles/mobile-menu.module.css';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
-const items = [
+const ITEMS = [
   {
     href: '/',
     title: 'Home',
@@ -43,8 +44,8 @@ const items = [
   },
 ];
 
-const MobileMenu = () => {
-  const router = useRouter();
+function MobileMenu() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
     isMenuOpen,
@@ -64,7 +65,7 @@ const MobileMenu = () => {
       setIsMenuOpen(false);
       document.body.style.overflow = '';
     };
-  }, [router.pathname]);
+  }, [pathname]);
 
   return (
     <div>
@@ -93,7 +94,7 @@ const MobileMenu = () => {
             <CrossIcon data-hide={!isMenuOpen} />
           </button>
           <ul>
-            {items.map(({ href, title, transitionDelay }) => (
+            {ITEMS.map(({ href, title, transitionDelay }) => (
               <li
                 key={href}
                 className='border-b border-neutral-400 text-neutral-400 font-medium mt-4'
@@ -109,11 +110,11 @@ const MobileMenu = () => {
       )}
     </div>
   );
-};
+}
 
 export default MobileMenu;
 
-const MenuIcon = (props: JSX.IntrinsicElements['svg']) => {
+function MenuIcon(props: JSX.IntrinsicElements['svg']) {
   return (
     <svg
       className='h-6 w-6 text-neutral-400'
@@ -139,9 +140,9 @@ const MenuIcon = (props: JSX.IntrinsicElements['svg']) => {
       />
     </svg>
   );
-};
+}
 
-const CrossIcon = (props: JSX.IntrinsicElements['svg']) => {
+function CrossIcon(props: JSX.IntrinsicElements['svg']) {
   return (
     <svg
       className='h-6 w-6 text-neutral-400'
@@ -160,4 +161,4 @@ const CrossIcon = (props: JSX.IntrinsicElements['svg']) => {
       <path d='M6 6l12 12' />
     </svg>
   );
-};
+}

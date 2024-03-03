@@ -12,5 +12,6 @@ if (typeof window === 'undefined') {
     prisma = global.prisma;
   }
 }
-// @ts-ignore
+
+// @ts-expect-error - prisma variable will always be defined here
 export default prisma;

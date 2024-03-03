@@ -1,6 +1,12 @@
 import { PageTitle, Paragraph } from '@components/typography';
+import type { Metadata } from 'next';
 
-const Home = () => {
+export const metadata: Metadata = {
+  title: 'kkurko.dev',
+  description: 'Frontend Developer, creator, and penguin.',
+};
+
+function Page() {
   return (
     <section className='flex justify-center items-center overflow-hidden py-8 max-[1200px]:h-auto max-[1200px]:overflow-auto'>
       <div>
@@ -24,6 +30,6 @@ const Home = () => {
       </div>
     </section>
   );
-};
+}
 
-export default Home;
+export default Page;

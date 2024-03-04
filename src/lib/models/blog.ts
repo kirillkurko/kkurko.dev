@@ -1,12 +1,25 @@
 import prisma from '@lib/prisma';
+import { allBlogs } from '@contentlayer/generated';
 
-export const getAllBlogs = async () => {
-  const blog = await prisma.blog.findMany();
+export async function getAllBlogPosts() {
+  const views = await prisma.blog.findMany();
 
-  return blog;
-};
+  const sortedBlogs = allBlogs.sort((a, b) => {
+    if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
+      return -1;
+    }
+    return 1;
+  });
 
-export const trackView = async (slug: string) => {
+  return sortedBlogs.map((blog) => ({
+    slug: blog.slug,
+    title: blog.title,
+    publishedAt: blog.publishedAt,
+    views: views.find((view) => view.slug === blog.slug)?.views || 0,
+  }));
+}
+
+export async function trackView(slug: string) {
   const blog = await prisma.blog.findUnique({
     where: {
       slug,
@@ -30,4 +43,4 @@ export const trackView = async (slug: string) => {
       },
     });
   }
-};
+}

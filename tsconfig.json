@@ -10,7 +10,7 @@
       ],
       "@components/*": [
         "src/components/*"
-      ],
+      ]
     },
     "target": "es5",
     "lib": [
@@ -29,7 +29,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
@@ -37,7 +42,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/**/*",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

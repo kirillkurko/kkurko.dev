@@ -38,6 +38,14 @@ a {
   @apply visible;
 }
 
+.prose p {
+  @apply font-secondary;
+}
+
+.prose h2, h3, h4 {
+  @apply font-primary;
+}
+
 .prose a {
   @apply transition-all decoration-neutral-600 underline-offset-2 decoration-[0.1em];
 }

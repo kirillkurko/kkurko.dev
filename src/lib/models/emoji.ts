@@ -23,7 +23,10 @@ export const getAllEmojis = async () => {
   }));
 };
 
-export const upvoteEmoji = async (emoji: EmojiName) => {
+export const updateEmojiUpvoteCount = async (
+  emoji: EmojiName,
+  upvoteCount: number,
+) => {
   const emojiItem = await prisma.emoji.findUnique({
     where: {
       emoji,
@@ -37,7 +40,7 @@ export const upvoteEmoji = async (emoji: EmojiName) => {
       emoji,
     },
     data: {
-      upvote_count: emojiItem.upvote_count + 1,
+      upvote_count: upvoteCount,
     },
   });
 

@@ -1,6 +1,7 @@
+'use client';
 import NavItem from '@components/NavItem';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import MobileMenu from '@components/MobileMenu';
 
 interface ItemInfo {
@@ -38,23 +39,21 @@ const NAV_ITEMS: Record<string, ItemInfo> = {
 };
 
 const NavBar = () => {
-  const router = useRouter();
-  const pathname = router.pathname.includes('/blog')
-    ? '/blog'
-    : router.pathname;
+  const pathname = usePathname() ?? '';
+  const currentPathname = pathname.includes('/blog') ? '/blog' : pathname;
 
   return (
     <nav className='flex justify-between ml-[-0.60rem]'>
       <div className='flex items-center'>
-        {NAV_ITEMS[pathname] ? (
+        {NAV_ITEMS[currentPathname] ? (
           <motion.div
             className='absolute !hidden sm:!block bg-zinc-800 h-[40px] rounded-lg z-[-1]'
             layoutId='nav-items'
-            initial={{ opacity: 0, x: NAV_ITEMS[pathname].x }}
+            initial={{ opacity: 0, x: NAV_ITEMS[currentPathname].x }}
             animate={{
               opacity: 1,
-              x: NAV_ITEMS[pathname].x,
-              width: NAV_ITEMS[pathname].w,
+              x: NAV_ITEMS[currentPathname].x,
+              width: NAV_ITEMS[currentPathname].w,
             }}
             transition={{
               type: 'spring',
@@ -65,7 +64,7 @@ const NavBar = () => {
         ) : null}
         <MobileMenu />
         {Object.entries(NAV_ITEMS).map(([path, { name }]) => {
-          const isActive = pathname === path;
+          const isActive = currentPathname === path;
           return (
             <NavItem key={path} href={path} text={name} isActive={isActive} />
           );

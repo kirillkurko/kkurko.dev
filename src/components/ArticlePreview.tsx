@@ -11,7 +11,7 @@ type Props = {
   };
 };
 
-const ArticlePreview = ({ blog }: Props) => {
+function ArticlePreview({ blog }: Props) {
   const date = useMemo(() => {
     return new Date(blog.publishedAt).toLocaleString('en-US', {
       month: 'short',
@@ -38,6 +38,6 @@ const ArticlePreview = ({ blog }: Props) => {
       </NextLink>
     </li>
   );
-};
+}
 
 export default ArticlePreview;

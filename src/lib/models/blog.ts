@@ -1,7 +1,7 @@
 import prisma from '@lib/prisma';
 import { allBlogs } from '@contentlayer/generated';
 
-export async function getAllBlogPosts() {
+export function getAllBlogPosts() {
   return allBlogs.sort((a, b) => {
     if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
       return -1;

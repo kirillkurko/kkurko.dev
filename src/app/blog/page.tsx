@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   title: 'Blog',
 };
 
-async function Page() {
-  const blogPosts = await getAllBlogPosts();
+function Page() {
+  const blogPosts = getAllBlogPosts();
 
   return (
     <section className='my-8 inline-block'>

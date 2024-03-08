@@ -3,6 +3,8 @@ import ArticlePreview from '@components/ArticlePreview';
 import { type Metadata } from 'next';
 import { getAllBlogPosts } from '@lib/models/blog';
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: 'Blog',
 };

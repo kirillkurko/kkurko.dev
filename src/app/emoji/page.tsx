@@ -3,6 +3,8 @@ import { PageTitle, Paragraph } from '@components/typography';
 import { getAllEmojis } from '@lib/models/emoji';
 import { type Metadata } from 'next';
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: 'Emoji',
 };

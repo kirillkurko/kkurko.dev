@@ -6,7 +6,7 @@ interface Props {
   slug: string;
 }
 
-function ViewCounter({ slug }: Props) {
+function ViewTracker({ slug }: Props) {
   useEffect(() => {
     trackBlogPostView(slug);
   }, [slug]);
@@ -14,4 +14,4 @@ function ViewCounter({ slug }: Props) {
   return <></>;
 }
 
-export default ViewCounter;
+export default ViewTracker;

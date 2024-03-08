@@ -2,7 +2,7 @@ import { PageTitle } from '@components/typography';
 import { Mdx } from '@components/mdx';
 import { allBlogs } from '@contentlayer/generated';
 import { type Metadata } from 'next';
-import ViewCounter from './ViewCounter';
+import ViewTracker from './ViewTracker';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
@@ -32,7 +32,7 @@ async function Page({ params }: Props) {
 
   return (
     <>
-      <ViewCounter slug={slug} />
+      <ViewTracker slug={slug} />
       <article className='mt-8 inline-block'>
         <header>
           <PageTitle>{blogPost.title}</PageTitle>

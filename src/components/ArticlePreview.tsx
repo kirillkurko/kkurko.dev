@@ -1,13 +1,13 @@
-import { useMemo } from 'react';
+import { Suspense, useMemo } from 'react';
 import NextLink from 'next/link';
-import { Paragraph, ArticleTitle } from '@components/typography';
+import { ArticleTitle, Paragraph } from '@components/typography';
+import ViewCounter from '../app/blog/ViewCounter';
 
 type Props = {
   blog: {
     slug: string;
     title: string;
     publishedAt: string;
-    views: number;
   };
 };
 
@@ -29,7 +29,10 @@ const ArticlePreview = ({ blog }: Props) => {
           <ArticleTitle>{blog.title}</ArticleTitle>
 
           <Paragraph primary={false} className='!my-0 font-primary text-base'>
-            {date} • {blog.views} views
+            {date}
+            <Suspense>
+              <ViewCounter slug={blog.slug} />
+            </Suspense>
           </Paragraph>
         </div>
       </NextLink>

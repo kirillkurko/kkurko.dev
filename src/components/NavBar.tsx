@@ -64,7 +64,7 @@ const NavBar = () => {
         ) : null}
         <MobileMenu />
         {Object.entries(NAV_ITEMS).map(([path, { name }]) => {
-          const isActive = pathname === path;
+          const isActive = currentPathname === path;
           return (
             <NavItem key={path} href={path} text={name} isActive={isActive} />
           );

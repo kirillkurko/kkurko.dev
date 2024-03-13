@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     template: '%s | Kirill Kurko',
     default: 'Kirill Kurko',
   },
+  metadataBase: new URL('https://kkurko.dev/'),
 };
 
 interface Props {

@@ -1,12 +1,14 @@
 import { PageTitle, Paragraph } from '@components/typography';
 import type { Metadata } from 'next';
-import { BASE_URL } from '../utils/conts';
+import { BASE_URL } from '../utils/const';
+import { OG_IMAGE } from '../utils/ogImage';
 
 export const metadata: Metadata = {
   title: 'kkurko.dev',
   description: 'Frontend Developer and Penguin 🐧',
   openGraph: {
     url: new URL(BASE_URL),
+    images: [OG_IMAGE],
   },
 };
 

@@ -1,7 +1,8 @@
 import { PageTitle, Paragraph } from '@components/typography';
 import AboutCard from './AboutCard';
 import type { Metadata } from 'next';
-import { BASE_URL } from '../../utils/conts';
+import { BASE_URL } from '../../utils/const';
+import { OG_IMAGE } from '../../utils/ogImage';
 
 interface Feedback {
   avatar: string;
@@ -78,6 +79,7 @@ export const metadata: Metadata = {
     'Learn more about me through the words of some of my close friends, managers and peers.',
   openGraph: {
     url: new URL(`${BASE_URL}/about`),
+    images: [OG_IMAGE],
   },
 };
 

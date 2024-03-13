@@ -2,7 +2,8 @@ import { PageTitle, Paragraph, SectionTitle } from '@components/typography';
 import ArticlePreview from '@components/ArticlePreview';
 import { type Metadata } from 'next';
 import { getAllBlogPosts } from '@lib/models/blog';
-import { BASE_URL } from '../../utils/conts';
+import { BASE_URL } from '../../utils/const';
+import { OG_IMAGE } from '../../utils/ogImage';
 
 export const revalidate = 0;
 
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     'Weekly content about software development and management. All articles are based on my own experience and real cases.',
   openGraph: {
     url: new URL(`${BASE_URL}/blog`),
+    images: [OG_IMAGE],
   },
 };
 

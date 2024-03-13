@@ -1,12 +1,14 @@
 import WorkInProgress from '@components/WorkInProgress';
 import type { Metadata } from 'next';
-import { BASE_URL } from '../../utils/conts';
+import { BASE_URL } from '../../utils/const';
+import { OG_IMAGE } from '../../utils/ogImage';
 
 export const metadata: Metadata = {
   title: 'Newsletter',
   description: 'Follow my newsletter on software development and management.',
   openGraph: {
     url: new URL(`${BASE_URL}/newsletter`),
+    images: [OG_IMAGE],
   },
 };
 

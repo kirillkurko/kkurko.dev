@@ -3,6 +3,8 @@ import { Mdx } from '@components/mdx';
 import { allBlogs } from '@contentlayer/generated';
 import { type Metadata } from 'next';
 import ViewTracker from './ViewTracker';
+import { BASE_URL } from '../../../utils/const';
+import { OG_IMAGE } from '../../../utils/ogImage';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
@@ -11,6 +13,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: blogPost?.title,
     description: blogPost?.summary,
+    openGraph: {
+      url: new URL(`${BASE_URL}/blog/${slug}`),
+      images: [OG_IMAGE],
+    },
   };
 }
 

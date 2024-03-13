@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'kkurko.dev',
-  description: 'Frontend Developer, creator, and penguin.',
+  description: 'Frontend Developer and Penguin 🐧',
 };
 
 function Page() {

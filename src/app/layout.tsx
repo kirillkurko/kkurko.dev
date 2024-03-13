@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import Container from '@components/Container';
 import './globals.css';
+import { BASE_URL } from '../utils/conts';
 
 const redHatText = Red_Hat_Text({
   variable: '--font-red-hat-text',
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: './',
   },
-  metadataBase: new URL('https://kkurko.dev/'),
+  metadataBase: new URL(BASE_URL),
 };
 
 interface Props {

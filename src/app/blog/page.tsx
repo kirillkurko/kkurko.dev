@@ -2,11 +2,17 @@ import { PageTitle, Paragraph, SectionTitle } from '@components/typography';
 import ArticlePreview from '@components/ArticlePreview';
 import { type Metadata } from 'next';
 import { getAllBlogPosts } from '@lib/models/blog';
+import { BASE_URL } from '../../utils/conts';
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Blog',
+  description:
+    'Weekly content about software development and management. All articles are based on my own experience and real cases.',
+  openGraph: {
+    url: new URL(`${BASE_URL}/blog`),
+  },
 };
 
 function Page() {

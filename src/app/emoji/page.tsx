@@ -2,11 +2,16 @@ import Emoji from './Emoji';
 import { PageTitle, Paragraph } from '@components/typography';
 import { getAllEmojis } from '@lib/models/emoji';
 import { type Metadata } from 'next';
+import { BASE_URL } from '../../utils/conts';
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Emoji',
+  description: 'Here you can have fun and vote for your favorite emoji.',
+  openGraph: {
+    url: new URL(`${BASE_URL}/emoji`),
+  },
 };
 
 async function Page() {

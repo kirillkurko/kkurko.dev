@@ -3,7 +3,7 @@ import { PageTitle, Paragraph } from '@components/typography';
 import { getAllEmojis } from '@lib/models/emoji';
 import { type Metadata } from 'next';
 import { BASE_URL } from '../../utils/const';
-import { OG_IMAGE } from '../../utils/ogImage';
+import { OG_IMAGE } from '../../utils/ogImages';
 
 export const revalidate = 0;
 

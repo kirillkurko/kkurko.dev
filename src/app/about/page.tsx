@@ -2,7 +2,7 @@ import { PageTitle, Paragraph } from '@components/typography';
 import AboutCard from './AboutCard';
 import type { Metadata } from 'next';
 import { BASE_URL } from '../../utils/const';
-import { OG_IMAGE } from '../../utils/ogImage';
+import { OG_IMAGE } from '../../utils/ogImages';
 
 interface Feedback {
   avatar: string;

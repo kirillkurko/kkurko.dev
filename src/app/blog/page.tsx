@@ -3,9 +3,7 @@ import ArticlePreview from '@components/ArticlePreview';
 import { type Metadata } from 'next';
 import { getAllBlogPosts } from '@lib/models/blog';
 import { BASE_URL } from '../../utils/const';
-import { OG_IMAGE } from '../../utils/ogImage';
-
-export const revalidate = 0;
+import { OG_IMAGE } from '../../utils/ogImages';
 
 export const metadata: Metadata = {
   title: 'Blog',

@@ -5,8 +5,6 @@ import { getAllBlogPosts } from '@lib/models/blog';
 import { BASE_URL } from '../../utils/const';
 import { OG_IMAGE } from '../../utils/ogImage';
 
-export const revalidate = 0;
-
 export const metadata: Metadata = {
   title: 'Blog',
   description:

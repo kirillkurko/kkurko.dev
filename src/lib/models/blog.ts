@@ -1,5 +1,6 @@
 import prisma from '@lib/prisma';
 import { allBlogs } from '@contentlayer/generated';
+import { unstable_noStore as noStore } from 'next/cache';
 
 export function getAllBlogPosts() {
   return allBlogs.sort((a, b) => {
@@ -11,6 +12,8 @@ export function getAllBlogPosts() {
 }
 
 export async function getBlogPostViews() {
+  noStore();
+
   const views = await prisma.blog.findMany();
 
   return Object.fromEntries(views.map((view) => [view.slug, view.views]));

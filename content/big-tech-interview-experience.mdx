@@ -1,0 +1,89 @@
+---
+title: 'Big tech interview experience'
+publishedAt: '2024-03-15'
+summary: 'Learn about my experience of interviewing at a big tech company.'
+---
+
+## Introduction
+
+In December 2023, I received a message from an HR working for a big tech company asking if I was interested in a new opportunity and would like to join them. I was actually looking for a new job, so I decided to proceed with the interview process, even though I've never liked the way hiring in big tech works. So here's my experience.
+
+## HR interview
+
+It was a regular HR interview where we talked about my experience, expectations, motivation, etc. HR also explained the interview process, presented preparatory materials and answered my questions. At the end of the interview, I had to answer 20 basic questions about JavaScript (for example, the difference between var, let and const, and so on).
+
+## Frontend interview
+
+Having studied the preparatory materials, I was confident that I would pass this section and no special preparation was required. But about 40 minutes before the interview, I decided to search YouTube for “CompanyName frontend interview” and there was one video from a couple of months ago. And you know what, my interview was almost the same 😂
+
+The first part included several JavaScript challenges:
+
+- a simple `this` challenge;
+- implement `Promise.allSettled`;
+- multiple problems with what will be written to the console.
+
+The second part consisted of two React tasks:
+
+- review the component tree, determine what will be re-rendered and how to minimize re-rendering;
+- implement a search input component with data obtained from the API; additional tasks here were implementing pagination, adding debouncing, and moving the logic to a custom hook.
+
+The interview went pretty well, although I didn't implement pagination because the interviewer said we had time left (we actually had 15 minutes, but I think he wanted to leave me some time to ask questions if I had them).
+
+My only concern is the feedback or how it was provided (this applies to other sections as well). Many of the recommendations I was given were not related to what was happening in the interview and were formulated as follows: “The interviewer felt X, so he suggested looking at Y.” Other points were fair, so I'm guessing the problem is just in the wording of the feedback and can be easily resolved.
+
+## Algorithms interview
+
+I don't like challenges with algorithms and data structures, and all these abstract problems often stretch my mind (especially without consistent practice), so I really needed to prepare for this section. I chose the LeetCode Top Interview 150 study plan (10 days before the interview), so I had to solve more than 10 problems per day. My preparation plan because my work tasks took up a lot of time and energy. Also, I was generally nervous about this interview, so at one point I even thought about rescheduling it. But eventually, I decided that postponing the interview would not help me in any significant way.
+
+According to the preparatory materials, there will be several tasks that will test your knowledge of basic data structures and your ability to work with them. I also searched for "company X algorithms interview" and was able to find an article from 2019 where the author also mentioned a statement from the preparatory materials about "basic data structures" and that the second problem was actually a DP problem. The day before the interview, I decided to refresh my knowledge of DP problems and look at some common challenges.
+
+Actually, I had to solve the following LeetCode problems:
+
+- [two sum](https://leetcode.com/problems/two-sum/description/) (not sure if this is precisely the problem that I had to solve, but something similar to this);
+- [longest substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/).
+
+I needed some guidance to find the optimal solution to the second problem, but overall, it went pretty well, and I appreciate how the interviewer handled it by asking the right questions at the right time, pointing me in the direction of the best solution.
+
+## System design interview
+
+I had no idea what to expect from this because HR said it wouldn't be frontend only and the purpose here was to test my understanding of general concepts like caching, networking, etc. but their preparatory materials included links to resources that covered topics such as autocomplete, news feed, etc. The actual interview task was somewhere in the middle: I needed to develop a solution for a marketing website with a home page and product listing, as well as a page with detailed information about each product. It should be possible to easily add new products (ideally without any effort from the developers). And performance was critical.
+
+I was also not sure what structure to follow, so I decided to follow the [DR structure](https://github.com/joelparkerhenderson/decision-record) that I am used to and the interviewer appreciated it because decision records are what they actually use.
+
+After collecting requirements, I designed the architecture, and we talked a lot about CDN, rendering strategies, load balancing and so on. To be honest, I rarely deal with things like load balancing directly, so this definitely highlighted an area I could improve on. We then discussed the potential technology stack and were able to discuss a couple of nuances, such as how to manage content and how to reduce the amount of developer effort required to introduce a new product.
+
+When the interview ended, my first thought was that I had failed because designing architecture took up a lot of time, and we were unable to discuss many of the requirements. But, to my surprise, the feedback was positive, which means that I successfully completed all sections, and now it’s time to choose a team.
+
+## Team interviews
+
+Three teams from two different departments were interested in me joining, and the interviews had the same structure:
+
+- questions about my experience;
+- project overview;
+- my questions to them about the project and the company.
+
+There's nothing special here, so I'll just give a list of questions I asked them:
+
+1. What expectations are there for a developer in this role?
+2. What’s the most important thing I have to achieve during onboarding/next 90 days?
+3. How the performance review process is organized? How can I grow within the team?
+4. Are there any skills that the team currently lacks?
+5. What are some possible challenges of working in this position?
+6. Tell me more about the team on this project.
+7. Who am I going to interact more often with? Is there any communication with other departments/teams involved?
+8. What’s the current focus of the team?
+9. What’s next for the project?
+
+<Callout emoji="💡">
+  These are some common questions I've asked that make sense to ask. Please note that these are not universal, and you may change them for other projects/companies.
+</Callout>
+
+## Conclusion
+
+Yes, I received an offer!
+
+The interview process wasn't that bad, to be honest. Even though I had to do some preparation, and it took a lot of time, I think it was possible to get an offer without special preparation for the interview because there were no questions that could only be answered with special preparation for them. Most (if not all) of the things were related to what you would generally need to know to do your day-to-day work.
+
+I have some questions about the process, such as the importance of the survey at the end of the HR interview and how they provide feedback, but overall, it went well.
+
+And I ended up joining this company, so I hope that I will have the opportunity to participate in the process from the interviewer's side, find answers to my questions and understand why big tech has so many interview sections to hire a person.

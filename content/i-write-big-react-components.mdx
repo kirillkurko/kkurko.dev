@@ -1,0 +1,19 @@
+---
+title: 'I write big React components'
+publishedAt: '2024-03-15'
+summary: 'Learn why large React components are not a problem and how to think about component size correctly.'
+---
+
+<Callout emoji="💡">
+    Learn why large React components are not a problem and how to think about component size correctly.
+</Callout>
+
+When reading articles about React best practices, you’ll learn that it’s better to keep your components small (numbers can vary, but usually 150–200 lines of code is what recommended). The problem is that most articles don't properly explain the reasoning behind this thing, and if followed blindly, it can do more harm than good. So here is my explanation.
+
+First, and probably most important, instead of thinking about lines of code, you should think about component responsibilities. If your component has a single responsibility, then it’ll be 99% fine to keep things together, no matter how many lines of code it is. And in the case of multiple responsibilities, you’ll most likely want to split the component into smaller pieces that are responsible for a single thing.
+
+Separating a single component with multiple responsibilities usually comes with performance benefits. Multiple responsibilities mean multiple reasons for a component to re-render, and sometimes it’s not optimal to re-render the whole component’s UI when a tiny piece of state changed. Having components with single responsibilities, you can expect that the UI is updated when it really needed to be updated.
+
+Obviously, it’s easier to work with a component (read/modify) that has a single responsibility. But at the same time, by refactoring such components into smaller pieces you increase cognitive load (it might be nice to read this top-level piece with a high level of abstractions where everything is moved into custom hooks and subcomponents, but it means more pieces to keep in your head when actually making changes and trying to drill down into all these layers of abstraction).
+
+In conclusion, I would say that exceptions are possible in both cases. By separating a component into smaller pieces you increase tree nesting which might have its own performance downsides as well as a single large component can have higher time to instantiation, but I hope that now you have a small framework helping you to decide whether to refactor a component into smaller pieces or not.

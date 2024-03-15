@@ -4,7 +4,7 @@ import { BASE_URL } from '../utils/const';
 import { OG_IMAGE } from '../utils/ogImages';
 
 export const metadata: Metadata = {
-  title: 'kkurko.dev',
+  title: 'Kirill Kurko',
   description: 'Frontend Developer and Penguin 🐧',
   openGraph: {
     url: new URL(BASE_URL),

@@ -60,7 +60,7 @@ a {
 }
 
 .prose pre {
-  @apply border border-neutral-800 bg-neutral-900;
+  @apply border border-neutral-800 !bg-neutral-900;
 }
 
 .prose code {

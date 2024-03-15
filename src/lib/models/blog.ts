@@ -11,12 +11,16 @@ export function getAllBlogPosts() {
   });
 }
 
-export async function getBlogPostViews() {
+export async function getBlogPostViews(slug: string) {
   noStore();
 
-  const views = await prisma.blog.findMany();
+  const blogViews = await prisma.blog.findFirst({
+    where: {
+      slug,
+    },
+  });
 
-  return Object.fromEntries(views.map((view) => [view.slug, view.views]));
+  return { [slug]: blogViews?.views ?? 0 };
 }
 
 export async function trackView(slug: string) {

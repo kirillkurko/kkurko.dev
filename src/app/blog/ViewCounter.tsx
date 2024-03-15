@@ -5,7 +5,7 @@ interface Props {
 }
 
 async function ViewCounter({ slug }: Props) {
-  const blogPostViews = await getBlogPostViews();
+  const blogPostViews = await getBlogPostViews(slug);
 
   const views = blogPostViews[slug];
 

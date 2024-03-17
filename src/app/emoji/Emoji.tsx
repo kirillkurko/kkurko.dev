@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { Paragraph } from '@components/typography';
-import { EmojiName } from '../../types/EmojiName';
+import { EmojiName } from '@app-types/EmojiName';
 import { upvoteEmoji } from './upvoteEmoji';
 import { useDebounce } from 'react-use';
 

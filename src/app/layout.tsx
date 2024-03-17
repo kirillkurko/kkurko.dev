@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import Container from '@components/Container';
 import './globals.css';
-import { BASE_URL } from '../utils/const';
+import { BASE_URL } from '@utils/const';
 
 const redHatText = Red_Hat_Text({
   variable: '--font-red-hat-text',

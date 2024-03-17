@@ -1,7 +1,7 @@
 import WorkInProgress from '@components/WorkInProgress';
 import type { Metadata } from 'next';
-import { BASE_URL } from '../../utils/const';
-import { OG_IMAGE } from '../../utils/ogImages';
+import { BASE_URL } from '@utils/const';
+import { OG_IMAGE } from '@utils/ogImages';
 
 export const metadata: Metadata = {
   title: 'Newsletter',

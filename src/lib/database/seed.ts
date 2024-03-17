@@ -1,6 +1,6 @@
 import { getBlogPostViewsKey, getEmojiKey } from '@lib/database/utils';
 import { client } from '@lib/database/client';
-import { EmojiName } from '../../types/EmojiName';
+import { EmojiName } from '@app-types/EmojiName';
 
 export async function seed() {
   console.log('Seed blog post views');

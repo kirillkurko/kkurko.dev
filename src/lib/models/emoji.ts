@@ -1,6 +1,6 @@
 import { getEmojiKey } from '@lib/database/utils';
 import { client } from '@lib/database/client';
-import { EmojiName } from '../../types/EmojiName';
+import { EmojiName } from '@app-types/EmojiName';
 
 export async function getAllEmojis() {
   const emojiNames = Object.values(EmojiName);

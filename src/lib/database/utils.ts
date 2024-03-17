@@ -1,4 +1,4 @@
-import { EmojiName } from '../../types/EmojiName';
+import { EmojiName } from '@app-types/EmojiName';
 
 const BLOG_POST_VIEWS_PREFIX = 'blog-views';
 

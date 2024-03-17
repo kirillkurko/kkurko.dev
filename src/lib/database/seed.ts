@@ -29,8 +29,9 @@ const BLOG_POST_VIEW_DATA: Record<string, number> = {
 
 async function seedBlogPostViews() {
   for (const [slug, views] of Object.entries(BLOG_POST_VIEW_DATA)) {
-    console.log(`Seed blog post view for slug: ${slug}`);
-    await client.set(getBlogPostViewsKey(slug), views);
+    const storageKey = getBlogPostViewsKey(slug);
+    console.log(`Seed blog post view for slug: ${slug} (${storageKey})`);
+    await client.set(storageKey, views);
   }
 }
 
@@ -48,7 +49,8 @@ const EMOJI_DATA: Record<EmojiName, number> = {
 
 async function seedEmoji() {
   for (const [emojiName, value] of Object.entries(EMOJI_DATA)) {
-    console.log(`Seed emoji with name: ${emojiName}`);
-    await client.set(getEmojiKey(emojiName as EmojiName), value);
+    const storageKey = getEmojiKey(emojiName as EmojiName);
+    console.log(`Seed emoji with name: ${emojiName} (${storageKey})`);
+    await client.set(storageKey, value);
   }
 }

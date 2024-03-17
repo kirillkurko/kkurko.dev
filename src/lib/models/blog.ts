@@ -1,6 +1,7 @@
-import prisma from '@lib/prisma';
 import { allBlogs } from '@contentlayer/generated';
 import { unstable_noStore as noStore } from 'next/cache';
+import { client } from '@lib/database/client';
+import { getBlogPostViewsKey } from '@lib/database/utils';
 
 export function getAllBlogPosts() {
   return allBlogs.sort((a, b) => {
@@ -14,37 +15,13 @@ export function getAllBlogPosts() {
 export async function getBlogPostViews(slug: string) {
   noStore();
 
-  const blogViews = await prisma.blog.findFirst({
-    where: {
-      slug,
-    },
-  });
+  const key = getBlogPostViewsKey(slug);
+  const viewsCount = await client.get<number>(key);
 
-  return { [slug]: blogViews?.views ?? 0 };
+  return { [slug]: viewsCount ?? 0 };
 }
 
 export async function trackView(slug: string) {
-  const blog = await prisma.blog.findUnique({
-    where: {
-      slug,
-    },
-  });
-
-  if (blog) {
-    await prisma.blog.update({
-      where: {
-        slug,
-      },
-      data: {
-        views: blog.views + 1,
-      },
-    });
-  } else {
-    await prisma.blog.create({
-      data: {
-        slug,
-        views: 1,
-      },
-    });
-  }
+  const key = getBlogPostViewsKey(slug);
+  await client.incr(key);
 }

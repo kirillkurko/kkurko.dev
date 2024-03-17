@@ -6,9 +6,17 @@ interface Props {
   slug: string;
 }
 
+let finished = false;
+
 function ViewTracker({ slug }: Props) {
   useEffect(() => {
-    trackBlogPostView(slug);
+    if (!finished) {
+      trackBlogPostView(slug);
+    }
+
+    return () => {
+      finished = true;
+    };
   }, [slug]);
 
   return <></>;

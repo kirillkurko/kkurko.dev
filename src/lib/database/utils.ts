@@ -13,7 +13,7 @@ export function getEmojiKey(emojiName: EmojiName) {
 }
 
 function getEnvStorageKey(key: string) {
-  const env = process.env.NODE_ENV;
+  const env = process.env.VERCEL_ENV;
   const envPrefix = env === 'production' ? 'production' : 'staging';
 
   return `${envPrefix}:${key}`;

@@ -8,6 +8,8 @@
       "@lib/*": [
         "src/lib/*"
       ],
+      "@app-types/*": ["src/types/*"],
+      "@utils/*": ["src/utils/*"],
       "@components/*": [
         "src/components/*"
       ]

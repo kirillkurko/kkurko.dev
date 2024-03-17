@@ -3,8 +3,8 @@ import { Mdx } from '@components/mdx';
 import { allBlogs } from '@contentlayer/generated';
 import { type Metadata } from 'next';
 import ViewTracker from './ViewTracker';
-import { BASE_URL } from '../../../utils/const';
-import { getBlogPostOpengraphImage } from '../../../utils/ogImages';
+import { BASE_URL } from '@utils/const';
+import { getBlogPostOpengraphImage } from '@utils/ogImages';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;

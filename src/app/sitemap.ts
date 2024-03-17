@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { BASE_URL } from '../utils/const';
+import { BASE_URL } from '@utils/const';
 import { getAllBlogPosts } from '@lib/models/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {

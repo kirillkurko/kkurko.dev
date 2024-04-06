@@ -1,0 +1,68 @@
+---
+title: 'How to approach micro frontends'
+publishedAt: '2024-04-06'
+summary: 'Learn about two different strategies for organizing micro frontends.'
+---
+
+<Callout emoji='💡'>
+  Learn about two different strategies for organizing micro frontends.
+</Callout>
+
+## Introduction
+
+I spent most of my time working in startups and with relatively small, monolithic frontend codebases. But there are two occasions when I worked with micro frontends: the first time at the very beginning of my frontend development journey, and the second time at a company I recently joined. I constantly compare these two cases, but I have never really thought about the fundamental difference.
+
+In fact, I've never seen anyone differentiate micro frontends this way. But I recently found an [article](https://dev.to/hamed-fatehi/how-to-implement-micro-frontends-using-systemjs-a-comprehensive-guide-i3a) that showed two different strategies and gave them names. I couldn't find any other material that uses the same naming, but I think it makes a lot of sense, so I'll stick with it.
+
+While the article mentioned above is more focused on the technical details, here I want to focus on the pros and cons of both strategies, when to use them and whether one is better than the other.
+
+## Central orchestrator model
+
+In this strategy, you have a main application responsible for rendering the micro frontends on the page (it knows how and where to render each micro frontend). The main application also manages the routing and provides some mechanism that allows the micro frontends to communicate with each other and with the main application itself.
+
+Some facts about the central orchestrator model:
+
+- decomposition flexibility: the micro frontend can span the entire page or just one button on the page;
+- content management: thanks to the high level of decomposition into micro frontends, it becomes easier to manage the content of the page – you can quickly change micro frontends or their order on the page;
+- simplified communication: the communication mechanism is implemented at the orchestrator level and is guaranteed by the orchestrator.
+- integration challenges: if there is no single technology stack, then, for example, you will have to solve the problems of integrating one framework with another.
+- more things to manage: at a high level of decomposition, you may find yourself in a situation where introducing a simple button requires spinning up a new micro frontend, setting up an observability stack for it, configuring CI/CD, etc.
+
+## Route-driven fragmentation
+
+In this approach, there is one micro-frontend for each route and the functionality of the central application is limited primarily to handling navigation.
+
+Some facts about route-driven fragmentation:
+
+- tech stack freedom: because each micro frontend is loaded independently and spans the entire route, teams can choose the best tool for the job without worrying about integration issues;
+- lowered flexibility: since one micro frontend covers the entire route, at some point you may run into all the problems that are possible with a monolithic application when multiple teams have to work on the same piece of code.
+- decentralized communication: it's difficult to provide a centralized communication mechanism due to potentially different micro frontend technology stacks, so you'll have to rely on something generic, like URL params or external storage.
+- Lowered reusability: if one team has a component that another team wants to reuse, you will first need to move that component to some shared component library so that the second team can use it (and ideally the first team should move to that shared component).
+
+## What to choose?
+
+As you may have noticed, the advantages of the central orchestrator model are the disadvantages of the route-driven fragmentation and vice versa.
+
+So which one is better? Unfortunately or not, it's not black and white, but a spectrum with a central orchestrator model at one end and router-driven fragmentation at the other. And your unique application, with its unique set of challenges and requirements, falls somewhere on that spectrum.
+
+The good news is that you will have the benefits of both approaches (to some extent).
+
+The sad news is that you will have cons of both approaches (to some extent).
+
+So your final solution will be unique, but here are some of my thoughts on how to approach micro frontends:
+
+- this may be controversial, but if you're just starting a project, choose React: thanks to the flexibility it offers, you can do what's best for a particular micro frontend in terms of architectural decisions and tools used, while remaining more or less consistent with other micro frontends;
+- make sure you offer a happy path: whether you want all teams to work with React, or teams should choose their own tools, there should be a happy path that you support and promote by providing guides, tools, templates, etc. The team is responsible for deciding whether deviation from the happy path is worth it for their project;
+- your micro frontends will communicate with each other: whether it's a central orchestrator or a route-driven fragmentation method, your micro frontends will need to communicate with each other, so think ahead about how this will be implemented;
+- think twice before choosing a central orchestrator model: if there is a need to frequently change page content without deployments, then the central orchestrator model is your choice, otherwise consider less flexible and less complex solutions (for example, route-driven fragmentation with some build-time page configuration);
+- route-driven fragmentation is great for migrations: you rework pages one by one into separate micro frontends, unless your main applications become a shell primarily responsible for routing.
+
+## Conclusion
+
+I showed two really different approaches for organizing micro frontends. The answer to the question which one to choose is, as it often happens in software development, is it depends. It depends on your project requirements and challenges. I worked with route-driven fragmentation quite a lot and it definitely worth it. Central orchestrator model is new for me, so I don’t really have an opinion on it, but I will definitely give an update in some future article.
+
+I showed two really different approaches to organizing micro frontends. The answer to the question of which one to choose is, as is often the case in software development, “it depends”. It depends on the requirements and challenges of your project. I've worked a lot with route-driven fragmentation and it's definitely worth it. The central orchestrator model is new to me, so I don't have a strong opinion on it, but I'll definitely provide an update in a future article.
+
+## Links
+
+- [Micro Frontends - Martin Fowler blog](https://martinfowler.com/articles/micro-frontends.html)

@@ -15,7 +15,7 @@
     "@vercel/kv": "^1.0.1",
     "@vercel/speed-insights": "^1.0.10",
     "babel-runtime": "^6.26.0",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "contentlayer": "^0.3.4",
     "framer-motion": "^11.1.7",
     "next": "^14.2.2",

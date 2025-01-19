@@ -30,7 +30,7 @@ export const Paragraph = ({
   return (
     <p
       className={clsx(
-        'mb-4 font-secondary leading-relaxed tracking-[1px] text-lg font-medium',
+        'mb-4 font-primary leading-relaxed tracking-[1px] text-lg font-medium',
         primary ? 'text-white' : 'text-[#d1d5db]',
         className,
       )}

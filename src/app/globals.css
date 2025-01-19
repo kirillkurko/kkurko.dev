@@ -42,7 +42,7 @@ a {
 }
 
 .prose p {
-  @apply font-secondary;
+  @apply font-primary;
 }
 
 .prose h2, h3, h4 {

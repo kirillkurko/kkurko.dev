@@ -16,12 +16,7 @@ interface LinkProps {
 
 export const PageTitle = ({ children, className }: TypographyProps) => {
   return (
-    <h1
-      className={clsx(
-        'font-primary text-[2.4rem] mb-3 font-bold text-neutral-50',
-        className,
-      )}
-    >
+    <h1 className={clsx('font-bold leading-[1.05] mb-0', className)}>
       {children}
     </h1>
   );
@@ -35,8 +30,8 @@ export const Paragraph = ({
   return (
     <p
       className={clsx(
-        'mb-4 font-secondary leading-relaxed tracking-[1px]',
-        primary ? 'text-neutral-50' : 'text-neutral-400',
+        'mb-4 font-secondary leading-relaxed tracking-[1px] text-lg font-medium',
+        primary ? 'text-white' : 'text-[#d1d5db]',
         className,
       )}
     >

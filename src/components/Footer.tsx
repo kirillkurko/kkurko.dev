@@ -14,14 +14,8 @@ const Footer = () => {
           <NextLink href='/about'>
             <LinkText>About</LinkText>
           </NextLink>
-          <NextLink href='/newsletter'>
-            <LinkText>Newsletter</LinkText>
-          </NextLink>
         </div>
         <div className='flex flex-col'>
-          <ExternalLink href='https://github.com/kirillkurko'>
-            GitHub
-          </ExternalLink>
           <ExternalLink href='https://www.threads.net/@aqwergqwec'>
             Threads
           </ExternalLink>
@@ -30,12 +24,12 @@ const Footer = () => {
           </ExternalLink>
         </div>
         <div className='flex flex-col'>
-          <NextLink href='/gallery'>
-            <LinkText>Gallery</LinkText>
-          </NextLink>
-          <NextLink href='/snippets'>
-            <LinkText>Snippets</LinkText>
-          </NextLink>
+          <ExternalLink href='https://github.com/kirillkurko'>
+            GitHub
+          </ExternalLink>
+          <ExternalLink href='https://app.daily.dev/kkurko'>
+            daily.dev
+          </ExternalLink>
         </div>
       </div>
     </footer>

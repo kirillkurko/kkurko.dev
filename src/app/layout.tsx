@@ -21,6 +21,13 @@ const ibmPlexSans = IBM_Plex_Sans({
   display: 'swap',
 });
 
+const roboto = Red_Hat_Text({
+  variable: '--font-lato',
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: {
     template: '%s | Kirill Kurko',
@@ -41,9 +48,10 @@ function RootLayout({ children }: Props) {
     <html
       lang='en'
       className={clsx(
-        'scroll-smooth bg-zinc-900',
+        'scroll-smooth bg-zinc-950',
         redHatText.variable,
         ibmPlexSans.variable,
+        roboto.variable,
       )}
     >
       <body className='box-border max-[1200px]:overflow-auto'>

@@ -1,16 +1,16 @@
-import { PageTitle, Paragraph } from '@components/typography';
 import AboutCard from './AboutCard';
 import type { Metadata } from 'next';
 import { BASE_URL } from '@utils/const';
 import { OG_IMAGE } from '@utils/ogImages';
+import { PageTitle } from '@components/typography';
 
-interface Feedback {
+interface FeedbackItem {
   avatar: string;
   username: string;
   message: Array<string>;
 }
 
-const DATA: Array<Feedback> = [
+const FEEDBACK: Array<FeedbackItem> = [
   {
     avatar: 'from-rose-300 to-sky-300',
     username: 'detailed-lion933',
@@ -48,7 +48,7 @@ const DATA: Array<Feedback> = [
     avatar: 'from-stone-300 to-indigo-700',
     username: 'reliable-owl231',
     message: [
-      `Krill is a fascinating conversationalist, a top-notch professional, and a person of exceptional depth. You can talk to him about any topic, and it will be fascinating. He knows exactly what human values are, and he knows how to convey them both in his professional activities and in the process of communication with his team and clients. Communicating with Krill is easy, comfortable, and beneficial!`,
+      `Kirill is a fascinating conversationalist, a top-notch professional, and a person of exceptional depth. You can talk to him about any topic, and it will be fascinating. He knows exactly what human values are, and he knows how to convey them both in his professional activities and in the process of communication with his team and clients. Communicating with Krill is easy, comfortable, and beneficial!`,
     ],
   },
   {
@@ -85,15 +85,15 @@ export const metadata: Metadata = {
 
 function Page() {
   return (
-    <section className='mt-8 mb-12 inline-block'>
+    <section className='mt-8 mb-12 inline-block prose prose-invert'>
       <header className='mb-8'>
         <PageTitle>About</PageTitle>
-        <Paragraph primary={false}>
+        <p>
           {`This page is about me, but not from me. I asked some of my close friends, managers and peers to write something about me without format restrictions. Usernames are generated - I wanted to "blur" their roles - what matters is people and what they say, not their titles.`}
-        </Paragraph>
+        </p>
       </header>
-      <ul className='m-0 p-0'>
-        {DATA.map(({ avatar, username, message }) => (
+      <ul className='m-0 p-0 list-none'>
+        {FEEDBACK.map(({ avatar, username, message }) => (
           <AboutCard
             key={username}
             avatar={avatar}

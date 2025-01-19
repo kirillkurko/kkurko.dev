@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 ::selection {
-  background-color: rgba(236, 72, 153, 0.99);
-  color: #fefefe;
+  @apply bg-sky-600 text-white;
 }
 
 html,
@@ -38,16 +37,24 @@ a {
   @apply visible;
 }
 
+.prose {
+  @apply text-lg;
+}
+
 .prose p {
   @apply font-secondary;
 }
 
 .prose h2, h3, h4 {
-  @apply font-primary;
+  @apply font-primary mt-0;
 }
 
 .prose a {
   @apply transition-all decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .raw-link {
+  @apply decoration-0 no-underline;
 }
 
 .prose .anchor:after {
@@ -75,12 +82,6 @@ a {
 .prose img {
   /* Don't apply styles to next/image */
   @apply m-0;
-}
-
-.prose > :first-child {
-  /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
 }
 
 code[class*='language-'],

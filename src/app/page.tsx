@@ -16,7 +16,7 @@ function Page() {
   return (
     <section className='prose prose-invert flex justify-center items-center overflow-hidden py-8 max-[1200px]:h-auto max-[1200px]:overflow-auto'>
       <div>
-        <PageTitle className='whitespace-pre-wrap text-5xl'>{`Kirill Kurko\nFrontend Developer\nand Penguin 🐧`}</PageTitle>
+        <PageTitle className='whitespace-pre-wrap text-4xl sm:text-5xl'>{`Kirill Kurko\nFrontend Developer\nand Penguin 🐧`}</PageTitle>
         <p>
           {`I’m a software engineer who started his career with backend
           development and then switched to frontend. Right now my primary stack

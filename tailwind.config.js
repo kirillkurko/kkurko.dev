@@ -9,8 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['var(--font-lato)', ...fontFamily.sans],
-        secondary: ['var(--font-lato)', ...fontFamily.sans],
+        primary: ['var(--font-red-hat-text)', ...fontFamily.sans],
       },
     },
   },

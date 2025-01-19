@@ -40,32 +40,6 @@ export const Paragraph = ({
   );
 };
 
-export const SectionTitle = ({ children, className }: TypographyProps) => {
-  return (
-    <h2
-      className={clsx(
-        'font-primary text-[1.8rem] mb-[20px] pb-[20px] font-bold text-neutral-50 border-b border-neutral-50',
-        className,
-      )}
-    >
-      {children}
-    </h2>
-  );
-};
-
-export const ArticleTitle = ({ children, className }: TypographyProps) => {
-  return (
-    <h3
-      className={clsx(
-        'font-primary text-[1.4rem] font-bold mb-2.5 text-neutral-50',
-        className,
-      )}
-    >
-      {children}
-    </h3>
-  );
-};
-
 export const LinkText = ({ children }: LinkProps) => {
   return (
     <Paragraph className='transition-colors ease-out duration-150 mt-4 !mb-0 mx-0 underline underline-offset-4 !text-neutral-400 hover:!text-neutral-700'>

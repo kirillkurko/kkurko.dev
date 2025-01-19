@@ -1,6 +1,5 @@
 import { Suspense, useMemo } from 'react';
 import NextLink from 'next/link';
-import { ArticleTitle, Paragraph } from '@components/typography';
 import ViewCounter from '../app/blog/ViewCounter';
 
 type Props = {
@@ -23,17 +22,17 @@ function ArticlePreview({ blog }: Props) {
   const link = `/blog/${blog.slug}`;
 
   return (
-    <li className='mb-4 border border-neutral-700 rounded-md'>
-      <NextLink href={link}>
+    <li className='mb-4 border border-neutral-700 rounded-md ps-0'>
+      <NextLink href={link} className='raw-link'>
         <div className='py-4 px-6'>
-          <ArticleTitle>{blog.title}</ArticleTitle>
+          <h3 className='mt-0'>{blog.title}</h3>
 
-          <Paragraph primary={false} className='!my-0 font-primary text-base'>
+          <p className='!my-0 text-[#d1d5db]'>
             {date}
             <Suspense>
               <ViewCounter slug={blog.slug} />
             </Suspense>
-          </Paragraph>
+          </p>
         </div>
       </NextLink>
     </li>

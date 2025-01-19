@@ -16,25 +16,25 @@ const NAV_ITEMS: Record<string, ItemInfo> = {
     name: 'Home',
     x: 0,
     y: 0,
-    w: '68.67px',
+    w: '68.1px',
   },
   '/about': {
     name: 'About',
-    x: 68.67,
+    x: 68.1,
     y: 0,
-    w: '70.42px',
+    w: '69.34px',
   },
   '/blog': {
     name: 'Blog',
-    x: 139.09,
+    x: 137.44,
     y: 0,
-    w: '58.48px',
+    w: '57.74px',
   },
   '/emoji': {
     name: 'Emoji',
-    x: 197.57,
+    x: 195.18,
     y: 0,
-    w: '65.9px',
+    w: '64.95px',
   },
 };
 

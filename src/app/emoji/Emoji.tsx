@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { Paragraph } from '@components/typography';
 import { EmojiName } from '@app-types/EmojiName';
 import { upvoteEmoji } from './upvoteEmoji';
 import { useDebounce } from 'react-use';
@@ -43,8 +42,8 @@ function Emoji({ emoji, initialCounter }: Props) {
           setCounter((prevState) => prevState + 1);
         }}
       >
-        <Paragraph className='text-6xl mb-4'>{EMOJI_MAP[emoji]}</Paragraph>
-        <Paragraph className='text-xl font-bold'>{counter}</Paragraph>
+        <p className='text-6xl mb-4 mt-0'>{EMOJI_MAP[emoji]}</p>
+        <p className='text-2xl font-bold my-0 text-white'>{counter}</p>
       </button>
     </div>
   );

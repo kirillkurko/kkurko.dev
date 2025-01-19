@@ -40,7 +40,7 @@ async function Page({ params }: Props) {
     <>
       <ViewTracker slug={slug} />
       <article className='mt-8 inline-block'>
-        <header>
+        <header className='prose prose-invert'>
           <PageTitle>{blogPost.title}</PageTitle>
         </header>
         <section>

@@ -13,7 +13,7 @@
     "@tailwindcss/typography": "^0.5.13",
     "@vercel/analytics": "^1.2.2",
     "@vercel/kv": "^1.0.1",
-    "@vercel/speed-insights": "^1.0.10",
+    "@vercel/speed-insights": "^1.1.0",
     "babel-runtime": "^6.26.0",
     "clsx": "^2.1.1",
     "contentlayer": "^0.3.4",
